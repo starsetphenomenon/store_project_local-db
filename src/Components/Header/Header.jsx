@@ -17,10 +17,10 @@ class Header extends Component {
                             <li className="menu__item"><a href=".">Some Item</a></li>
                         </ul>
                     </div>
-                    <div className="phone">
-                        <img src="./assets/icons/phone.svg" alt="" />
+                    <a href="tel:8 981 120-11-17" className="phone">
+                        <img src="./assets/icons/phone.svg" alt="" />                      
                         <span>8 981 120-11-17</span>
-                    </div>
+                    </a>
                 </div>
                 <div className="logo">
                     <a href="."><img src="./assets/img/logo.png" alt="" /></a>
@@ -30,7 +30,7 @@ class Header extends Component {
                         <img src="./assets/icons/cart.svg" alt="" />
                     </div>
                     <div className="search">
-                        <input type="search" placeholder="Поиск" />
+                        <input type="search" placeholder="Поиск" spellсheck="false" />
                         <img src="./assets/icons/search.svg" alt="" />
                     </div>
                 </div>
