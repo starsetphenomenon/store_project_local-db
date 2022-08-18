@@ -1,0 +1,140 @@
+$mainBackground: #373737;
+$hoverBasic: #FF0000;
+
+.Main {
+    margin: 0 auto;
+    background-color: $mainBackground;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+
+    img {
+        width: 100%;
+    }
+}
+
+.main-wrapper {
+    margin: 0 auto;
+    padding: 0 120px 0;
+}
+
+.menu-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 88px 0;
+    margin-bottom: 88px;
+    cursor: pointer;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .svg {
+        margin-bottom: 30px;
+        transition-duration: 1s;
+    }
+
+    a {
+        text-decoration: none;
+        font-family: 'Montserrat', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', sans-serif;
+        font-size: 17px;
+        line-height: 21px;
+        color: #ffffff;
+        font-weight: 500;
+        transition-duration: 1s;
+        opacity: 40%;
+    }
+}
+
+.menu-element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:hover .svg {
+        filter: brightness(0) saturate(100%) invert(12%) sepia(97%) saturate(6206%) hue-rotate(0deg) brightness(107%) contrast(114%);
+    }
+
+    &:hover a {
+        color: $hoverBasic;
+        opacity: 100%;
+    }
+}
+
+.nav-menu div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+}
+
+.collection-item {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.banner {
+    width: 49.2%;
+    margin-bottom: 25px;
+    position: relative;
+
+    & .banner-img {
+        border-radius: 14px;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.banner-text {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 26px;
+    width: 92%;
+    padding: 0 26px;
+
+    p {
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 28px;
+    }
+}
+
+@media (max-width: 991px) {
+    .main-wrapper {
+        padding: 0 69px 0;
+    }
+
+    .menu-list {
+        padding: 0 60px 0;
+    }
+
+    .banner {
+        width: 100%;
+        margin: 0 0 52px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-list {
+        padding: 0;
+        margin-bottom: 72px;
+
+        div {
+            margin-right: 20px;
+            text-align: center;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
