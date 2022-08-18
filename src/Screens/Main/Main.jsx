@@ -1,7 +1,7 @@
 import './Main.scss';
 import { Component } from "react";
 
-import ItemCard from "../../Components/ItemCard/ItenCard"
+import ItemCard from "../../Components/ItemCard/ItemCard.jsx"
 
 
 class Main extends Component {
@@ -14,28 +14,28 @@ class Main extends Component {
                 <div className="main-wrapper">
                     <div className="menu-list">
                         <div className="menu-element">
-                            <a href="#">
-                                <img className="svg" src='./assets/icons/knife.svg'></img>
+                            <a href=".">
+                                <img alt="itemKnife" className="svg" src='./assets/icons/knife.svg'></img>
                             </a>
-                            <a href="#">Кухонные ножи</a>
+                            <a href=".">Кухонные ножи</a>
                         </div>
                         <div className="menu-element">
-                            <a href="#">
-                                <img className="svg" src='./assets/icons/grey-knifes.svg'></img>
+                            <a href=".">
+                                <img alt="itemKnife" className="svg" src='./assets/icons/grey-knifes.svg'></img>
                             </a>
-                            <a href="#">Складные ножи</a>
+                            <a href=".">Складные ножи</a>
                         </div>
                         <div className="menu-element">
-                            <a href="#">
-                                <img className="svg" src='./assets/icons/red-knifes.svg'></img>
+                            <a href=".">
+                                <img alt="itemKnife" className="svg" src='./assets/icons/red-knifes.svg'></img>
                             </a>
-                            <a href="#">Точилки для ножей</a>
+                            <a href=".">Точилки для ножей</a>
                         </div>
                         <div className="menu-element">
-                            <a href="#">
-                                <img className="svg" src='./assets/icons/cookHat.svg'></img>
+                            <a href=".">
+                                <img alt="itemKnife" className="svg" src='./assets/icons/cookHat.svg'></img>
                             </a>
-                            <a href="#">Аксессуары для кухни</a>
+                            <a href=".">Аксессуары для кухни</a>
                         </div>
                     </div>
                     <div className="collection-item">
