@@ -258,3 +258,16 @@
         }
     }
 }
+
+@media (max-width: 575px) {
+    .catalog {
+        .content {
+            .items {
+                .items__wrapper {
+                    justify-content: space-between;
+                    gap: 0;
+                }
+            }
+        }
+    }
+}

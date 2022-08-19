@@ -10,16 +10,17 @@ class ItemCard extends Component {
             title,
             price,
             status,
+            className,
           } = this.props;
 
         return (
-            <div className="item-card">
-                <div className="item-img">
+            <div className={className}>
+                <div className="item-img" >
                     <a href=".">
                         <img alt="itemKnife" src={img}></img>
                     </a>
                     <div className="plus">
-                        <img alt="itemKnife" src='./assets/icons/plus.svg'></img>
+                        <img alt="itemKnife"  src='./assets/icons/plus.svg'></img>
                         <img alt="itemKnife" className="basket" src='./assets/icons/cart.svg'></img>
                     </div>
                 </div>
@@ -39,6 +40,7 @@ ItemCard.defaultProps = {
     img: './assets/img/knifeCatalog.png',
     title: 'Складной нож SQ01-B',
     price: '850$',
+    className: 'item-card'
   };
 
 export default ItemCard;

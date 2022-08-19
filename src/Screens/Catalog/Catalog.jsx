@@ -64,11 +64,11 @@ function Catalog() {
                 </div>
                 <div className="items">
                     <div className="items__wrapper">
-                        <ItemCard status={'Новинка'} />
-                        <ItemCard />
-                        <ItemCard />
-                        <ItemCard />
-                        <ItemCard />
+                        <ItemCard className ={'item-card-catalog'} status={'Новинка'} />
+                        <ItemCard className ={'item-card-catalog'}/>
+                        <ItemCard className ={'item-card-catalog'}/>
+                        <ItemCard className ={'item-card-catalog'}/>
+                        <ItemCard className ={'item-card-catalog'}/>
                     </div>
                 </div>
             </div>
