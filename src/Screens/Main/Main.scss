@@ -12,9 +12,19 @@ $hoverBasic: #FF0000;
     font-weight: 500;
   }
 
+ * {
+    margin: 0;
+    padding: 0;
+}
+
 .Main {
     margin: 0 auto;
     background-color: $mainBackground;
+}
+
+a {
+    text-decoration: none;
+    color: #FFFFFF;
 }
 
 .slider {
@@ -29,7 +39,7 @@ $hoverBasic: #FF0000;
 
 .main-wrapper {
     margin: 0 auto;
-    padding: 0 120px 120px;
+    padding: 0 120px 0;
 }
 
 .menu-list {
@@ -51,11 +61,8 @@ $hoverBasic: #FF0000;
     }
 
     a {
-        text-decoration: none;
-        font-family: 'Montserrat', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', sans-serif;
         font-size: 17px;
         line-height: 21px;
-        color: #ffffff;
         font-weight: 500;
         transition-duration: 0.2s;
         opacity: 40%;
@@ -75,6 +82,11 @@ $hoverBasic: #FF0000;
         color: $hoverBasic;
         opacity: 100%;
     }
+}
+
+.block-hidden-mob,
+.collection-knives-min {
+    display: none;
 }
 
 .nav-menu div {
@@ -123,10 +135,12 @@ $hoverBasic: #FF0000;
     height: 1px;
     background-color: #FFFFFF;
     opacity: 10%;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
-.title-new-popular {
+// section new-popular product
+
+.switcher-new-popular {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
@@ -159,14 +173,12 @@ $hoverBasic: #FF0000;
     }
 }
 
+// section content about knifes
+
 .content-item {
     display: flex;
     justify-content: space-around;
     margin-bottom: 40px;
-}
-
-.content-img {
-    margin-right: 0;
 }
 
 .content-text {
@@ -183,12 +195,16 @@ $hoverBasic: #FF0000;
         margin: 0 0 35px 0;
     }
 
-    & .title {
+    & h2:last-child {
         margin-bottom: 0;
     }
 }
 
-// section-interesting
+.hidden {
+    display: none
+}
+
+// section interesting
 
 .about-knife {
     @include title-h2;
@@ -197,17 +213,49 @@ $hoverBasic: #FF0000;
 
 .section-interesting {
     display: flex;
+    justify-content: space-between;
+    padding-bottom: 60px;
 }
 
 .interesting-item {
-   
-    
+    width: 31.7%;
+    position: relative;
+    background-image: linear-gradient(to top, 
+    rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    border-radius: 18px;
+
+    p {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        opacity: 60%;
+    }
 }
 
+.data-item {
+    position: absolute;
+    top: 23px;
+    right: 25px;
+}
 
+.title-item {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 94.2%;
+    padding: 33px 15px;
 
-
-
+    a {
+        display: inline-block;
+        font-size: 17px;
+        font-weight: 500;
+        width: 70%;
+    }
+}
 
 
 @media (max-width: 991px) {
@@ -225,6 +273,7 @@ $hoverBasic: #FF0000;
     }
 }
 
+
 @media (max-width: 768px) {
     .menu-list {
         padding: 0;
@@ -237,6 +286,143 @@ $hoverBasic: #FF0000;
             &:last-child {
                 margin-right: 0;
             }
+        }
+    }
+
+    .collection-item {
+        margin-bottom: 0;
+    }
+
+    .content-item {
+        justify-content: space-between;
+    }
+    
+    .content-text {
+        width: 47%;
+        display: flex;
+        flex-direction: column;
+    
+        h2 {
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+    
+        p {
+            color: #ADACAC;
+            margin-bottom: 25px;
+        }
+
+        & .order {
+            order: -1;
+            margin-bottom: 25px;
+        }
+    }
+
+    .invisible {
+        display: none;
+    }
+
+    .content-img {
+        img {
+            width: 300px;
+        }
+    }
+
+    .hidden {
+        display: flex;
+    }
+
+    .section-interesting {
+        flex-direction: column;
+
+        & div:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .interesting-item {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+
+    .title-item {
+
+        a {
+            font-size: 20PX;
+        }
+    }
+}
+
+
+@media (max-width: 575px) {
+    .main-wrapper {
+        padding: 0 35px 0;
+    }
+
+    .block-hidden {
+        display: none;
+    }
+
+    .block-hidden-mob {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        a {
+            @include title-h2;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 13px;
+            margin-bottom: 65px;
+        }
+    }
+
+    .content-mobail-img {
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+
+    .accessories {
+        @include title-h2;
+        font-size: 18px;
+        position: relative;
+        width: 41%;
+        margin-bottom: 27px;
+
+        &:hover {
+            &::before {
+                @include pseudo;
+                top: 21px;
+                left: 1px;
+                width: 100%;
+                height: 2px;
+                background-color: #C80000;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 375px) {
+    .main-wrapper {
+        padding: 0 20px 0;
+    }
+
+    .collection-knives-min {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+
+        img {
+            width: 100%;
         }
     }
 }
