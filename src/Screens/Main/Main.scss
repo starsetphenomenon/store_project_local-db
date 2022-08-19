@@ -29,7 +29,7 @@ $hoverBasic: #FF0000;
 
 .main-wrapper {
     margin: 0 auto;
-    padding: 0 120px 0;
+    padding: 0 120px 120px;
 }
 
 .menu-list {
@@ -47,7 +47,7 @@ $hoverBasic: #FF0000;
 
     .svg {
         margin-bottom: 30px;
-        transition-duration: 1s;
+        transition-duration: 0.2s;
     }
 
     a {
@@ -57,7 +57,7 @@ $hoverBasic: #FF0000;
         line-height: 21px;
         color: #ffffff;
         font-weight: 500;
-        transition-duration: 1s;
+        transition-duration: 0.2s;
         opacity: 40%;
     }
 }
