@@ -9,24 +9,25 @@ class ItemCard extends Component {
             img,
             title,
             price,
+            status,
           } = this.props;
 
         return (
             <div className="item-card">
                 <div className="item-img">
-                    <a href="#">
-                        <img src={img}></img>
+                    <a href=".">
+                        <img alt="itemKnife" src={img}></img>
                     </a>
                     <div className="plus">
-                        <img src='./assets/icons/plus.svg'></img>
-                        <img className="basket" src='./assets/icons/cart.svg'></img>
+                        <img alt="itemKnife" src='./assets/icons/plus.svg'></img>
+                        <img alt="itemKnife" className="basket" src='./assets/icons/cart.svg'></img>
                     </div>
                 </div>
                 <div className="item-text">
-                    <a href="#">{title}</a>
+                    <a alt="itemKnife" href=".">{title}</a>
                     <div className="item-price">
                         <p>{price}</p>
-                        <p className="new-product">{this.props.status}</p>
+                        <p className="new-product">{status}</p>
                     </div>
                 </div>
             </div>
