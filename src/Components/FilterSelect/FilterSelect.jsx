@@ -1,7 +1,7 @@
 import './FilterSelect.scss';
 import { useState } from 'react';
 
-export default function FilterSelect() {
+export default function FilterSelect({ data, name }) {
 
     const [isVisible, setIsVisible] = useState(false);
 
@@ -12,7 +12,7 @@ export default function FilterSelect() {
     return (
         <div className="filter">
             <div className="nav" onClick={handleVisibility}>
-                <h3>Новинки</h3>
+                <h3>{name}</h3>
                 <div className="arrow">
                     <svg className="arrow-down" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fillRule="evenodd" clipRule="evenodd" d="M16.7072 7.70725L10.7073 13.7073C10.3163 14.0983 9.68425 14.0983 
@@ -24,9 +24,9 @@ export default function FilterSelect() {
                 </div>
             </div>
             {isVisible && <ul className="links">
-                <li><a href=".">Складной нож</a></li>
-                <li><a href=".">Складной нож</a></li>
-                <li><a href=".">Складной нож</a></li>
+                {data.map(el => {
+                  return  <li key={el.id}><a href=".">{el.linkName}</a></li>
+                })} 
             </ul>}
         </div>
     )

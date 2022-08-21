@@ -1,25 +1,19 @@
 import "./Header.scss";
 
-import { Component } from 'react';
 
-class Header extends Component {
-    render() {
-        return (
-            <div className="header">
-                <div className="left">
-                    <div className="burger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <div className="menu">
-                        <ul>
-                            <li className="menu__item"><a href=".">Some Item</a></li>
-                        </ul>
-                    </div>
-                    <a href="tel:8 981 120-11-17" className="phone">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21.9999 16.9201V19.9201C22.0011 20.1986 21.944 20.4743 21.8324 20.7294C21.7209 20.9846 21.5572 21.2137 21.352 
+function Header({ menuVisibility }) {
+
+    return (
+        <div className="header">
+            <div className="left">
+                <div className="burger" onClick={menuVisibility}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <a href="tel:8 981 120-11-17" className="phone">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.9999 16.9201V19.9201C22.0011 20.1986 21.944 20.4743 21.8324 20.7294C21.7209 20.9846 21.5572 21.2137 21.352 
                             21.402C21.1468 21.5902
                              20.9045 21.7336 20.6407 21.8228C20.3769 21.912 20.0973 21.9452 19.8199 21.9201C16.7428 21.5857 13.7869 20.5342 11.1899 
                              18.8501C8.77376 17.3148 6.72527 15.2663 5.18993 12.8501C3.49991 10.2413 2.44818 7.27109 2.11993 4.1801C2.09494 3.90356 
@@ -30,17 +24,17 @@ class Header extends Component {
                                15.9101L15.3599 14.6401C15.6318 14.3712 15.9751 14.1859 16.3491 14.1062C16.723 14.0264 17.112 14.0556 17.4699 14.1901C18.3772 
                                14.5286 19.3199 14.7635 20.2799 14.8901C20.7657 14.9586 21.2093 15.2033 21.5265 15.5776C21.8436 15.9519 22.0121 16.4297 21.9999
                                 16.9201Z" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                        <span>8 981 120-11-17</span>
-                    </a>
-                </div>
-                <div className="logo">
-                    <a href="."><img src="./assets/img/logo.png" alt="" /></a>
-                </div>
-                <div className="right">
-                    <div className="cart">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M11.9681 2C12.3023 2.06645 12.6486 2.11245 12.9767 2.20446C14.8663 2.75139 16.0632 
+                    </svg>
+                    <span>8 981 120-11-17</span>
+                </a>
+            </div>
+            <div className="logo">
+                <a href="."><img src="./assets/img/logo.png" alt="" /></a>
+            </div>
+            <div className="right">
+                <div className="cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.9681 2C12.3023 2.06645 12.6486 2.11245 12.9767 2.20446C14.8663 2.75139 16.0632 
                             4.0855 16.1908 5.76719C16.1908 5.79786 16.203 5.82853 16.2091 5.88987C16.2941 5.88987 16.3792
                              5.88987 16.4582 5.88987C17.2602 5.88987 18.0683 5.88987 18.8703 5.88987C19.3685 5.88987 19.6116
                               6.07388 19.6602 6.48792C19.8242 8.02137 19.9822 9.55994 20.1402 11.0934C20.3346 12.9182 20.529
@@ -68,24 +62,23 @@ class Header extends Component {
                                            7.4659 9.22769C7.10743 9.22769 6.83401 8.99256 6.82186 8.68076C6.81579 8.58364 6.82186
                                             8.48652 6.82186 8.3894C6.80971 7.92936 6.80971 7.47444 6.80971 7.00929ZM14.8906 5.87964C14.8055
                                              4.81134 14.2526 3.99349 13.159 3.47723C11.9742 2.92007 10.7772 2.96097 9.64106 3.58457C8.675
-                                              4.11617 8.18285 4.89823 8.1221 5.87964C10.3884 5.87964 12.6304 5.87964 14.8906 5.87964Z" 
-                                              fill="white" />
-                        </svg>
+                                              4.11617 8.18285 4.89823 8.1221 5.87964C10.3884 5.87964 12.6304 5.87964 14.8906 5.87964Z"
+                            fill="white" />
+                    </svg>
 
-                    </div>
-                    <div className="search">
-                        <input type="search" placeholder="Поиск" spellсheck="false" />
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10.5556 18.1111C14.7284 18.1111 18.1111 14.7284 18.1111 10.5556C18.1111 6.38274 14.7284 3 10.5556 3C6.38274 3 3 6.38274
+                </div>
+                <div className="search">
+                    <input type="search" placeholder="Поиск" spellсheck="false" />
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.5556 18.1111C14.7284 18.1111 18.1111 14.7284 18.1111 10.5556C18.1111 6.38274 14.7284 3 10.5556 3C6.38274 3 3 6.38274
                              3 10.5556C3 14.7284 6.38274 18.1111 10.5556 18.1111Z" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M19.9999 19.9999L15.8916 15.8916" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
+                        <path d="M19.9999 19.9999L15.8916 15.8916" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
 
-                    </div>
                 </div>
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 export default Header;

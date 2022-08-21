@@ -2,6 +2,41 @@ import FilterSelect from '../../Components/FilterSelect/FilterSelect';
 import ItemCard from '../../Components/ItemCard/ItemCard';
 import "./Catalog.scss";
 
+const filter1 = [
+    {
+        id: 0,
+        linkName: 'Складной нож',
+        link: '.',
+    },
+    {
+        id: 1,
+        linkName: 'Складной нож',
+        link: '.',
+    },
+    {
+        id: 2,
+        linkName: 'Складной нож',
+        link: '.',
+    }
+]
+const filter2 = [
+    {
+        id: 0,
+        linkName: 'Японский нож',
+        link: '.',
+    },
+    {
+        id: 1,
+        linkName: 'Японский нож',
+        link: '.',
+    },
+    {
+        id: 2,
+        linkName: 'Японский нож',
+        link: '.',
+    }
+]
+
 
 function Catalog() {
 
@@ -20,16 +55,16 @@ function Catalog() {
             <h2 className='catalog_heading'>Ножи</h2>
             <div className="content">
                 <div className="filters">
-                    <FilterSelect />
-                    <FilterSelect />
+                    <FilterSelect name="Новинки" data={filter1} />
+                    <FilterSelect name="Японская сталь" data={filter2} />
                 </div>
                 <div className="items">
                     <div className="items__wrapper">
-                        <ItemCard className ={'item-card-catalog'} status={'Новинка'} />
-                        <ItemCard className ={'item-card-catalog'}/>
-                        <ItemCard className ={'item-card-catalog'}/>
-                        <ItemCard className ={'item-card-catalog'}/>
-                        <ItemCard className ={'item-card-catalog'}/>
+                        <ItemCard className={'item-card-catalog'} status={'Новинка'} />
+                        <ItemCard className={'item-card-catalog'} />
+                        <ItemCard className={'item-card-catalog'} />
+                        <ItemCard className={'item-card-catalog'} />
+                        <ItemCard className={'item-card-catalog'} />
                     </div>
                 </div>
             </div>
