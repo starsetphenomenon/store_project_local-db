@@ -3,12 +3,35 @@ import { Component } from "react";
 import Slider from "../../Components/Slider/Slider"
 import ItemCard from "../../Components/ItemCard/ItemCard.jsx"
 
+const slides = [
+    {
+        id: 0,
+        imgSrc: '../assets/img/main/slideBanner.png',
+        imgAlt: 'slider background',
+        h1: 'Исключительное качество без компромиссов',
+        h4: 'Ножи «Tuotown» – это главный инструмент поваров и секрет кулинарного мастерства',
+    },
+    {
+        id: 1,
+        imgSrc: '../assets/img/main/slideBanner.png',
+        imgAlt: 'slider background',
+        h1: '1',
+        h4: 'lorem',
+    },
+    {
+        id: 2,
+        imgSrc: '../assets/img/main/slideBanner.png',
+        imgAlt: 'slider background',
+        h1: '2',
+        h4: 'lorem ispum',
+    }
+];
 
 class Main extends Component {
     render() {
         return (
             <main className="Main">
-                <Slider />
+                <Slider data={slides} />
                 <div className="main-wrapper">
                     <div className="menu-list block-hidden">
                         <div className="menu-element">
