@@ -3,31 +3,7 @@ import 'swiper/css';
 import './Slider.scss';
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 
-const slides = [
-    {
-        id: 0,
-        imgSrc: '../assets/img/main/slideBanner.png',
-        imgAlt: 'slider background',
-        h1: 'Исключительное качество без компромиссов',
-        h4: 'Ножи «Tuotown» – это главный инструмент поваров и секрет кулинарного мастерства',
-    },
-    {
-        id: 1,
-        imgSrc: '../assets/img/main/slideBanner.png',
-        imgAlt: 'slider background',
-        h1: '1',
-        h4: 'Ножи «Tuotown» – это главный инструмент поваров и секрет кулинарного мастерства',
-    },
-    {
-        id: 2,
-        imgSrc: '../assets/img/main/slideBanner.png',
-        imgAlt: 'slider background',
-        h1: '2',
-        h4: 'Ножи «Tuotown» – это главный инструмент поваров и секрет кулинарного мастерства',
-    }
-];
-
-export default function Slider() {
+export default function Slider({ data }) {
     const pagination = {
         clickable: true,
         renderBullet: function (index, className) {
@@ -45,7 +21,7 @@ export default function Slider() {
             spaceBetween={0}
             modules={[Navigation, Pagination, Mousewheel, Keyboard]}
             className="slider"
-        >            {slides.map(el => (
+        >            {data.map(el => (
             <SwiperSlide key={el.id} className='slide'>
                 <div className='item'>
                     <div className="item_background">

@@ -53,6 +53,7 @@
                 }
 
                 button {
+                    -webkit-tap-highlight-color: transparent;
                     box-sizing: border-box;
                     width: auto;
                     padding: 15px 30px;
@@ -67,6 +68,7 @@
                     background: none;
                     color: #fff;
                     cursor: pointer;
+                    backdrop-filter: blur(6px);
 
                     &:hover {
                         background: #000;
@@ -93,6 +95,7 @@
     }
 }
 
+.swiper-button-next,
 .swiper-button-prev {
     height: 60px;
     width: 60px;
@@ -100,17 +103,17 @@
     box-sizing: border-box;
     position: absolute;
     width: 45px;
-    bottom: 10%;
-    left: 5%;
     height: 45px;
-    border-radius: 50%;
+    bottom: 10%;
     z-index: 5;
-    border: 1px solid #373737;
+    border-radius: 50%;
     cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
     -webkit-tap-highlight-color: transparent;
 
     &:hover {
-        border: 1px solid #FFF;
+        background: rgba(255, 255, 255, 0.3);
     }
 
     &::before {
@@ -134,53 +137,22 @@
         border-left: 2px solid rgb(255, 255, 255);
         position: absolute;
         top: 33%;
+    }
+}
+
+.swiper-button-prev {
+    left: 5%;
+
+    &::after {
         right: 15%;
         transform: rotate(-45deg) translate(-50%, -50%);
     }
 }
 
 .swiper-button-next {
-    height: 60px;
-    width: 60px;
-    display: block;
-    box-sizing: border-box;
-    position: absolute;
-    width: 45px;
-    bottom: 10%;
     right: 5%;
-    height: 45px;
-    border-radius: 50%;
-    z-index: 5;
-    border: 1px solid #373737;
-    -webkit-tap-highlight-color: transparent;
-    cursor: pointer;
-    backdrop-filter: blur(8px);
-
-    &:hover {
-        border: 1px solid #FFF;
-    }
-
-    &::before {
-        content: "";
-        display: block;
-        height: 2px;
-        width: 50%;
-        background: #fff;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
 
     &::after {
-        content: "";
-        display: block;
-        width: 30%;
-        height: 30%;
-        border-top: 2px solid rgb(255, 255, 255);
-        border-left: 2px solid rgb(255, 255, 255);
-        position: absolute;
-        top: 33%;
         left: 15%;
         transform: rotate(135deg) translate(-50%, -50%);
     }
@@ -198,6 +170,7 @@
     align-items: center;
     padding: 5px 30px;
     gap: 15px;
+    -webkit-tap-highlight-color: transparent;
 
     .swiper-pagination-bullet {
         display: flex;
