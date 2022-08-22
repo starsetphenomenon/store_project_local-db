@@ -89,6 +89,7 @@
     }
 
     .mainLinks {
+
         li {
             font-family: 'Montserrat';
             font-style: normal;
@@ -96,14 +97,89 @@
             font-size: 15px;
             line-height: 18px;
             text-transform: uppercase;
-            opacity: 0.6;
+            opacity: 0.4;
+            background: #FFF;
+
+            a {
+                color: #000;
+            }
         }
 
         :hover {
             background: #373737;
+            color: #fff;
             width: 80%;
             opacity: 1;
             border-radius: 8px;
         }
     }
+}
+
+@media (max-width: 767px) {
+    .Menu {
+        width: 320px;
+
+        .close {
+            top: 10px;
+            right: 10px;
+        }
+
+        .filterLinks {
+            :not(a):hover {
+                width: 95%;
+            }
+
+            li {
+                font-size: 15px;
+            }
+        }
+
+        .mainLinks {
+            :not(a):hover {
+                width: 95%;
+            }
+
+            li {
+                font-size: 13px;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 575px) {
+    .Menu {
+        width: 80%;
+        padding: 80px 10%;
+
+        .close {
+            top: 10px;
+            right: 10px;
+        }
+
+        .filterLinks {
+            width: 95%;
+
+            :not(a):hover {
+                width: 110%;
+            }
+
+            li {
+                font-size: 13px;
+            }
+        }
+
+        .mainLinks {
+            width: 95%;
+
+            :not(a):hover {
+                width: 110%;
+            }
+
+            li {
+                font-size: 13px;
+            }
+        }
+    }
+
 }
