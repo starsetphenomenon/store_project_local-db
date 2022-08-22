@@ -4,9 +4,28 @@ import Main from "./Screens/Main/Main";
 import Footer from "./Components/Footer/Footer";
 import Catalog from "./Screens/Catalog/Catalog";
 import Menu from './Components/Menu/Menu';
+import Cart from './Screens/Cart/Cart';
 import { useState } from 'react';
 
 function App() {
+
+
+  const cartItems = [{
+    id: 0,
+    imgSrc: './assets/img/knifeCatalog.png',
+    imgAlt: '.',
+    name: 'Нож классного качества Knight light C653',
+    amount: 3,
+    price: 750,
+  },
+  {
+    id: 1,
+    imgSrc: './assets/img/knifeCatalog.png',
+    imgAlt: '.',
+    name: 'Нож классного качества Knight light C653',
+    amount: 5,
+    price: 1250,
+  }]
 
   const [menu, setMenu] = useState(false);
 
@@ -18,6 +37,7 @@ function App() {
     <div className="App">
       {menu && <Menu menuVisibility={handleMenuVisibility} />}
       <Header menuVisibility={handleMenuVisibility} />
+      <Cart data={cartItems} />
       <Main />
       <Catalog />
       <Footer />
