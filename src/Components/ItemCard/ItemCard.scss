@@ -5,6 +5,7 @@ $hoverPluc: #C80000;
 
 .item-card,
 .item-card-catalog {
+    -webkit-tap-highlight-color: transparent;
     width: 23.8%;
     display: flex;
     flex-direction: column;
@@ -16,6 +17,7 @@ $hoverPluc: #C80000;
 }
 
 .item-img {
+    -webkit-tap-highlight-color: transparent;
     position: relative;
     display: flex;
     align-items: center;

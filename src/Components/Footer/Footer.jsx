@@ -31,7 +31,7 @@ export default class Footer extends Component {
                             <li><a href=".">Контакты</a></li>
                         </ul>
                     </div>
-                    <div className="catalog">
+                    <div className="catalog_footer">
                         <h2>Каталог</h2>
                         <ul className="linkItems">
                             <li><a href=".">Кухонные ножи</a></li>

@@ -1,12 +1,44 @@
+import FilterSelect from '../../Components/FilterSelect/FilterSelect';
 import ItemCard from '../../Components/ItemCard/ItemCard';
 import "./Catalog.scss";
 
+const filter1 = [
+    {
+        id: 0,
+        linkName: 'Складной нож',
+        link: '.',
+    },
+    {
+        id: 1,
+        linkName: 'Складной нож',
+        link: '.',
+    },
+    {
+        id: 2,
+        linkName: 'Складной нож',
+        link: '.',
+    }
+]
+const filter2 = [
+    {
+        id: 0,
+        linkName: 'Японский нож',
+        link: '.',
+    },
+    {
+        id: 1,
+        linkName: 'Японский нож',
+        link: '.',
+    },
+    {
+        id: 2,
+        linkName: 'Японский нож',
+        link: '.',
+    }
+]
+
 
 function Catalog() {
-
-    const handleVisibility = event => {
-        event.currentTarget.nextElementSibling.classList.toggle('hidden'); // toggle visibility on click
-    };
 
     return (
         <div className='catalog'>
@@ -23,52 +55,16 @@ function Catalog() {
             <h2 className='catalog_heading'>Ножи</h2>
             <div className="content">
                 <div className="filters">
-                    <div className="filter">
-                        <div className="nav" onClick={handleVisibility}>
-                            <h3>Новинки</h3>
-                            <div className="arrow">
-                                <svg className="arrow-down" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fillRule="evenodd" clipRule="evenodd" d="M16.7072 7.70725L10.7073 13.7073C10.3163 14.0983 9.68425 14.0983 
-                                        9.29325 13.7073L3.29325 7.70725C2.90225
-                                         7.31625 2.90225 6.68425 3.29325 6.29325C3.68425 5.90225 4.31625 5.90225 4.70725 6.29325L10.0002 11.5862L15.2933
-                                          6.29325C15.6842 5.90225 16.3162 5.90225 16.7072 6.29325C16.9022 6.48825 17.0002 6.74425 17.0002 7.00025C17.0002 
-                                          7.25625 16.9022 7.51225 16.7072 7.70725Z" fill="#828282" />
-                                </svg>
-                            </div>
-                        </div>
-                        <ul className="links hidden">
-                            <li><a href=".">Складной нож</a></li>
-                            <li><a href=".">Складной нож</a></li>
-                            <li><a href=".">Складной нож</a></li>
-                        </ul>
-                    </div>
-                    <div className="filter">
-                        <div className="nav" onClick={handleVisibility}>
-                            <h3>Новинки</h3>
-                            <div className="arrow">
-                                <svg className="arrow-down" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fillRule="evenodd" clipRule="evenodd" d="M16.7072 7.70725L10.7073 13.7073C10.3163 14.0983 9.68425 14.0983 
-                                        9.29325 13.7073L3.29325 7.70725C2.90225
-                                         7.31625 2.90225 6.68425 3.29325 6.29325C3.68425 5.90225 4.31625 5.90225 4.70725 6.29325L10.0002 11.5862L15.2933
-                                          6.29325C15.6842 5.90225 16.3162 5.90225 16.7072 6.29325C16.9022 6.48825 17.0002 6.74425 17.0002 7.00025C17.0002 
-                                          7.25625 16.9022 7.51225 16.7072 7.70725Z" fill="#828282" />
-                                </svg>
-                            </div>
-                        </div>
-                        <ul className="links hidden">
-                            <li><a href=".">Складной нож</a></li>
-                            <li><a href=".">Складной нож</a></li>
-                            <li><a href=".">Складной нож</a></li>
-                        </ul>
-                    </div>
+                    <FilterSelect name="Новинки" data={filter1} />
+                    <FilterSelect name="Японская сталь" data={filter2} />
                 </div>
                 <div className="items">
                     <div className="items__wrapper">
-                        <ItemCard className ={'item-card-catalog'} status={'Новинка'} />
-                        <ItemCard className ={'item-card-catalog'}/>
-                        <ItemCard className ={'item-card-catalog'}/>
-                        <ItemCard className ={'item-card-catalog'}/>
-                        <ItemCard className ={'item-card-catalog'}/>
+                        <ItemCard className={'item-card-catalog'} status={'Новинка'} />
+                        <ItemCard className={'item-card-catalog'} />
+                        <ItemCard className={'item-card-catalog'} />
+                        <ItemCard className={'item-card-catalog'} />
+                        <ItemCard className={'item-card-catalog'} />
                     </div>
                 </div>
             </div>

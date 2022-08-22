@@ -1,19 +1,37 @@
 import './Main.scss';
 import { Component } from "react";
-
+import Slider from "../../Components/Slider/Slider"
 import ItemCard from "../../Components/ItemCard/ItemCard.jsx"
 
+const slides = [
+    {
+        id: 0,
+        imgSrc: '../assets/img/main/slideBanner.png',
+        imgAlt: 'slider background',
+        h1: 'Исключительное качество без компромиссов',
+        h4: 'Ножи «Tuotown» – это главный инструмент поваров и секрет кулинарного мастерства',
+    },
+    {
+        id: 1,
+        imgSrc: '../assets/img/main/slideBanner.png',
+        imgAlt: 'slider background',
+        h1: '1',
+        h4: 'lorem',
+    },
+    {
+        id: 2,
+        imgSrc: '../assets/img/main/slideBanner.png',
+        imgAlt: 'slider background',
+        h1: '2',
+        h4: 'lorem ispum',
+    }
+];
 
 class Main extends Component {
     render() {
         return (
             <main className="Main">
-                <div className="slider"> 
-                    <picture class="picture">
-                        <source media="(max-width: 375px)" srcset="../assets/img/main/slideMob.png"></source>
-                        <img src="../assets/img/main/slideBanner.jpg" alt='Место для слайдера'></img>
-                    </picture>  
-                </div>
+                <Slider data={slides} />
                 <div className="main-wrapper">
                     <div className="menu-list block-hidden">
                         <div className="menu-element">
@@ -43,17 +61,17 @@ class Main extends Component {
                     </div>
                     <div className="content-mobail block-hidden-mob">
                         <div className="content-mobail-img">
-                            <img alt="" src="../assets/img/main/blades.png"/>
+                            <img alt="" src="../assets/img/main/blades.png" />
                         </div>
                         <a href=".">Исключительное качество без компромиссов</a>
                         <p>Ножи «Tuotown» — это главный инструмент поваров и секрет кулинарного мастерства</p>
                         <div className="content-mobail-img">
-                            <img alt="" src="../assets/img/main/kitchenKnife.png"/>
+                            <img alt="" src="../assets/img/main/kitchenKnife.png" />
                         </div>
-                            <a href=".">Исключительное качество без компромиссов</a>
-                            <p>Ножи «Tuotown» — это главный инструмент поваров и секрет кулинарного мастерства</p>
-                            <div className="collection-knives-min">
-                            <img className="knives-min" alt="collectionKnives" src="../assets/img/main/collectionKnives.png"/>
+                        <a href=".">Исключительное качество без компромиссов</a>
+                        <p>Ножи «Tuotown» — это главный инструмент поваров и секрет кулинарного мастерства</p>
+                        <div className="collection-knives-min">
+                            <img className="knives-min" alt="collectionKnives" src="../assets/img/main/collectionKnives.png" />
                         </div>
                     </div>
                     <h3 className="hidden accessories">Аксессуары (9)</h3>
@@ -65,7 +83,7 @@ class Main extends Component {
                                 <img src='./assets/icons/arrow-right.svg' alt='arrow'></img>
                             </div>
                         </div>
-                        <ItemCard status = {'Новинка'} />
+                        <ItemCard status={'Новинка'} />
                         <ItemCard />
                         <ItemCard />
                         <ItemCard />
@@ -80,10 +98,10 @@ class Main extends Component {
                         <h3>ПОПУЛЯРНОЕ</h3>
                     </div>
                     <div className="collection-item">
-                        <ItemCard status = {'Новинка'} />
-                        <ItemCard status = {'Новинка'} />
-                        <ItemCard status = {'Новинка'} />
-                        <ItemCard status = {'Новинка'} />
+                        <ItemCard status={'Новинка'} />
+                        <ItemCard status={'Новинка'} />
+                        <ItemCard status={'Новинка'} />
+                        <ItemCard status={'Новинка'} />
                     </div>
                 </div>
                 <div className="line"></div>
@@ -144,7 +162,7 @@ class Main extends Component {
                             </div>
                             <div className="title-item">
                                 <a href=".">
-                                   Всемирная история режущих клинков — взгляд в прошлое
+                                    Всемирная история режущих клинков — взгляд в прошлое
                                 </a>
                             </div>
                         </div>
@@ -159,7 +177,7 @@ class Main extends Component {
                                 </a>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </main>
