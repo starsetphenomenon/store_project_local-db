@@ -64,17 +64,19 @@ class Main extends Component {
                             <img alt="" src="../assets/img/main/blades.png" />
                         </div>
                         <a href=".">Исключительное качество без компромиссов</a>
-                        <p>Ножи «Tuotown» — это главный инструмент поваров и секрет кулинарного мастерства</p>
+                        <p>Ножи «Tuotown»— это главный инструмент поваров и секрет кулинарного мастерства</p>
                         <div className="content-mobail-img">
                             <img alt="" src="../assets/img/main/kitchenKnife.png" />
                         </div>
                         <a href=".">Исключительное качество без компромиссов</a>
-                        <p>Ножи «Tuotown» — это главный инструмент поваров и секрет кулинарного мастерства</p>
+                        <p>Ножи «Tuotown»— это главный инструмент поваров и секрет кулинарного мастерства</p>
                         <div className="collection-knives-min">
                             <img className="knives-min" alt="collectionKnives" src="../assets/img/main/collectionKnives.png" />
                         </div>
                     </div>
-                    <h3 className="hidden accessories">Аксессуары (9)</h3>
+                    <div className="hidden accessories">
+                        <h3>Аксессуары</h3>
+                    </div>
                     <div className="collection-item">
                         <div className="banner block-hidden">
                             <img className="banner-img" src='../assets/img/main/banner.png' alt='banner'></img>
@@ -145,7 +147,10 @@ class Main extends Component {
                     <h2 className="about-knife">Всё самое интересное о ножах</h2>
                     <div className="section-interesting">
                         <div className="interesting-item">
-                            <img alt="japaneseKnifes" src="../assets/img/main/japaneseKnives.png"></img>
+                            <picture>
+                                <source media="(max-width: 768px)" srcSet="../assets/img/main/japaneseKnives-mob.png"/>
+                                <img alt="japaneseKnifes" src="../assets/img/main/japaneseKnives.png"></img>
+                            </picture>
                             <div className="data-item">
                                 <p>4 августа 2021 19:24</p>
                             </div>
@@ -156,7 +161,10 @@ class Main extends Component {
                             </div>
                         </div>
                         <div className="interesting-item">
-                            <img alt="japaneseKnifes" src="../assets/img/main/blades.png"></img>
+                            <picture>
+                                <source media="(max-width: 768px)" srcSet="../assets/img/main/blades-mob.png"/>
+                                <img alt="blades" src="../assets/img/main/blades.png"/>
+                            </picture>
                             <div className="data-item">
                                 <p>4 августа 2021 19:24</p>
                             </div>
@@ -167,7 +175,10 @@ class Main extends Component {
                             </div>
                         </div>
                         <div className="interesting-item">
-                            <img alt="japaneseKnifes" src="../assets/img/main/kitchenKnife.png"></img>
+                            <picture>
+                                <source media="(max-width: 768px)" srcSet="../assets/img/main/kitchenKnife-mob.png"/>
+                                <img alt="kitchenKnife" src="../assets/img/main/kitchenKnife.png"/>
+                            </picture>
                             <div className="data-item">
                                 <p>4 августа 2021 19:24</p>
                             </div>
@@ -177,7 +188,6 @@ class Main extends Component {
                                 </a>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </main>
