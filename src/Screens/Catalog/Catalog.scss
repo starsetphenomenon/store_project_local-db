@@ -224,9 +224,23 @@
                 padding: 0 5%;
 
                 .items__wrapper {
-                    justify-content: center;
+                    justify-content: space-between;
                     gap: 0;
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .catalog {
+        .content {
+            padding: 0;
+
+            .items {
+                width: 100%;
+                padding: 0;
+                justify-content: space-between;
             }
         }
     }
