@@ -5,7 +5,7 @@ export default function InputNumber() {
     const [amount, setAmount] = useState("");
 
     const handlePlus = () => {
-        setAmount(amount + 1);
+        setAmount(+amount + 1);
     }
 
     const handleMinus = () => {
