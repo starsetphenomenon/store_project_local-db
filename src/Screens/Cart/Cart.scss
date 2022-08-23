@@ -145,41 +145,7 @@
                             top: 50%;
                         }
                     }
-
-                    .amount {
-                        position: relative;
-
-                        ::before {
-                            color: blue;
-                            content: "\25B2";
-                            margin-top: 1px;
-                            position: absolute;
-                            right: 5px;
-                            width: 10px;
-                            height: 10px;
-                            font-size: 10px;
-                            pointer-events: none;
-                            background: #fff;
-                        }
-
-                        input {
-                            width: 40px;
-                            height: auto;
-                            font-family: 'Montserrat';
-                            font-style: normal;
-                            font-weight: 500;
-                            font-size: 14px;
-                            line-height: 140%;
-                            background: none;
-                            border: none;
-                            color: inherit;
-                            border-bottom: 1px solid #ADACAC;
-                            text-align: center;
-                            height: 100%;
-                            border-radius: 0;
-                        }
-                    }
-
+                    
                     .price {
                         font-family: 'Montserrat';
                         font-style: normal;
