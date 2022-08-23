@@ -1,6 +1,7 @@
 import './Cart.scss';
 
 import React from 'react'
+import InputNumber from '../../Components/InputNumber/InputNumber';
 
 export default function Cart({ data }) {
     return (
@@ -21,8 +22,7 @@ export default function Cart({ data }) {
                                     <img src={el.imgSrc} alt={el.imgAlt} />
                                     <h3>{el.name}</h3></div>
                                 <div className="item_info">
-                                    <div className="amount">
-                                        <input type="number" /></div>
+                                    <InputNumber/>
                                     <div className="price">{el.price} ₴</div>
                                     <div className="close">
                                         <span></span>
