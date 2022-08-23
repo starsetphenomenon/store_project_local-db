@@ -26,6 +26,15 @@
         background-color: transparent;
         border: none;
         cursor: pointer;
+
+        svg {
+            transition-duration: 0.3s;
+            &:hover {
+                path {
+                    fill: #FF0000; 
+                }
+            }
+        }
     }
 
     .arrow-up {
