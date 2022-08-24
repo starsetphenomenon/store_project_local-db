@@ -22,7 +22,7 @@ export default function Cart({ data }) {
                                     <img src={el.imgSrc} alt={el.imgAlt} />
                                     <h3>{el.name}</h3></div>
                                 <div className="item_info">
-                                    <InputNumber/>
+                                    <InputNumber />
                                     <div className="price">{el.price} ₴</div>
                                     <div className="close">
                                         <span></span>
@@ -44,20 +44,20 @@ export default function Cart({ data }) {
                     <div className="info">
                         <div className="info_item required">
                             <p className="name">Получатель</p>
-                            <input spellCheck="false" placeholder='Имя Фамилия' type="text" />
+                            <input pattern="^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)" spellCheck="false" placeholder='Имя Фамилия' type="text" />
                         </div>
                         <div className="info_item required">
                             <p className="name">Мобильный телефон</p>
-                            <input spellCheck="false" placeholder='+(380)___-__-__' type="tel" />
+                            <input pattern="((\+38)?\(?\d{3}\)?[\s\.-]?(\d{7}|\d{3}[\s\.-]\d{2}[\s\.-]\d{2}|\d{3}-\d{4}))" spellCheck="false" placeholder='+38(0**)___-__-__' type="tel" />
                         </div>
                         <div className="info_item">
                             <p className="name">E-mail</p>
-                            <input spellCheck="false" placeholder='Ваша почта' type="email" />
+                            <input pattern="[^@\s]+@[^@\s]+\.[^@\s]+" spellCheck="false" placeholder='Ваша почта' type="email" />
                         </div>
                     </div>
                     <div className="send">
                         <div className="policy">
-                            Нажимая «Выбрать способ доставки», подтверждаю, что я ознакомлен с условиями 
+                            Нажимая «Выбрать способ доставки», подтверждаю, что я ознакомлен с условиями
                             <a href="."> Публичного договора оферты</a> и <a href=".">Политикой конфиденциальности</a>,
                             а также согласен получать информационную рассылку
                         </div>
