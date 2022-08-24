@@ -145,7 +145,7 @@
                             top: 50%;
                         }
                     }
-                    
+
                     .price {
                         font-family: 'Montserrat';
                         font-style: normal;
@@ -259,9 +259,11 @@
                     border: none;
                     border-bottom: 1px solid #828282;
                     height: 40px;
-                    width: 100%;
+                    width: 90%;
                     display: flex;
                     color: #fff;
+                    padding: 0 5%;
+                    border-radius: 5px;
 
                     ::placeholder {
                         font-family: 'Montserrat';
@@ -273,6 +275,18 @@
                         align-self: flex-end;
                         justify-self: flex-end;
                     }
+                }
+
+                :focus {
+                    outline: none;
+                }
+
+                :invalid {
+                    box-shadow: -1px 1px #C34A2C;
+                }
+
+                :valid {
+                    box-shadow: -1px 1px lightgreen;
                 }
             }
 

@@ -35,7 +35,7 @@ function App() {
 
   return (
     <div className="App">
-      {menu && <Menu menuVisibility={handleMenuVisibility} />}
+      <Menu menuStatus={menu} menuVisibility={handleMenuVisibility} />
       <Header menuVisibility={handleMenuVisibility} />
       <Cart data={cartItems} />
       <Main />
