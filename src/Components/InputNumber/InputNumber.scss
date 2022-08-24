@@ -1,0 +1,40 @@
+.amount {
+    position: relative;
+    display: inline-block;
+
+    input {
+        width: 40px;
+        height: auto;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 140%;
+        background: none;
+        border: none;
+        color: inherit;
+        border-bottom: 1px solid #ADACAC;
+        text-align: center;
+        height: 100%;
+        padding-bottom: 3px;
+    }
+
+    .arrow-up, .arrow-down {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .arrow-up {
+        bottom: 16px;
+        left: 25px;
+    }
+
+    .arrow-down {
+        top: 2px;
+        left: 25px;
+    }
+}
