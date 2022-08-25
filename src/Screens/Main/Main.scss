@@ -1,18 +1,18 @@
 $mainBackground: #373737;
 $hoverBasic: #FF0000;
 
-@mixin pseudo ( $pos: absolute, $content: ''){
+@mixin pseudo ($pos: absolute, $content: '') {
     content: $content;
     position: $pos;
-  }
+}
 
-  @mixin title-h2 {
+@mixin title-h2 {
     font-family: 'Jura', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', sans-serif;
     font-size: 30px;
     font-weight: 500;
-  }
+}
 
- * {
+* {
     margin: 0;
     padding: 0;
 }
@@ -140,7 +140,6 @@ a {
 }
 
 // section new-popular product
-
 .switcher-new-popular {
     display: flex;
     justify-content: center;
@@ -218,7 +217,10 @@ a {
     padding-bottom: 60px;
 }
 
+
+
 .interesting-item {
+
     width: 31.7%;
     border-radius: 18px;
     position: relative;
@@ -235,10 +237,10 @@ a {
     &::before {
         @include pseudo;
         width: 100%;
-        height: 100%;   
+        height: 100%;
         position: absolute;
-        top: 0;     
-        left: 0;  
+        top: 0;
+        left: 0;
         background: transparent;
         background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
         opacity: 0.8;
@@ -324,17 +326,17 @@ a {
     .content-item {
         justify-content: space-between;
     }
-    
+
     .content-text {
         width: 47%;
         display: flex;
         flex-direction: column;
-    
+
         h2 {
             font-size: 24px;
             margin-bottom: 25px;
         }
-    
+
         p {
             color: #ADACAC;
             margin-bottom: 25px;
@@ -463,4 +465,3 @@ a {
         }
     }
 }
-
