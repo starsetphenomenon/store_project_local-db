@@ -1,0 +1,115 @@
+.Modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1000;
+    display: none;
+    transition: all 3s;
+
+    &__wrapper {
+        position: fixed;
+        display: none;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 100vw;
+        z-index: 1;
+        background: #3030305a;
+    }
+
+    &__content {
+        position: absolute;
+        height: auto;
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        border-radius: 8px;
+        z-index: 2;
+        background: #232323ad;
+        backdrop-filter: blur(4px);
+        padding: 80px 0;
+        transition: all 3s;
+
+        .close {
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 15px;
+            cursor: pointer;
+
+            span {
+                height: 2px;
+                width: 100%;
+                display: block;
+                background: #fff;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+            }
+
+            :first-child {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            :last-child {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+
+        h3 {
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 10px 40px;
+            font-family: 'Jura';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 42px;
+            text-transform: uppercase;
+            background: #ffffff97;
+            backdrop-filter: blur(16px);
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .Modal {
+        &__content {
+            width: 80%;
+        }
+    }
+}
+
+
+@media (max-width: 575px) {
+    .Modal {
+        &__content {
+            h3 {
+                font-size: 19px;
+                line-height: 28px;
+                padding: 10px 20px;
+            }
+
+            .close {
+                height: 10px;
+                width: 10px;
+            }
+        }
+    }
+}
+
+.active {
+    display: flex;
+}
+
+.Modal__content.active {
+    transform: translate(-50%, -50%) scale(1);
+}
