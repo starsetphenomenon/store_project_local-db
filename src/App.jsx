@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import './App.scss';
 import Header from "./Components/Header/Header";
 import Main from "./Screens/Main/Main";
@@ -23,14 +24,14 @@ function App() {
       })
   }, []);
 
-  useEffect(() => {
+  useEffect(() => { // Get only unique links/topics from data ~~~
     let result = [];
     let tempCheck = false;
     data.map(el => {
       result.forEach(elem => {
         if (elem.topic === el.topic) {
           tempCheck = true;
-          return tempCheck
+          return tempCheck;
         }
       })
       if (tempCheck) {

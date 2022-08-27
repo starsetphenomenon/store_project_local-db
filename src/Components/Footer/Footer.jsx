@@ -1,5 +1,5 @@
 import "./Footer.scss";
-
+import { Link } from "react-router-dom";
 import React, { Component } from 'react'
 
 export default class Footer extends Component {
@@ -8,7 +8,7 @@ export default class Footer extends Component {
             <div className="footer">
                 <div className="company">
                     <div className="logo">
-                        <a href="."><img src="./assets/img/logo.png" alt="" /></a>
+                        <Link to="/"><img src="./assets/img/logo.png" alt="" /></Link>
                         <p className="name">легендарные ножи,<br></br>
                             создающие шедевры</p>
                     </div>
@@ -25,8 +25,7 @@ export default class Footer extends Component {
                     <div className="info">
                         <h2>Информация</h2>
                         <ul className="linkItems">
-                            <li><a href=".">Главная</a></li>
-                            <li><a href=".">Новости</a></li>
+                            <li><a href=".">Главная</a></li>                            
                             <li><a href=".">О Компания</a></li>
                             <li><a href=".">Контакты</a></li>
                         </ul>

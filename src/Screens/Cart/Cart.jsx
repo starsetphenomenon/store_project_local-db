@@ -21,7 +21,7 @@ export default function Cart() {
         handleClassName(e);
         const regExs = {
             name: /^([a-zA-Zа-яієїґА-ЯІЄЇ']{2,}\s[a-zA-Zа-яієїґА-ЯІЄЇ']{1,}'?-?[a-zA-Zа-яієїґА-ЯІЄЇ']{2,}\s?([a-zA-Zа-яієїґА-ЯІЄЇ']{1,})?)/,
-            tel: /(?=.*\+[0-9]{3}\s?[0-9]{2}\s?[0-9]{3}\s?[0-9]{4,5}$)/,
+            tel: /(\+?[0-9]{2,3}\s?[0-9]{2,3}\s?[0-9]{2,3}\s?[0-9]{2,4}$)/,
             email: /[^@\s]+@[^@\s]+\.[^@\s]+/,
         };
 
@@ -120,7 +120,7 @@ export default function Cart() {
                         </div>
                         <div className="info_item required">
                             <p className="name">Мобильный телефон</p>
-                            <input pattern="\+[0-9]{3}\s?[0-9]{2}\s?[0-9]{3}\s?[0-9]{4,5}$"
+                            <input pattern="\+?[0-9]{2,3}\s?[0-9]{2,3}\s?[0-9]{2,3}\s?[0-9]{2,4}$"
                                 name="tel" onChange={handleInputValidation} spellCheck="false" placeholder='+380___  __  __' type="tel" />
                         </div>
                         <div className="info_item">

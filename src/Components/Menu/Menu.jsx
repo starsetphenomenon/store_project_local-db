@@ -1,4 +1,4 @@
-import { React, useContext, useState, useEffect } from 'react'
+import { React } from 'react'
 import "./Menu.scss";
 import { NavLink } from 'react-router-dom';
 
@@ -12,7 +12,7 @@ export default function Menu({ menuVisibility, menuStatus, menuLinks }) {
                     <span></span>
                     <span></span>
                 </div>
-                <ul className='filterLinks'>
+                <ul className='filterLinks'>                  
                     <li onClick={menuVisibility}><NavLink to="/">Главная</NavLink></li>
                     {menuLinks.map(link => {
                         return <li key={link.id} onClick={menuVisibility}><NavLink to="catalog">{link.topic}</NavLink></li>
