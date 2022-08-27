@@ -10,8 +10,8 @@
         "bladeMaterial": "steel 440С",
         "bladeLength": "86",
         "handleMaterial": "wood",
-        "imageSrc": "./assets/img/knifeCatalog.png",
-        "imageAlt": "jackknife"
+        "imgSrc": "./assets/img/knifeCatalog.png",
+        "imgAlt": "jackknife"
     },
     {
         "id": "2",
@@ -24,8 +24,8 @@
         "bladeMaterial": "stainless steel Nitrum",
         "bladeLength": "210",
         "handleMaterial": "Polyoxymethylene",
-        "imageSrc": "./assets/img/knifeCatalog.png",
-        "imageAlt": "kitchenKnife"
+        "imgSrc": "./assets/img/knifeCatalog.png",
+        "imgAlt": "kitchenKnife"
     },
     {
         "id": "3",
@@ -36,8 +36,8 @@
         "price": 1192,
         "status": "Popular",
         "material": "plastic",
-        "imageSrc": "./assets/img/knifeCatalog.png",
-        "imageAlt": "sharpener"
+        "imgSrc": "./assets/img/knifeCatalog.png",
+        "imgAlt": "sharpener"
     },
     {
         "id": "4",
@@ -49,8 +49,8 @@
         "status": "",
         "bladeMaterial": "stainless steel Nitrum",
         "handleMaterial": "Polyoxymethylene",
-        "imageSrc": "./assets/img/knifeCatalog.png",
-        "imageAlt": "knifeSet"
+        "imgSrc": "./assets/img/knifeCatalog.png",
+        "imgAlt": "knifeSet"
     },
     {
         "id": "5",
@@ -63,8 +63,8 @@
         "bladeMaterial": "steel 440С",
         "bladeLength": "185",
         "handleMaterial": "Canvas mikarta",
-        "imageSrc": "./assets/img/knifeCatalog.png",
-        "imageAlt": "jackknife"
+        "imgSrc": "./assets/img/knifeCatalog.png",
+        "imgAlt": "jackknife"
     },
     {
         "id": "6",
@@ -77,8 +77,8 @@
         "bladeMaterial": "stainless steel Nitrum",
         "bladeLength": "190",
         "handleMaterial": "wood",
-        "imageSrc": "./assets/img/knifeCatalog.png",
-        "imageAlt": "kitchenKnife"
+        "imgSrc": "./assets/img/knifeCatalog.png",
+        "imgAlt": "kitchenKnife"
     },
     {
         "id": "7",
@@ -91,7 +91,21 @@
         "bladeMaterial": "stainless steel Nitrum",
         "bladeLength": "60",
         "handleMaterial": "polypropylene",
-        "imageSrc": "./assets/img/knifeCatalog.png",
-        "imageAlt": "oysterKnife"
+        "imgSrc": "./assets/img/knifeCatalog.png",
+        "imgAlt": "oysterKnife"
+    },
+    {
+        "id": "8",
+        "topic": "kitchen-accessories",
+        "type": "oysterKnife",
+        "collection": "MANHATTAN",
+        "title": "Нож для устриц Manhattan",
+        "price": 545,
+        "status": "Popular",
+        "bladeMaterial": "stainless steel Nitrum",
+        "bladeLength": "60",
+        "handleMaterial": "polypropylene",
+        "imgSrc": "./assets/img/knifeCatalog.png",
+        "imgAlt": "oysterKnife"
     }
-  ]
+]
