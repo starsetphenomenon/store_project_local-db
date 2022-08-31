@@ -1,11 +1,13 @@
 import './Cart.scss';
-import React from 'react'
+import { React, useContext, useState } from 'react'
 import Modal from '../../Components/Modal/Modal';
 import InputNumber from '../../Components/InputNumber/InputNumber';
 import PopUp from '../../Components/PopUp/PopUp';
-import { useState } from 'react';
+import { DataContext } from '../../App';
 
-export default function Cart({ data }) {
+export default function Cart() {
+
+    const data = useContext(DataContext);
 
     const [form, setForm] = useState({
         tel: false,
@@ -19,12 +21,11 @@ export default function Cart({ data }) {
         handleClassName(e);
         const regExs = {
             name: /^([a-zA-Zа-яієїґА-ЯІЄЇ']{2,}\s[a-zA-Zа-яієїґА-ЯІЄЇ']{1,}'?-?[a-zA-Zа-яієїґА-ЯІЄЇ']{2,}\s?([a-zA-Zа-яієїґА-ЯІЄЇ']{1,})?)/,
-            tel: /((\+38)?\(?\d{3}\)?[\s.-]?(\d{7}|\d{3}[\s.-]\d{2}[\s.-]\d{2}|\d{3}-\d{4}))/,
+            tel: /(\+?[0-9]{2,3}\s?[0-9]{2,3}\s?[0-9]{2,3}\s?[0-9]{2,4}$)/,
             email: /[^@\s]+@[^@\s]+\.[^@\s]+/,
         };
 
         const isMatch = regExs[e.target.name].test(e.target.value);
-
         setForm({
             ...form,
             [e.target.name]: isMatch
@@ -55,8 +56,7 @@ export default function Cart({ data }) {
         if (form.name && form.email && form.tel) {
             setModal(true);
         } else {
-            setPopUp(true)
-            clearTimeout(popTimer);
+            setPopUp(true);
             setTimeout(popTimer, 3000);
         }
     }
@@ -76,7 +76,7 @@ export default function Cart({ data }) {
     return (
         <div className='Cart'>
             <Modal modal={modal} setModal={setModal}>Благодарим за ваш заказ! <br></br> Ожидайте звонка...</Modal>
-            <PopUp popUp={popUp} setPopUp={setPopUp}>Пожалуйста, заполните все поля корректно!</PopUp>
+            <PopUp popUp={popUp} setPopUp={setPopUp}>Пожалуйста, заполните <br></br> все поля!</PopUp>
             <div className="top">
                 <div className="back">
                     <img src="./assets/icons/arrow-toRight.svg" alt="." />
@@ -91,9 +91,9 @@ export default function Cart({ data }) {
                             <li key={el.id} className="item">
                                 <div className="item_name">
                                     <img src={el.imgSrc} alt={el.imgAlt} />
-                                    <h3>{el.name}</h3></div>
+                                    <h3>{el.title}</h3></div>
                                 <div className="item_info">
-                                    <InputNumber />
+                                    <InputNumber>1</InputNumber>
                                     <div className="price">{el.price} ₴</div>
                                     <div className="close">
                                         <span></span>
@@ -115,15 +115,18 @@ export default function Cart({ data }) {
                     <div className="info">
                         <div className="info_item required">
                             <p className="name">Получатель</p>
-                            <input name="name" onChange={handleInputValidation} spellCheck="false" placeholder='Имя Фамилия' type="text" />
+                            <input pattern="[a-zA-Zа-яієїґА-ЯІЄЇ']{2,}\s[a-zA-Zа-яієїґА-ЯІЄЇ']{1,}'?-?[a-zA-Zа-яієїґА-ЯІЄЇ']{2,}\s?[a-zA-Zа-яієїґА-ЯІЄЇ']{1,}"
+                                name="name" onChange={handleInputValidation} spellCheck="false" placeholder='Имя Фамилия' type="text" />
                         </div>
                         <div className="info_item required">
                             <p className="name">Мобильный телефон</p>
-                            <input name="tel" onChange={handleInputValidation} spellCheck="false" placeholder='+38(0**)___-__-__' type="tel" />
+                            <input pattern="\+?[0-9]{2,3}\s?[0-9]{2,3}\s?[0-9]{2,3}\s?[0-9]{2,4}$"
+                                name="tel" onChange={handleInputValidation} spellCheck="false" placeholder='+380___  __  __' type="tel" />
                         </div>
                         <div className="info_item">
                             <p className="name">E-mail</p>
-                            <input name="email" onChange={handleInputValidation} spellCheck="false" placeholder='Ваша почта' type="email" />
+                            <input pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                                name="email" onChange={handleInputValidation} spellCheck="false" placeholder='Ваша почта' type="email" />
                         </div>
                     </div>
                     <div className="send">
