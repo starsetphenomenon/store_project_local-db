@@ -1,8 +1,8 @@
 [
     {
         "id": "1",
-        "topic": "jackknife-TUOTOWN",
-        "type": "knife",
+        "topic": "Складные ножи TUOTOWN",
+        "type": "Нож",
         "collection": "TUOTOWN",
         "title": "Складной нож SQ01-B",
         "price": 850,
@@ -10,13 +10,17 @@
         "bladeMaterial": "steel 440С",
         "bladeLength": "86",
         "handleMaterial": "wood",
+        "img": {
+            "title": "./assets/img/knifeCatalog.png",
+            "itemPage": "./assets/img/knifeCatalog.png"
+        },
         "imgSrc": "./assets/img/knifeCatalog.png",
         "imgAlt": "jackknife"
     },
     {
         "id": "2",
-        "topic": "kitchen-TUOTOWN",
-        "type": "knife",
+        "topic": "Кухонные ножи TUOTOWN",
+        "type": "Нож",
         "collection": "TUOTOWN",
         "title": "Кухонный нож SQ01-B",
         "price": 1058,
@@ -29,8 +33,8 @@
     },
     {
         "id": "3",
-        "topic": "whet-stones",
-        "type": "sharpener",
+        "topic": "Точильные камни",
+        "type": "Точилка",
         "collection": "ARCOS",
         "title": "Точильний камень Arcos",
         "price": 1192,
@@ -41,8 +45,8 @@
     },
     {
         "id": "4",
-        "topic": "knife-set",
-        "type": "knifeSet",
+        "topic": "Наборы ножей",
+        "type": "Набор ножей",
         "collection": "TUOTOWN",
         "title": "Набор ножей TUOTOWN",
         "price": 5092,
@@ -54,8 +58,8 @@
     },
     {
         "id": "5",
-        "topic": "jackknife-SANTOKU",
-        "type": "knife",
+        "topic": "Складные ножи SANTOKU",
+        "type": "Нож",
         "collection": "SANTOKU",
         "title": "Складной нож Riviera White",
         "price": 1250,
@@ -68,8 +72,8 @@
     },
     {
         "id": "6",
-        "topic": "kitchen-SANTOKU",
-        "type": "knife",
+        "topic": "Кухонные ножи SANTOKU",
+        "type": "Нож",
         "collection": "SANTOKU",
         "title": "Кухонный нож Universal Santoku",
         "price": 980,
@@ -82,8 +86,8 @@
     },
     {
         "id": "7",
-        "topic": "kitchen-accessories",
-        "type": "oysterKnife",
+        "topic": "Кухонные аксессуары",
+        "type": "Нож",
         "collection": "MANHATTAN",
         "title": "Нож для устриц Manhattan",
         "price": 545,
@@ -96,8 +100,8 @@
     },
     {
         "id": "8",
-        "topic": "kitchen-accessories",
-        "type": "oysterKnife",
+        "topic": "Кухонные аксессуары",
+        "type": "Нож",
         "collection": "MANHATTAN",
         "title": "Нож для устриц Manhattan",
         "price": 545,
