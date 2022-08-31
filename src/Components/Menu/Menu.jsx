@@ -1,7 +1,9 @@
-import React from 'react';
+import { React } from 'react'
 import "./Menu.scss";
+import { NavLink } from 'react-router-dom';
 
-export default function Menu({ menuVisibility, menuStatus }) {
+export default function Menu({ menuVisibility, menuStatus, menuLinks }) {
+
     return (
         <div className={menuStatus ? 'Menu active' : 'Menu'}>
             <div onClick={menuVisibility} className='Menu__wrapper'></div>
@@ -10,13 +12,11 @@ export default function Menu({ menuVisibility, menuStatus }) {
                     <span></span>
                     <span></span>
                 </div>
-                <ul className='filterLinks'>
-                    <li><a href=".">Кухонные ножи TUOTOWN</a></li>
-                    <li><a href=".">Складные ножи TUOTOWN</a></li>
-                    <li><a href=".">Кухонные ножи QXF</a></li>
-                    <li><a href=".">Точильные камни</a></li>
-                    <li><a href=".">Наборы для BBQ</a></li>
-                    <li><a href=".">Кухонные принадлежности</a></li>
+                <ul className='filterLinks'>                  
+                    <li onClick={menuVisibility}><NavLink to="/">Главная</NavLink></li>
+                    {menuLinks.map(link => {
+                        return <li key={link.id} onClick={menuVisibility}><NavLink to="catalog">{link.topic}</NavLink></li>
+                    })}
                 </ul>
                 <ul className='mainLinks'>
                     <li><a href=".">О компании</a></li>
