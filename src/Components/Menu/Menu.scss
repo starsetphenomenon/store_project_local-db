@@ -44,16 +44,29 @@
             list-style-type: none;
             width: 100%;
             cursor: pointer;
-            backdrop-filter: blur(2px);
             background: #373737a7;
             border-radius: 8px;
-            -webkit-tap-highlight-color: transparent;
+            position: relative;
+            transition-duration: 0.3s;
+
+            & .lunges {
+                display: none;
+                position: absolute;
+                top: 32px;
+                left: 155px;
+                background-color: rgba(55, 55, 55, 1);
+                border-radius: 8px;
+                z-index: 1001;
+                color: #FFF;
+            }
+
+            &:hover .lunges {
+                display: block;
+            }
         }
 
         a {
             display: block;
-            height: calc(100%-10px);
-            width: calc(100%-15px);
             padding: 10px 15px;
         }
 
@@ -94,7 +107,6 @@
             :not(a):hover {
                 background: #373737;
                 width: 90%;
-                opacity: 0.4;
             }
 
             li {
@@ -104,6 +116,10 @@
                 font-size: 18px;
                 line-height: 22px;
                 text-transform: uppercase;
+
+                &:hover a {
+                    opacity: 0.4;
+                }
             }
         }
 

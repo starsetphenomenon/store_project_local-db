@@ -15,7 +15,13 @@ export default function Menu({ menuVisibility, menuStatus, menuLinks }) {
                 <ul className='filterLinks'>                  
                     <li onClick={menuVisibility}><NavLink to="/">Главная</NavLink></li>
                     {menuLinks.map(link => {
-                        return <li key={link.id} onClick={menuVisibility}><NavLink to="catalog">{link.topic}</NavLink></li>
+                        return <li key={link.id} onClick={menuVisibility}><NavLink to="catalog">{link.topic}</NavLink>
+                        <div className='lunges'>
+                            <a href=".">Нож</a>
+                            <a href=".">Острилка</a>
+                            <a href=".">Аксессуары</a>
+                        </div>
+                    </li>
                     })}
                 </ul>
                 <ul className='mainLinks'>
