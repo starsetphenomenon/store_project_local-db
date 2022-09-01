@@ -2,7 +2,7 @@ import { React } from 'react'
 import "./Menu.scss";
 import { NavLink } from 'react-router-dom';
 
-export default function Menu({ menuVisibility, menuStatus, menuLinks }) {
+export default function Menu({ menuVisibility, menuStatus, menuLinks, menuSubLinks }) {
 
     return (
         <div className={menuStatus ? 'Menu active' : 'Menu'}>
@@ -12,16 +12,18 @@ export default function Menu({ menuVisibility, menuStatus, menuLinks }) {
                     <span></span>
                     <span></span>
                 </div>
-                <ul className='filterLinks'>                  
+                <ul className='filterLinks'>
                     <li onClick={menuVisibility}><NavLink to="/">Главная</NavLink></li>
-                    {menuLinks.map(link => {
-                        return <li key={link.id} onClick={menuVisibility}><NavLink to="catalog">{link.topic}</NavLink>
-                        <div className='lunges'>
-                            <a href=".">Нож</a>
-                            <a href=".">Острилка</a>
-                            <a href=".">Аксессуары</a>
-                        </div>
-                    </li>
+                    {menuLinks.map((link, i) => {
+                        return <li key={i}><NavLink to="catalog">{link}</NavLink>
+                            <div className='lunges'>
+                                {menuSubLinks.map((subLink, ind) => {
+                                    if (subLink[link] !== undefined) {
+                                        return <NavLink to="catalog" onClick={menuVisibility} key={ind} href=".">{subLink[link]}</NavLink>                                    }
+                                    return null
+                                })}
+                            </div>
+                        </li>
                     })}
                 </ul>
                 <ul className='mainLinks'>

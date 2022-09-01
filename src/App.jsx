@@ -15,6 +15,7 @@ function App() {
 
   const [data, setData] = useState([]);
   const [menuLinks, setMenuLinks] = useState([]);
+  const [menuSubLinks, setMenuSubLinks] = useState([]);
 
   useEffect(() => {
     fetch("data/data.json")
@@ -25,25 +26,17 @@ function App() {
   }, []);
 
   useEffect(() => { // Get only unique links/topics from data ~~~
-    let result = [];
-    let tempCheck = false;
-    data.map(el => {
-      result.forEach(elem => {
-        if (elem.topic === el.topic) {
-          tempCheck = true;
-          return tempCheck;
-        }
-      })
-      if (tempCheck) {
-        return
-      }
-      tempCheck = false;
-      result.push({
-        topic: el.topic,
-        id: el.id,
+    let links = [...new Set(data.map(item => item.type))];
+    let subLinks = [];
+    let sub = [...new Map(data.map(item =>
+      [item.topic, item])).values()];
+    sub.forEach(el => {
+      subLinks.push({
+        [el.type]: el.topic,
       })
     })
-    setMenuLinks(result);
+    setMenuLinks(links);
+    setMenuSubLinks(subLinks);
   }, [data]);
 
   const [menu, setMenu] = useState(false);
@@ -57,7 +50,7 @@ function App() {
     <div className="App">
       <DataContext.Provider value={data}>
         <Header menuVisibility={handleMenuVisibility} />
-        <Menu menuLinks={menuLinks} menuStatus={menu} menuVisibility={handleMenuVisibility} />
+        <Menu menuLinks={menuLinks} menuSubLinks={menuSubLinks} menuStatus={menu} menuVisibility={handleMenuVisibility} />
         <Routes>
           <Route path="/" index element={<Main />} />
           <Route path="catalog" element={<Catalog />}>
