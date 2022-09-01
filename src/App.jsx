@@ -16,6 +16,7 @@ function App() {
   const [data, setData] = useState([]);
   const [menuLinks, setMenuLinks] = useState([]);
   const [menuSubLinks, setMenuSubLinks] = useState([]);
+  const [mainSlides, setMainSlides] = useState([]);
 
   useEffect(() => {
     fetch("data/data.json")
@@ -26,15 +27,28 @@ function App() {
   }, []);
 
   useEffect(() => { // Get only unique links/topics from data ~~~
-    let links = [...new Set(data.map(item => item.type))];
-    let subLinks = [];
-    let sub = [...new Map(data.map(item =>
+    let links = [...new Set(data.map(item => item.type))]; // Main links
+    let subLinks = []; // subLinks
+    let slides = []; // main slider slides;
+    let sub = [...new Map(data.map(item => // subLinks
       [item.topic, item])).values()];
     sub.forEach(el => {
       subLinks.push({
         [el.type]: el.topic,
       })
     })
+    let slider = data.filter(el => el.status === 'New')
+    slider.forEach(el => { // main slider slides
+      slides.push({
+        price: el.price,
+        title: el.title,
+        collection: el.collection,
+        imgSrc: el.img.mainSlider,
+        imgAlt: el.img.alt,
+        id: el.id,
+      })
+    })
+    setMainSlides(slides);
     setMenuLinks(links);
     setMenuSubLinks(subLinks);
   }, [data]);
@@ -48,7 +62,7 @@ function App() {
   return (
 
     <div className="App">
-      <DataContext.Provider value={data}>
+      <DataContext.Provider value={{ data, mainSlides }}>
         <Header menuVisibility={handleMenuVisibility} />
         <Menu menuLinks={menuLinks} menuSubLinks={menuSubLinks} menuStatus={menu} menuVisibility={handleMenuVisibility} />
         <Routes>

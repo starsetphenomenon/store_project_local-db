@@ -7,7 +7,7 @@ import { DataContext } from '../../App';
 
 export default function Cart() {
 
-    const data = useContext(DataContext);
+    const { data } = useContext(DataContext);
 
     const [form, setForm] = useState({
         tel: false,
