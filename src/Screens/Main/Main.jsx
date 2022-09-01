@@ -1,66 +1,55 @@
 import './Main.scss';
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import Slider from "../../Components/Slider/Slider"
 import ItemCard from "../../Components/ItemCard/ItemCard.jsx"
 import { DataContext } from '../../App';
 
-const slides = [
-    {
-        id: 0,
-        imgSrc: '../assets/img/main/slideBanner.png',
-        imgAlt: 'slider background',
-        h1: 'Исключительное качество без компромиссов',
-        h4: 'Ножи «Tuotown» – это главный инструмент поваров и секрет кулинарного мастерства',
-    },
-    {
-        id: 1,
-        imgSrc: '../assets/img/main/slideBanner.png',
-        imgAlt: 'slider background',
-        h1: '1',
-        h4: 'lorem',
-    },
-    {
-        id: 2,
-        imgSrc: '../assets/img/main/slideBanner.png',
-        imgAlt: 'slider background',
-        h1: '2',
-        h4: 'lorem ispum',
-    }
-];
-
-
 function Main() {
 
-    const { mainSlides } = useContext(DataContext);
+    const { data, mainSlides } = useContext(DataContext);
+    const [dataByType, setDataByType] = useState([]);
+    const [dataByStatus, setDataByStatus] = useState([]);
+    useEffect(() => {
+        setDataByStatus(data.filter(el => el.status === 'Popular'));
+        setDataByType(data)
+    }, [data])
+
+    const filterDataByStatus = (e) => {
+        setDataByStatus(data.filter(el => el.status === e.target.getAttribute('value')));
+    }
+
+    const filterDataByType = (e) => {
+        setDataByType(data.filter(el => el.topic.toLowerCase().includes(e.currentTarget.getAttribute('value').toLowerCase())));
+    }
 
     return (
         <main className="Main">
             <Slider slides={mainSlides} />
             <div className="main-wrapper">
                 <div className="menu-list block-hidden">
-                    <div className="menu-element">
-                        <a href=".">
+                    <div className="menu-element" value="Кухонные" onClick={filterDataByType}>
+                        <div className="menu-element-item">
                             <img alt="itemKnife" className="svg" src='./assets/icons/knife.svg'></img>
-                        </a>
-                        <a href=".">Кухонные ножи</a>
+                        </div>
+                        <div className="menu-element-item">Кухонные ножи</div>
                     </div>
-                    <div className="menu-element">
-                        <a href=".">
+                    <div className="menu-element" value="Складные" onClick={filterDataByType}>
+                        <div className="menu-element-item">
                             <img alt="itemKnife" className="svg" src='./assets/icons/grey-knifes.svg'></img>
-                        </a>
-                        <a href=".">Складные ножи</a>
+                        </div>
+                        <div className="menu-element-item">Складные ножи</div>
                     </div>
-                    <div className="menu-element">
-                        <a href=".">
+                    <div className="menu-element" value="Точильные" onClick={filterDataByType}>
+                        <div className="menu-element-item">
                             <img alt="itemKnife" className="svg" src='./assets/icons/red-knifes.svg'></img>
-                        </a>
-                        <a href=".">Точилки для ножей</a>
+                        </div>
+                        <div className="menu-element-item">Точилки для ножей</div>
                     </div>
-                    <div className="menu-element">
-                        <a href=".">
+                    <div className="menu-element" value="аксессуары" onClick={filterDataByType}>
+                        <div className="menu-element-item">
                             <img alt="itemKnife" className="svg" src='./assets/icons/cookHat.svg'></img>
-                        </a>
-                        <a href=".">Аксессуары для кухни</a>
+                        </div>
+                        <div className="menu-element-item">Аксессуары для кухни</div>
                     </div>
                 </div>
                 <div className="content-mobail block-hidden-mob">
@@ -89,25 +78,21 @@ function Main() {
                             <img src='./assets/icons/arrow-right.svg' alt='arrow'></img>
                         </div>
                     </div>
-                    <ItemCard status={'Новинка'} />
-                    <ItemCard />
-                    <ItemCard />
-                    <ItemCard />
-                    <ItemCard />
-                    <ItemCard />
+                    {dataByType.map(item => {
+                        return <ItemCard key={item.id} data={item} status={item.status} />
+                    })}
                 </div>
             </div>
             <div className="line"></div>
             <div className="main-wrapper">
                 <div className="switcher-new-popular">
-                    <h3 className="new">НОВИНКИ</h3>
-                    <h3>ПОПУЛЯРНОЕ</h3>
+                    <h3 value="New" onClick={filterDataByStatus} className="new">НОВИНКИ</h3>
+                    <h3 value="Popular" onClick={filterDataByStatus}>ПОПУЛЯРНОЕ</h3>
                 </div>
                 <div className="collection-item">
-                    <ItemCard status={'Новинка'} />
-                    <ItemCard status={'Новинка'} />
-                    <ItemCard status={'Новинка'} />
-                    <ItemCard status={'Новинка'} />
+                    {dataByStatus.map(item => {
+                        return <ItemCard key={item.id} data={item} status={item.status} />
+                    })}
                 </div>
             </div>
             <div className="line"></div>

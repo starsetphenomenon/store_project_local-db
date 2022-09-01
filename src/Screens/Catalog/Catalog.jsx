@@ -1,44 +1,26 @@
 import FilterSelect from '../../Components/FilterSelect/FilterSelect';
 import ItemCard from '../../Components/ItemCard/ItemCard';
 import "./Catalog.scss";
+import { React, useContext, useState, useEffect } from 'react'
+import { DataContext } from '../../App';
 
-const filter1 = [
-    {
-        id: 0,
-        linkName: 'Складной нож',
-        link: '.',
-    },
-    {
-        id: 1,
-        linkName: 'Складной нож',
-        link: '.',
-    },
-    {
-        id: 2,
-        linkName: 'Складной нож',
-        link: '.',
+
+function Catalog({ filter1 }) {
+
+    let { data } = useContext(DataContext);
+    const [pageTitle, setPageTitle] = useState('Ножи')
+    const [filterData, setFilterData] = useState(data);
+
+    useEffect(() => {
+        setFilterData(data.filter(el => el.type === 'Ножи'))
+    }, [data]);
+
+    const handleFilter = (e) => {
+        setPageTitle(e.target.getAttribute('value'));
+        let result = [];
+        result = data.filter(el => el.type === e.target.getAttribute('value'));
+        setFilterData(result);
     }
-]
-const filter2 = [
-    {
-        id: 0,
-        linkName: 'Японский нож',
-        link: '.',
-    },
-    {
-        id: 1,
-        linkName: 'Японский нож',
-        link: '.',
-    },
-    {
-        id: 2,
-        linkName: 'Японский нож',
-        link: '.',
-    }
-]
-
-
-function Catalog() {
 
     return (
         <div className='catalog'>
@@ -52,19 +34,17 @@ function Catalog() {
                     <h3>Эксклюзивные технологии на страже чистоты и уюта в вашем доме</h3>
                 </div>
             </div>
-            <h2 className='catalog_heading'>Ножи</h2>
+            <h2 className='catalog_heading'>{pageTitle}</h2>
             <div className="content">
                 <div className="filters">
-                    <FilterSelect name="Новинки" data={filter1} />
-                    <FilterSelect name="Японская сталь" data={filter2} />
+                    <FilterSelect name="Новинки" handleFilter={handleFilter} filter={filter1} />
+                    <FilterSelect name="Японская сталь" filter={filter1} />
                 </div>
                 <div className="items">
                     <div className="items__wrapper">
-                        <ItemCard className={'item-card-catalog'} status={'Новинка'} />
-                        <ItemCard className={'item-card-catalog'} />
-                        <ItemCard className={'item-card-catalog'} />
-                        <ItemCard className={'item-card-catalog'} />
-                        <ItemCard className={'item-card-catalog'} />
+                        {filterData.map(item => {
+                            return <ItemCard data={item} key={item.id} className={'item-card-catalog'} status={item.status} />
+                        })}
                     </div>
                 </div>
             </div>

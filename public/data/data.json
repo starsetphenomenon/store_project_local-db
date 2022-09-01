@@ -68,7 +68,7 @@
         "material": "plastic",
         "img": {
             "mainSlider": "./assets/img/main/slideBanner.png",
-            "title": "./assets/img/knifeCatalog.png",
+            "title": "./assets/img/main/meat.png",
             "alt": "jackknife",
             "itemPage": {
                 "product": [
@@ -96,7 +96,7 @@
         "handleMaterial": "Polyoxymethylene",
         "img": {
             "mainSlider": "./assets/img/main/slideBanner.png",
-            "title": "./assets/img/knifeCatalog.png",
+            "title": "./assets/img/main/blades-mob.png",
             "alt": "jackknife",
             "itemPage": {
                 "product": [
