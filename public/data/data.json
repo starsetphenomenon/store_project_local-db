@@ -11,8 +11,9 @@
         "bladeLength": "86",
         "handleMaterial": "wood",
         "img": {
+            "mainSlider": "./assets/img/main/slideBanner.png",
             "title": "./assets/img/knifeCatalog.png",
-            "imgAlt": "jackknife",
+            "alt": "jackknife",
             "itemPage": {
                 "product": [
                     "./assets/img/knifeCatalog.png",
@@ -39,8 +40,9 @@
         "bladeLength": "210",
         "handleMaterial": "Polyoxymethylene",
         "img": {
+            "mainSlider": "./assets/img/main/slideBanner.png",
             "title": "./assets/img/knifeCatalog.png",
-            "imgAlt": "jackknife",
+            "alt": "jackknife",
             "itemPage": {
                 "product": [
                     "./assets/img/knifeCatalog.png",
@@ -65,8 +67,9 @@
         "status": "Popular",
         "material": "plastic",
         "img": {
+            "mainSlider": "./assets/img/main/slideBanner.png",
             "title": "./assets/img/knifeCatalog.png",
-            "imgAlt": "jackknife",
+            "alt": "jackknife",
             "itemPage": {
                 "product": [
                     "./assets/img/knifeCatalog.png",
@@ -92,8 +95,9 @@
         "bladeMaterial": "stainless steel Nitrum",
         "handleMaterial": "Polyoxymethylene",
         "img": {
+            "mainSlider": "./assets/img/main/slideBanner.png",
             "title": "./assets/img/knifeCatalog.png",
-            "imgAlt": "jackknife",
+            "alt": "jackknife",
             "itemPage": {
                 "product": [
                     "./assets/img/knifeCatalog.png",
@@ -120,8 +124,9 @@
         "bladeLength": "185",
         "handleMaterial": "Canvas mikarta",
         "img": {
+            "mainSlider": "./assets/img/main/banner.png",
             "title": "./assets/img/knifeCatalog.png",
-            "imgAlt": "jackknife",
+            "alt": "jackknife",
             "itemPage": {
                 "product": [
                     "./assets/img/knifeCatalog.png",
@@ -148,8 +153,9 @@
         "bladeLength": "190",
         "handleMaterial": "wood",
         "img": {
+            "mainSlider": "./assets/img/main/slideBanner.png",
             "title": "./assets/img/knifeCatalog.png",
-            "imgAlt": "jackknife",
+            "alt": "jackknife",
             "itemPage": {
                 "product": [
                     "./assets/img/knifeCatalog.png",
@@ -176,8 +182,9 @@
         "bladeLength": "60",
         "handleMaterial": "polypropylene",
         "img": {
+            "mainSlider": "./assets/img/main/slideBanner.png",
             "title": "./assets/img/knifeCatalog.png",
-            "imgAlt": "jackknife",
+            "alt": "jackknife",
             "itemPage": {
                 "product": [
                     "./assets/img/knifeCatalog.png",
@@ -204,8 +211,9 @@
         "bladeLength": "60",
         "handleMaterial": "polypropylene",
         "img": {
+            "mainSlider": "./assets/img/main/slideBanner.png",
             "title": "./assets/img/knifeCatalog.png",
-            "imgAlt": "jackknife",
+            "alt": "jackknife",
             "itemPage": {
                 "product": [
                     "./assets/img/knifeCatalog.png",

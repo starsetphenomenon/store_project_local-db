@@ -1,9 +1,9 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import './Slider.scss';
-import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
+import { Navigation, Pagination, Mousewheel, Keyboard, Autoplay } from "swiper";
 
-export default function Slider({ data }) {
+export default function Slider({ slides }) {
     const pagination = {
         clickable: true,
         renderBullet: function (index, className) {
@@ -19,17 +19,23 @@ export default function Slider({ data }) {
             keyboard={true}
             loop={true}
             spaceBetween={0}
-            modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+            modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
+            autoplay={{
+                delay: 3500,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            }}
             className="slider"
-        >            {data.map(el => (
+        >            {slides.map(el => (
             <SwiperSlide key={el.id} className='slide'>
                 <div className='item'>
                     <div className="item_background">
                         <img src={el.imgSrc} alt={el.imgAlt} />
                     </div>
                     <div className="item_content">
-                        <h1>{el.h1}</h1>
-                        <h4>{el.h4}</h4>
+                        <h1>{el.title}</h1>
+                        <h4>Коллекция: {el.collection}</h4>
+                        <h4>Цена: {el.price} UAH</h4>
                         <button>Подробнее</button>
                     </div>
                 </div>
