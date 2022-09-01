@@ -2,7 +2,7 @@
     {
         "id": "1",
         "topic": "Складные ножи TUOTOWN",
-        "type": "Нож",
+        "type": "Ножи",
         "collection": "TUOTOWN",
         "title": "Складной нож SQ01-B",
         "price": 850,
@@ -12,15 +12,25 @@
         "handleMaterial": "wood",
         "img": {
             "title": "./assets/img/knifeCatalog.png",
-            "itemPage": "./assets/img/knifeCatalog.png"
-        },
-        "imgSrc": "./assets/img/knifeCatalog.png",
-        "imgAlt": "jackknife"
+            "imgAlt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
     },
     {
         "id": "2",
         "topic": "Кухонные ножи TUOTOWN",
-        "type": "Нож",
+        "type": "Ножи",
         "collection": "TUOTOWN",
         "title": "Кухонный нож SQ01-B",
         "price": 1058,
@@ -28,38 +38,80 @@
         "bladeMaterial": "stainless steel Nitrum",
         "bladeLength": "210",
         "handleMaterial": "Polyoxymethylene",
-        "imgSrc": "./assets/img/knifeCatalog.png",
-        "imgAlt": "kitchenKnife"
+        "img": {
+            "title": "./assets/img/knifeCatalog.png",
+            "imgAlt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
     },
     {
         "id": "3",
         "topic": "Точильные камни",
-        "type": "Точилка",
+        "type": "Точилки",
         "collection": "ARCOS",
         "title": "Точильний камень Arcos",
         "price": 1192,
         "status": "Popular",
         "material": "plastic",
-        "imgSrc": "./assets/img/knifeCatalog.png",
-        "imgAlt": "sharpener"
+        "img": {
+            "title": "./assets/img/knifeCatalog.png",
+            "imgAlt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
     },
     {
         "id": "4",
-        "topic": "Наборы ножей",
-        "type": "Набор ножей",
+        "topic": "Набор титановых ножей",
+        "type": "Наборы ножей",
         "collection": "TUOTOWN",
         "title": "Набор ножей TUOTOWN",
         "price": 5092,
         "status": "",
         "bladeMaterial": "stainless steel Nitrum",
         "handleMaterial": "Polyoxymethylene",
-        "imgSrc": "./assets/img/knifeCatalog.png",
-        "imgAlt": "knifeSet"
+        "img": {
+            "title": "./assets/img/knifeCatalog.png",
+            "imgAlt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
     },
     {
         "id": "5",
         "topic": "Складные ножи SANTOKU",
-        "type": "Нож",
+        "type": "Ножи",
         "collection": "SANTOKU",
         "title": "Складной нож Riviera White",
         "price": 1250,
@@ -67,13 +119,27 @@
         "bladeMaterial": "steel 440С",
         "bladeLength": "185",
         "handleMaterial": "Canvas mikarta",
-        "imgSrc": "./assets/img/knifeCatalog.png",
-        "imgAlt": "jackknife"
+        "img": {
+            "title": "./assets/img/knifeCatalog.png",
+            "imgAlt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
     },
     {
         "id": "6",
         "topic": "Кухонные ножи SANTOKU",
-        "type": "Нож",
+        "type": "Ножи",
         "collection": "SANTOKU",
         "title": "Кухонный нож Universal Santoku",
         "price": 980,
@@ -81,13 +147,27 @@
         "bladeMaterial": "stainless steel Nitrum",
         "bladeLength": "190",
         "handleMaterial": "wood",
-        "imgSrc": "./assets/img/knifeCatalog.png",
-        "imgAlt": "kitchenKnife"
+        "img": {
+            "title": "./assets/img/knifeCatalog.png",
+            "imgAlt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
     },
     {
         "id": "7",
         "topic": "Кухонные аксессуары",
-        "type": "Нож",
+        "type": "Ножи",
         "collection": "MANHATTAN",
         "title": "Нож для устриц Manhattan",
         "price": 545,
@@ -95,13 +175,27 @@
         "bladeMaterial": "stainless steel Nitrum",
         "bladeLength": "60",
         "handleMaterial": "polypropylene",
-        "imgSrc": "./assets/img/knifeCatalog.png",
-        "imgAlt": "oysterKnife"
+        "img": {
+            "title": "./assets/img/knifeCatalog.png",
+            "imgAlt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
     },
     {
         "id": "8",
         "topic": "Кухонные аксессуары",
-        "type": "Нож",
+        "type": "Ножи",
         "collection": "MANHATTAN",
         "title": "Нож для устриц Manhattan",
         "price": 545,
@@ -109,7 +203,21 @@
         "bladeMaterial": "stainless steel Nitrum",
         "bladeLength": "60",
         "handleMaterial": "polypropylene",
-        "imgSrc": "./assets/img/knifeCatalog.png",
-        "imgAlt": "oysterKnife"
+        "img": {
+            "title": "./assets/img/knifeCatalog.png",
+            "imgAlt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
     }
 ]
