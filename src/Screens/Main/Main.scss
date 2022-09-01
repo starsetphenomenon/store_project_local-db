@@ -61,12 +61,17 @@ a {
         transition-duration: 0.2s;
     }
 
-    a {
+    .menu-element-item {
         font-size: 17px;
         line-height: 21px;
         font-weight: 500;
         transition-duration: 0.2s;
         opacity: 40%;
+        color: #fff;
+
+        &:hover {
+            color: $hoverBasic;
+        }
     }
 }
 
@@ -79,9 +84,16 @@ a {
         filter: brightness(0) saturate(100%) invert(12%) sepia(97%) saturate(6206%) hue-rotate(0deg) brightness(107%) contrast(114%);
     }
 
-    &:hover a {
+    &-item {
         color: $hoverBasic;
         opacity: 100%;
+    }
+
+    &:hover {
+        .menu-element-item {
+            color: $hoverBasic;
+            opacity: 1;
+        }
     }
 }
 
@@ -99,7 +111,8 @@ a {
 
 .collection-item {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 20px;
     flex-wrap: wrap;
     margin-bottom: 35px;
 }

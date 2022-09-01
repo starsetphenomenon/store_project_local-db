@@ -67,7 +67,7 @@ function App() {
         <Menu menuLinks={menuLinks} menuSubLinks={menuSubLinks} menuStatus={menu} menuVisibility={handleMenuVisibility} />
         <Routes>
           <Route path="/" index element={<Main />} />
-          <Route path="catalog" element={<Catalog />}>
+          <Route path="catalog" element={<Catalog filter1={menuLinks} />}>
             <Route path=":itemID" element={<Catalog />} />
           </Route>
           <Route path="cart" element={<Cart />} />

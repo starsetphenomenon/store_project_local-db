@@ -75,15 +75,16 @@ $hoverPluc: #C80000;
 .item-text {
     font-size: 14px;
     line-height: 28px;
-    color: #ffffff;
+    color: #ffffff;   
 
     a {
+        display: block;
         font-weight: 500;
         margin: 0;
         text-decoration: none;
         color: #ffffff;
         transition-duration: 0.3s;
-
+        
         &:hover {
             color: $hoverBasic;
         }

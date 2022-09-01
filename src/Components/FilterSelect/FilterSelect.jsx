@@ -1,7 +1,7 @@
 import './FilterSelect.scss';
 import { useState } from 'react';
 
-export default function FilterSelect({ data, name }) {
+export default function FilterSelect({ filter, name, handleFilter }) {
 
     const [isVisible, setIsVisible] = useState(false);
 
@@ -24,9 +24,9 @@ export default function FilterSelect({ data, name }) {
                 </div>
             </div>
             {isVisible && <ul className="links">
-                {data.map(el => {
-                  return  <li key={el.id}><a href=".">{el.linkName}</a></li>
-                })} 
+                {filter.map((el, id) => {
+                    return <li value={el} onClick={handleFilter} key={id}>{el}</li>
+                })}
             </ul>}
         </div>
     )

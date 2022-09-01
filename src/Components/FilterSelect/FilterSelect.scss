@@ -51,18 +51,14 @@
         li {
             cursor: pointer;
             margin-bottom: 10px;
+            cursor: pointer;
+            display: block;
+            height: 100%;
+            width: 100%;
+            color: #ADACAC;
 
-            a {
-                cursor: pointer;
-                display: block;
-                height: 100%;
-                width: 100%;
-                color: #ADACAC;
-                text-decoration: none;
-
-                &:hover {
-                    color: #FFFFFF;
-                }
+            &:hover {
+                color: #FFFFFF;
             }
         }
     }
