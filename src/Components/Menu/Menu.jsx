@@ -2,7 +2,12 @@ import { React } from 'react'
 import "./Menu.scss";
 import { NavLink } from 'react-router-dom';
 
-export default function Menu({ menuVisibility, menuStatus, menuLinks, menuSubLinks }) {
+export default function Menu({ menuVisibility, menuStatus, menuLinks, menuSubLinks, setFilterLink }) {
+
+    const handleLink = (e) => {
+        menuVisibility();
+        setFilterLink(e.target.name)
+    }
 
     return (
         <div className={menuStatus ? 'Menu active' : 'Menu'}>
@@ -14,12 +19,14 @@ export default function Menu({ menuVisibility, menuStatus, menuLinks, menuSubLin
                 </div>
                 <ul className='filterLinks'>
                     <li onClick={menuVisibility}><NavLink to="/">Главная</NavLink></li>
+                    <li onClick={menuVisibility}><NavLink to="/catalog">Каталог</NavLink></li>
                     {menuLinks.map((link, i) => {
-                        return <li onClick={menuVisibility} key={i}><NavLink to="catalog">{link}</NavLink>
+                        return <li key={i}><NavLink to="catalog">{link}</NavLink>
                             <div className='lunges'>
                                 {menuSubLinks.map((subLink, ind) => {
                                     if (subLink[link] !== undefined) {
-                                        return <NavLink to="catalog" onClick={menuVisibility} key={ind} href=".">{subLink[link]}</NavLink>                                    }
+                                        return <NavLink to={`catalog`} name={subLink[link]} onClick={handleLink} key={ind} href="." >{subLink[link]}</NavLink>
+                                    }
                                     return null
                                 })}
                             </div>
@@ -31,6 +38,6 @@ export default function Menu({ menuVisibility, menuStatus, menuLinks, menuSubLin
                     <li><a href=".">Контакты</a></li>
                 </ul>
             </div>
-        </div>
+        </div >
     )
 }
