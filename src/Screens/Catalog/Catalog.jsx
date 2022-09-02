@@ -22,6 +22,21 @@ function Catalog({ filter1 }) {
         setFilterData(result);
     }
 
+    const handleStatus = (e) => {
+        let result = [];
+        result = filterData.filter(el => el.status === e.target.getAttribute('id'));
+        console.log(e.target.getAttribute('id'))
+        console.log(filterData)
+        setFilterData(result);
+    }
+
+    const handleAllFilters = (...filters) => {
+        let result = [];
+        console.log(filters)
+        
+    }
+    handleAllFilters(1,2,'asf')
+
     return (
         <div className='catalog'>
             <div className="header">
@@ -37,8 +52,22 @@ function Catalog({ filter1 }) {
             <h2 className='catalog_heading'>{pageTitle}</h2>
             <div className="content">
                 <div className="filters">
-                    <FilterSelect name="Новинки" handleFilter={handleFilter} filter={filter1} />
-                    <FilterSelect name="Японская сталь" filter={filter1} />
+                    <FilterSelect name="Что ищем?" handleFilter={handleFilter} filter={filter1} />
+                    <div className="status">
+                        <h3>Статус</h3>
+                        <div>
+                            <input type="radio" id="All" name="status" onChange={handleStatus} />
+                            <label htmlFor="All">Все</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="New" name="status" onChange={handleStatus} />
+                            <label htmlFor="New">Новинки</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="Popular" name="status" onChange={handleStatus} />
+                            <label htmlFor="Popular">Популярное</label>
+                        </div>
+                    </div>
                 </div>
                 <div className="items">
                     <div className="items__wrapper">

@@ -9,10 +9,10 @@
         "status": "New",
         "bladeMaterial": "steel 440С",
         "bladeLength": "86",
-        "handleMaterial": "wood",
+        "handleMaterial": "steel/plastic",
         "img": {
             "mainSlider": "./assets/img/main/slideBanner.png",
-            "title": "./assets/img/knifeCatalog.png",
+            "title": "./assets/items/skladnoj/1.png",
             "alt": "jackknife",
             "itemPage": {
                 "product": [
@@ -58,90 +58,6 @@
         }
     },
     {
-        "id": "3",
-        "topic": "Точильные камни",
-        "type": "Точилки",
-        "collection": "ARCOS",
-        "title": "Точильний камень Arcos",
-        "price": 1192,
-        "status": "Popular",
-        "material": "plastic",
-        "img": {
-            "mainSlider": "./assets/img/main/slideBanner.png",
-            "title": "./assets/img/main/meat.png",
-            "alt": "jackknife",
-            "itemPage": {
-                "product": [
-                    "./assets/img/knifeCatalog.png",
-                    "./assets/img/knifeCatalog.png",
-                    "./assets/img/knifeCatalog.png"
-                ],
-                "slider": [
-                    "./assets/img/knifeCatalog.png",
-                    "./assets/img/knifeCatalog.png",
-                    "./assets/img/knifeCatalog.png"
-                ]
-            }
-        }
-    },
-    {
-        "id": "4",
-        "topic": "Набор титановых ножей",
-        "type": "Наборы ножей",
-        "collection": "TUOTOWN",
-        "title": "Набор ножей TUOTOWN",
-        "price": 5092,
-        "status": "",
-        "bladeMaterial": "stainless steel Nitrum",
-        "handleMaterial": "Polyoxymethylene",
-        "img": {
-            "mainSlider": "./assets/img/main/slideBanner.png",
-            "title": "./assets/img/main/blades-mob.png",
-            "alt": "jackknife",
-            "itemPage": {
-                "product": [
-                    "./assets/img/knifeCatalog.png",
-                    "./assets/img/knifeCatalog.png",
-                    "./assets/img/knifeCatalog.png"
-                ],
-                "slider": [
-                    "./assets/img/knifeCatalog.png",
-                    "./assets/img/knifeCatalog.png",
-                    "./assets/img/knifeCatalog.png"
-                ]
-            }
-        }
-    },
-    {
-        "id": "5",
-        "topic": "Складные ножи SANTOKU",
-        "type": "Ножи",
-        "collection": "SANTOKU",
-        "title": "Складной нож Riviera White",
-        "price": 1250,
-        "status": "New",
-        "bladeMaterial": "steel 440С",
-        "bladeLength": "185",
-        "handleMaterial": "Canvas mikarta",
-        "img": {
-            "mainSlider": "./assets/img/main/banner.png",
-            "title": "./assets/img/knifeCatalog.png",
-            "alt": "jackknife",
-            "itemPage": {
-                "product": [
-                    "./assets/img/knifeCatalog.png",
-                    "./assets/img/knifeCatalog.png",
-                    "./assets/img/knifeCatalog.png"
-                ],
-                "slider": [
-                    "./assets/img/knifeCatalog.png",
-                    "./assets/img/knifeCatalog.png",
-                    "./assets/img/knifeCatalog.png"
-                ]
-            }
-        }
-    },
-    {
         "id": "6",
         "topic": "Кухонные ножи SANTOKU",
         "type": "Ножи",
@@ -169,21 +85,21 @@
                 ]
             }
         }
-    },
+    },    
     {
-        "id": "7",
-        "topic": "Кухонные аксессуары",
+        "id": "26",
+        "topic": "Складные ножи TUOTOWN",
         "type": "Ножи",
-        "collection": "MANHATTAN",
-        "title": "Нож для устриц Manhattan",
-        "price": 545,
-        "status": "Popular",
-        "bladeMaterial": "stainless steel Nitrum",
-        "bladeLength": "60",
-        "handleMaterial": "polypropylene",
+        "collection": "TUOTOWN",
+        "title": "Складной нож SQ01-B",
+        "price": 830,
+        "status": "New",
+        "bladeMaterial": "steel 440С",
+        "bladeLength": "86",
+        "handleMaterial": "steel/plastic",
         "img": {
             "mainSlider": "./assets/img/main/slideBanner.png",
-            "title": "./assets/img/knifeCatalog.png",
+            "title": "./assets/items/skladnoj/1.png",
             "alt": "jackknife",
             "itemPage": {
                 "product": [
@@ -200,19 +116,463 @@
         }
     },
     {
-        "id": "8",
-        "topic": "Кухонные аксессуары",
+        "id": "25",
+        "topic": "Складные ножи TUOTOWN",
         "type": "Ножи",
-        "collection": "MANHATTAN",
-        "title": "Нож для устриц Manhattan",
-        "price": 545,
+        "collection": "TUOTOWN",
+        "title": "Складной нож FT-12P",
+        "price": 620,
         "status": "Popular",
-        "bladeMaterial": "stainless steel Nitrum",
-        "bladeLength": "60",
-        "handleMaterial": "polypropylene",
+        "bladeMaterial": "steel 440С",
+        "bladeLength": "86",
+        "handleMaterial": "plastic",
         "img": {
             "mainSlider": "./assets/img/main/slideBanner.png",
-            "title": "./assets/img/knifeCatalog.png",
+            "title": "./assets/items/skladnoj/2.png",
+            "alt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
+    },
+    {
+        "id": "9",
+        "topic": "Складные ножи TUOTOWN",
+        "type": "Ножи",
+        "collection": "TUOTOWN",
+        "title": "Складной нож L201-B",
+        "price": 945,
+        "status": "",
+        "bladeMaterial": "steel 440С",
+        "bladeLength": "86",
+        "handleMaterial": "steel",
+        "img": {
+            "mainSlider": "./assets/img/main/slideBanner.png",
+            "title": "./assets/items/skladnoj/3.png",
+            "alt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
+    },
+    {
+        "id": "10",
+        "topic": "Кухонные ножи TUOTOWN",
+        "type": "Ножи",
+        "collection": "TUOTOWN",
+        "title": "Кухонный нож SQ01-B",
+        "price": 1125,
+        "status": "",
+        "bladeMaterial": "stainless steel Nitrum",
+        "bladeLength": "210",
+        "handleMaterial": "wood",
+        "img": {
+            "mainSlider": "./assets/img/main/slideBanner.png",
+            "title": "./assets/items/kuhonnij/1.png",
+            "alt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
+    },
+    {
+        "id": "11",
+        "topic": "Кухонные ножи TUOTOWN",
+        "type": "Ножи",
+        "collection": "TUOTOWN",
+        "title": "Кухонный нож FT-B-1534",
+        "price": 1455,
+        "status": "New",
+        "bladeMaterial": "titan",
+        "bladeLength": "210",
+        "handleMaterial": "Polyoxymethylene",
+        "img": {
+            "mainSlider": "./assets/img/main/slideBanner.png",
+            "title": "./assets/items/kuhonnij/2.png",
+            "alt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
+    },
+    {
+        "id": "12",
+        "topic": "Кухонные ножи TUOTOWN",
+        "type": "Ножи",
+        "collection": "TUOTOWN",
+        "title": "Кухонный нож FT1-L0",
+        "price": 955,
+        "status": "Popular",
+        "bladeMaterial": "steel",
+        "bladeLength": "210",
+        "handleMaterial": "Polyoxymethylene",
+        "img": {
+            "mainSlider": "./assets/img/main/slideBanner.png",
+            "title": "./assets/items/kuhonnij/3.png",
+            "alt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
+    },
+    {
+        "id": "13",
+        "topic": "Набор титановых ножей",
+        "type": "Наборы ножей",
+        "collection": "TUOTOWN",
+        "title": "Набор ножей TUOTOWN",
+        "price": 5195,
+        "status": "Popular",
+        "bladeMaterial": "titan",
+        "handleMaterial": "Polyoxymethylene",
+        "img": {
+            "mainSlider": "./assets/img/main/slideBanner.png",
+            "title": "./assets/items/nabor/1.png",
+            "alt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
+    },
+    {
+        "id": "14",
+        "topic": "Набор швейцарских ножей",
+        "type": "Наборы ножей",
+        "collection": "TUOTOWN",
+        "title": "Набор ножей EXTRA",
+        "price": 1785,
+        "status": "Popular",
+        "bladeMaterial": "stainless steel Nitrum",
+        "handleMaterial": "Polyoxymethylene",
+        "img": {
+            "mainSlider": "./assets/img/main/slideBanner.png",
+            "title": "./assets/items/nabor/2.png",
+            "alt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
+    },
+    {
+        "id": "15",
+        "topic": "Набор нержавеющих ножей",
+        "type": "Наборы ножей",
+        "collection": "TUOTOWN",
+        "title": "Набор ножей USL",
+        "price": 2250,
+        "status": "",
+        "bladeMaterial": "stainless steel Nitrum",
+        "handleMaterial": "Polyoxymethylene",
+        "img": {
+            "mainSlider": "./assets/img/main/slideBanner.png",
+            "title": "./assets/items/nabor/3.png",
+            "alt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
+    },
+    {
+        "id": "16",
+        "topic": "Набор титановых ножей",
+        "type": "Наборы ножей",
+        "collection": "TUOTOWN",
+        "title": "Набор ножей REGULAR",
+        "price": 1300,
+        "status": "New",
+        "bladeMaterial": "titan",
+        "handleMaterial": "Polyoxymethylene",
+        "img": {
+            "mainSlider": "./assets/img/main/slideBanner.png",
+            "title": "./assets/items/nabor/4.png",
+            "alt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
+    },
+    {
+        "id": "17",
+        "topic": "Точильные камни",
+        "type": "Точилки",
+        "collection": "ARCOS",
+        "title": "Ручная точилка Arcos",
+        "price": 420,
+        "status": "",
+        "material": "plastic",
+        "img": {
+            "mainSlider": "./assets/img/main/slideBanner.png",
+            "title": "./assets/items/tochilka/1.png",
+            "alt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
+    },
+    {
+        "id": "18",
+        "topic": "Точильные камни",
+        "type": "Точилки",
+        "collection": "ARCOS",
+        "title": "Ручная точилка Lansky",
+        "price": 480,
+        "status": "Popular",
+        "material": "plastic",
+        "img": {
+            "mainSlider": "./assets/img/main/slideBanner.png",
+            "title": "./assets/items/tochilka/2.png",
+            "alt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
+    },
+    {
+        "id": "19",
+        "topic": "Точильные камни",
+        "type": "Точилки",
+        "collection": "Shifu",
+        "title": "Точильный камень Shifu",
+        "price": 1070,
+        "status": "New",
+        "material": "plastic",
+        "img": {
+            "mainSlider": "./assets/img/main/slideBanner.png",
+            "title": "./assets/items/tochilka/3.png",
+            "alt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
+    },
+    {
+        "id": "20",
+        "topic": "Точильные камни",
+        "type": "Точилки",
+        "collection": "ARCOS",
+        "title": "Точильный камень Arcos",
+        "price": 580,
+        "status": "Popular",
+        "material": "plastic",
+        "img": {
+            "mainSlider": "./assets/img/main/slideBanner.png",
+            "title": "./assets/items/tochilka/4.png",
+            "alt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
+    },
+    {
+        "id": "21",
+        "topic": "Кухонные аксессуары",
+        "type": "аксессуары",
+        "collection": "Timer",
+        "title": "Кухонные часы",
+        "price": 510,
+        "status": "",
+        "material": "wood",
+        "img": {
+            "mainSlider": "./assets/img/main/slideBanner.png",
+            "title": "./assets/items/accessories/1.png",
+            "alt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
+    },
+    {
+        "id": "22",
+        "topic": "Кухонные аксессуары",
+        "type": "аксессуары",
+        "collection": "Spooner",
+        "title": "Кухонные ложки",
+        "price": 320,
+        "status": "",
+        "material": "plastic",
+        "img": {
+            "mainSlider": "./assets/img/main/slideBanner.png",
+            "title": "./assets/items/accessories/2.png",
+            "alt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
+    },
+    {
+        "id": "23",
+        "topic": "Кухонные аксессуары",
+        "type": "аксессуары",
+        "collection": "Spooner",
+        "title": "Кухонные ложки",
+        "price": 570,
+        "status": "Popular",
+        "material": "stainless steel",
+        "img": {
+            "mainSlider": "./assets/img/main/slideBanner.png",
+            "title": "./assets/items/accessories/3.png",
+            "alt": "jackknife",
+            "itemPage": {
+                "product": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ],
+                "slider": [
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png",
+                    "./assets/img/knifeCatalog.png"
+                ]
+            }
+        }
+    },
+    {
+        "id": "24",
+        "topic": "Кухонные аксессуары",
+        "type": "аксессуары",
+        "collection": "Hoolder",
+        "title": "Кухонные подставки",
+        "price": 935,
+        "status": "New",
+        "material": "stainless steel",
+        "img": {
+            "mainSlider": "./assets/img/main/slideBanner.png",
+            "title": "./assets/items/accessories/4.png",
             "alt": "jackknife",
             "itemPage": {
                 "product": [
