@@ -15,7 +15,7 @@ export default function Menu({ menuVisibility, menuStatus, menuLinks, menuSubLin
                 <ul className='filterLinks'>
                     <li onClick={menuVisibility}><NavLink to="/">Главная</NavLink></li>
                     {menuLinks.map((link, i) => {
-                        return <li key={i}><NavLink to="catalog">{link}</NavLink>
+                        return <li onClick={menuVisibility} key={i}><NavLink to="catalog">{link}</NavLink>
                             <div className='lunges'>
                                 {menuSubLinks.map((subLink, ind) => {
                                     if (subLink[link] !== undefined) {

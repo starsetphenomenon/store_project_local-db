@@ -92,6 +92,77 @@
         .filters {
             height: 100%;
             width: 315px;
+
+            .status {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 15px;
+                border-bottom: 1px solid #4F4F4F;
+                padding-bottom: 40px;
+
+                &:hover {
+                    h3 {
+                        opacity: 1;
+                    }
+                }
+
+                h3 {
+                    opacity: 0.6;
+
+
+                }
+
+                div {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    justify-content: space-between;
+                    gap: 15px;
+                    width: 100%;
+                    cursor: pointer;
+                    -webkit-tap-highlight-color: transparent;
+
+                    input[type=radio]:checked+label {
+                        color: red;
+                    }
+
+
+                    input,
+                    label {
+                        cursor: pointer;
+                        -webkit-tap-highlight-color: transparent;
+                    }
+
+                    label {
+                        width: 100%;
+                    }
+
+                    input {
+                        position: relative;
+                        height: 20px;
+                        width: 20px;
+
+                        &:checked::before {
+                            background: black;
+                            border: 2px solid #4F4F4F;
+                        }
+
+                        &::before {
+                            content: '';
+                            display: block;
+                            height: 15px;
+                            width: 15px;
+                            position: absolute;
+                            background: #373737;
+                            border-radius: 50%;
+                            top: 0;
+                            left: 0;
+                            border: 2px solid black;
+                        }
+                    }
+                }
+            }
         }
 
         .items {
@@ -142,7 +213,8 @@
 
                 &:hover {
                     color: #000;
-                    h5{
+
+                    h5 {
                         backdrop-filter: blur(12px);
                     }
 

@@ -15,7 +15,7 @@ function ItemCard({ data, className }) {
             <div className="item-text">
                 <a alt="itemKnife" href=".">{data.title}</a>
                 <div className="item-price">
-                    <p>{data.price}</p>
+                    <p>{data.price} UAH</p>
                     <p className="new-product">{data.status}</p>
                 </div>
             </div>
