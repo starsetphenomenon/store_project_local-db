@@ -123,10 +123,10 @@
                     width: 100%;
                     padding: 10px 0;
                     cursor: pointer;
-                    -webkit-tap-highlight-color: transparent;
+                    -webkit-tap-highlight-color: transparent;                    
 
                     input[type=radio]:checked+label {
-                        color: red;
+                        color: #fff;
                     }
 
 
@@ -134,6 +134,7 @@
                     label {
                         cursor: pointer;
                         -webkit-tap-highlight-color: transparent;
+                        color: #ADACAC;
                     }
 
                     label {

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import FilterSelect from '../../Components/FilterSelect/FilterSelect';
 import ItemCard from '../../Components/ItemCard/ItemCard';
 import "./Catalog.scss";
@@ -5,9 +6,9 @@ import { React, useContext, useState, useEffect } from 'react'
 import { DataContext } from '../../App';
 
 
-function Catalog({ filter1 }) {
+function Catalog({ filter1, currentELEM }) {
 
-    let { data } = useContext(DataContext);
+    let { data, filterLink } = useContext(DataContext);
     const [pageTitle, setPageTitle] = useState('Ножи')
     const [filterData, setFilterData] = useState(data);
     const [filter, setFilter] = useState({
@@ -18,6 +19,10 @@ function Catalog({ filter1 }) {
         min: 0,
         max: 9999,
     });
+
+    useEffect(() => {
+        setFilter({ filter1: filterLink })
+    }, [filterLink])
 
     useEffect(() => {
         setFilterData(data.filter(el => el.type === 'Ножи'))
@@ -82,6 +87,7 @@ function Catalog({ filter1 }) {
         setPriceRange({
             min: min,
             max: max,
+            mainEdge: max,
         })
     }
 
@@ -89,7 +95,7 @@ function Catalog({ filter1 }) {
         handleAllFilters(filter);
     }, [filter]);
 
-    const handlePrice = (e) => {       
+    const handlePrice = (e) => {
         setPriceRange({
             ...priceRange,
             [e.target.getAttribute('id')]: +e.target.value
@@ -97,13 +103,13 @@ function Catalog({ filter1 }) {
     }
 
     const handleMaxRange = (e) => {
-        console.log(priceRange)      
         let result = [];
         result = data.filter(el => el.price >= +e.target.min && el.price <= +e.target.value);
         setFilterData(result)
         setPriceRange({
+            ...priceRange,
             min: +e.target.min,
-            max: +e.target.max,
+            max: +e.target.value,
         })
     }
 
@@ -144,8 +150,8 @@ function Catalog({ filter1 }) {
                             <input type="number" name="price" id="min" value={priceRange.min} onChange={handlePrice} />
                             <input type="number" name="price" id="max" value={priceRange.max} onChange={handlePrice} />
                         </div>
-                        <input type="range" name="price" onChange={handleMaxRange} step={10}
-                            min={priceRange.min} max={priceRange.max} />
+                        <input type="range" name="price" onChange={handleMaxRange}
+                            min={priceRange.min} max={priceRange.mainEdge} />
                     </div>
                 </div>
                 <div className="items">
