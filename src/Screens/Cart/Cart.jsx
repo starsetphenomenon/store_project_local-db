@@ -90,7 +90,7 @@ export default function Cart() {
                         return (
                             <li key={el.id} className="item">
                                 <div className="item_name">
-                                    <img src={el.imgSrc} alt={el.imgAlt} />
+                                    <img src={el.img.title} alt={el.img.alt} />
                                     <h3>{el.title}</h3></div>
                                 <div className="item_info">
                                     <InputNumber>1</InputNumber>

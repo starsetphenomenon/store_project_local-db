@@ -10,32 +10,102 @@ function Catalog({ filter1 }) {
     let { data } = useContext(DataContext);
     const [pageTitle, setPageTitle] = useState('Ножи')
     const [filterData, setFilterData] = useState(data);
+    const [filter, setFilter] = useState({
+        filter1: 'Ножи',
+        filter2: ''
+    });
+    const [priceRange, setPriceRange] = useState({
+        min: 0,
+        max: 9999,
+    });
 
     useEffect(() => {
         setFilterData(data.filter(el => el.type === 'Ножи'))
+        getPriceRange(data)
     }, [data]);
 
-    const handleFilter = (e) => {
+    const handleFilter = (e) => { // handle TYPE filters ~~~~~~~~~~
         setPageTitle(e.target.getAttribute('value'));
-        let result = [];
-        result = data.filter(el => el.type === e.target.getAttribute('value'));
-        setFilterData(result);
+        setFilter({
+            ...filter,
+            filter1: e.target.getAttribute('value'),
+        })
     }
 
-    const handleStatus = (e) => {
-        let result = [];
-        result = filterData.filter(el => el.status === e.target.getAttribute('id'));
-        console.log(e.target.getAttribute('id'))
-        console.log(filterData)
-        setFilterData(result);
+    const handleStatus = (e) => { // handle STATUS filter ~~~~~~~~~~
+        if (e.target.getAttribute('id') === 'All') {
+            setFilter({
+                ...filter,
+                filter2: '',
+            })
+        } else {
+            setFilter({
+                ...filter,
+                filter2: e.target.getAttribute('id'),
+            })
+        }
     }
 
-    const handleAllFilters = (...filters) => {
+    const handleAllFilters = (filter) => { // handle All filters ~~~~~~~~~~
         let result = [];
-        console.log(filters)
-        
+        let filterIsPassed = [];
+        data.filter(el => {
+            Object.values(filter).forEach(filter => {
+                if (JSON.stringify(el).includes(filter)) {
+                    filterIsPassed.push(1) // filter match
+                } else {
+                    filterIsPassed.push(0) // filter failed
+                }
+            })
+            if (filterIsPassed.every(el => el === 1)) { // if all filters are match ~~~~~~~~~~~
+                result.push(el);
+            }
+            return filterIsPassed = [];
+        })
+        result = [...new Set(result)]
+        setFilterData(result);
+        getPriceRange(result);
     }
-    handleAllFilters(1,2,'asf')
+
+    const getPriceRange = (data) => {
+        let min = Infinity;
+        let max = 0;
+        let prices = data.map(el => el.price);
+        prices.forEach(el => {
+            if (el > max) {
+                max = el;
+            }
+            if (el < min) {
+                min = el;
+            }
+        })
+        setPriceRange({
+            min: min,
+            max: max,
+        })
+    }
+
+    useEffect(() => {
+        handleAllFilters(filter);
+    }, [filter]);
+
+    const handlePrice = (e) => {       
+        setPriceRange({
+            ...priceRange,
+            [e.target.getAttribute('id')]: +e.target.value
+        })
+    }
+
+    const handleMaxRange = (e) => {
+        console.log(priceRange)      
+        let result = [];
+        result = data.filter(el => el.price >= +e.target.min && el.price <= +e.target.value);
+        setFilterData(result)
+        setPriceRange({
+            min: +e.target.min,
+            max: +e.target.max,
+        })
+    }
 
     return (
         <div className='catalog'>
@@ -67,6 +137,15 @@ function Catalog({ filter1 }) {
                             <input type="radio" id="Popular" name="status" onChange={handleStatus} />
                             <label htmlFor="Popular">Популярное</label>
                         </div>
+                    </div>
+                    <div className="price">
+                        <label htmlFor="volume"><h3>Цена</h3></label>
+                        <div className="range">
+                            <input type="number" name="price" id="min" value={priceRange.min} onChange={handlePrice} />
+                            <input type="number" name="price" id="max" value={priceRange.max} onChange={handlePrice} />
+                        </div>
+                        <input type="range" name="price" onChange={handleMaxRange} step={10}
+                            min={priceRange.min} max={priceRange.max} />
                     </div>
                 </div>
                 <div className="items">
