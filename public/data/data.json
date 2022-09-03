@@ -29,35 +29,6 @@
         }
     },
     {
-        "id": "2",
-        "topic": "Кухонные ножи TUOTOWN",
-        "type": "Ножи",
-        "collection": "TUOTOWN",
-        "title": "Кухонный нож SQ01-B",
-        "price": 1058,
-        "status": "",
-        "bladeMaterial": "stainless steel Nitrum",
-        "bladeLength": "210",
-        "handleMaterial": "Polyoxymethylene",
-        "img": {
-            "mainSlider": "./assets/img/main/slideBanner.png",
-            "title": "./assets/img/knifeCatalog.png",
-            "alt": "jackknife",
-            "itemPage": {
-                "product": [
-                    "./assets/img/knifeCatalog.png",
-                    "./assets/img/knifeCatalog.png",
-                    "./assets/img/knifeCatalog.png"
-                ],
-                "slider": [
-                    "./assets/img/knifeCatalog.png",
-                    "./assets/img/knifeCatalog.png",
-                    "./assets/img/knifeCatalog.png"
-                ]
-            }
-        }
-    },
-    {
         "id": "6",
         "topic": "Кухонные ножи SANTOKU",
         "type": "Ножи",
@@ -71,35 +42,6 @@
         "img": {
             "mainSlider": "./assets/img/main/slideBanner.png",
             "title": "./assets/img/knifeCatalog.png",
-            "alt": "jackknife",
-            "itemPage": {
-                "product": [
-                    "./assets/img/knifeCatalog.png",
-                    "./assets/img/knifeCatalog.png",
-                    "./assets/img/knifeCatalog.png"
-                ],
-                "slider": [
-                    "./assets/img/knifeCatalog.png",
-                    "./assets/img/knifeCatalog.png",
-                    "./assets/img/knifeCatalog.png"
-                ]
-            }
-        }
-    },
-    {
-        "id": "26",
-        "topic": "Складные ножи TUOTOWN",
-        "type": "Ножи",
-        "collection": "TUOTOWN",
-        "title": "Складной нож SQ01-B",
-        "price": 830,
-        "status": "New",
-        "bladeMaterial": "steel 440С",
-        "bladeLength": "86",
-        "handleMaterial": "steel/plastic",
-        "img": {
-            "mainSlider": "./assets/img/main/slideBanner.png",
-            "title": "./assets/items/skladnoj/1.png",
             "alt": "jackknife",
             "itemPage": {
                 "product": [

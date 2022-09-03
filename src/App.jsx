@@ -6,6 +6,8 @@ import Footer from "./Components/Footer/Footer";
 import Catalog from "./Screens/Catalog/Catalog";
 import Menu from './Components/Menu/Menu';
 import Cart from './Screens/Cart/Cart';
+import NotFound from './Screens/NotFound/NotFound.jsx';
+import Search from './Screens/Search/Search.jsx';
 import { useState, useEffect, createContext } from 'react';
 import { Routes, Route, } from "react-router-dom";
 
@@ -68,12 +70,14 @@ function App() {
         <Menu menuLinks={menuLinks} setFilterLink={setFilterLink} menuSubLinks={menuSubLinks} menuStatus={menu} menuVisibility={handleMenuVisibility} />
         <Routes>
           <Route path="/" index element={<Main />} />
-          <Route path="catalog" element={<Catalog filter1={menuLinks} />}>
+          <Route path="/catalog" element={<Catalog filter1={menuLinks} />}>
             <Route path="/catalog/:id" element={<Catalog />} />
           </Route>
-          <Route path="cart" element={<Cart />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
-        <Footer />
+        <Footer setFilterLink={setFilterLink} />
       </DataContext.Provider>
     </div >
   );

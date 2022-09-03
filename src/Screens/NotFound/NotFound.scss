@@ -1,0 +1,75 @@
+.notFound {
+    background: #373737;
+    height: auto;
+    min-height: 66vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20% 0;
+        width: 80%;
+        height: 60%;
+
+        .msg {
+            font-family: 'Jura';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 32px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .error {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            color: #272727;
+            font-size: 15rem;
+            font-weight: bolder;
+
+            .num1 {
+                animation: anim 3s ease-in-out infinite;
+            }
+
+            .num2 {
+                animation: anim 3.5s ease-in-out infinite;
+            }
+
+            .num3 {
+                animation: anim 4s ease-in-out infinite;
+            }
+        }
+    }
+}
+
+@keyframes anim {
+    0% {
+        transform: translateY(5%);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(5%);
+    }
+}
+
+@media (max-width: 575px) {
+    .notFound {
+        .wrapper {
+            .error {
+                font-size: 8rem;
+            }
+        }
+    }
+}

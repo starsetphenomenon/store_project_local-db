@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 
 function Header({ menuVisibility }) {
 
+    const onSearch = (e) => {
+        if(e.key === 'Enter') {
+            alert('YEAH')
+        }      
+    }
+
     return (
         <div className="header">
             <div className="left">
@@ -69,8 +75,8 @@ function Header({ menuVisibility }) {
                     </Link>
                 </div>
                 <div className="search">
-                    <input type="search" placeholder="Поиск" spellсheck="false" />
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <input onKeyDown={onSearch} onChange={onSearch} type="search" placeholder="Поиск" spellCheck="false" />
+                    <svg onClick={onSearch} width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.5556 18.1111C14.7284 18.1111 18.1111 14.7284 18.1111 10.5556C18.1111 6.38274 14.7284 3 10.5556 3C6.38274 3 3 6.38274
                              3 10.5556C3 14.7284 6.38274 18.1111 10.5556 18.1111Z" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                         <path d="M19.9999 19.9999L15.8916 15.8916" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
