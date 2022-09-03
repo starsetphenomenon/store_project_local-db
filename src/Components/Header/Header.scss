@@ -69,8 +69,8 @@
 
             svg {
                 transition-duration: 0.3s;
-                
-                &:hover path{
+
+                &:hover path {
                     stroke: #FF0000;
                 }
             }
@@ -102,7 +102,7 @@
             svg {
                 transition-duration: 0.3s;
 
-                &:hover path{
+                &:hover path {
                     stroke: #FF0000;
                 }
             }
@@ -132,7 +132,7 @@
                 }
             }
 
-            svg {
+            a {
                 position: absolute;
                 right: -15%;
                 height: 20px;

@@ -37,7 +37,7 @@ export default function Footer({ setFilterLink }) {
                 <div className="catalog_footer">
                     <h2>Каталог</h2>
                     <ul className="linkItems">
-                        <li><Link onClick={handleLink} to="/catalog" name="Кухонные">Кухонные ножи</Link></li>
+                        <li><Link onClick={handleLink} to="/catalog" name="Кухонные ножи">Кухонные ножи</Link></li>
                         <li><Link onClick={handleLink} to="/catalog" name="Складные">Складные ножи</Link></li>
                         <li><Link onClick={handleLink} to="/catalog" name="Точилки">Точилки для ножей</Link></li>
                         <li><Link onClick={handleLink} to="/catalog" name="аксессуары">Аксессуары</Link></li>

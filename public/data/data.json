@@ -63,7 +63,7 @@
         "type": "Ножи",
         "collection": "TUOTOWN",
         "title": "Складной нож FT-12P",
-        "price": 620,
+        "price": 1620,
         "status": "Popular",
         "bladeMaterial": "steel 440С",
         "bladeLength": "86",
@@ -92,7 +92,7 @@
         "type": "Ножи",
         "collection": "TUOTOWN",
         "title": "Складной нож L201-B",
-        "price": 945,
+        "price": 2045,
         "status": "",
         "bladeMaterial": "steel 440С",
         "bladeLength": "86",
@@ -150,13 +150,13 @@
         "type": "Ножи",
         "collection": "TUOTOWN",
         "title": "Кухонный нож FT-B-1534",
-        "price": 1455,
+        "price": 3455,
         "status": "New",
         "bladeMaterial": "titan",
         "bladeLength": "210",
         "handleMaterial": "Polyoxymethylene",
         "img": {
-            "mainSlider": "./assets/img/main/slideBanner.png",
+            "mainSlider": "./assets/items/mainSlider/mainSlider1.webp",
             "title": "./assets/items/kuhonnij/2.png",
             "alt": "jackknife",
             "itemPage": {
@@ -292,12 +292,12 @@
         "type": "Наборы ножей",
         "collection": "TUOTOWN",
         "title": "Набор ножей REGULAR",
-        "price": 1300,
+        "price": 3760,
         "status": "New",
         "bladeMaterial": "titan",
         "handleMaterial": "Polyoxymethylene",
         "img": {
-            "mainSlider": "./assets/img/main/slideBanner.png",
+            "mainSlider": "./assets/items/mainSlider/mainSlider2.webp",
             "title": "./assets/items/nabor/4.png",
             "alt": "jackknife",
             "itemPage": {
@@ -347,7 +347,7 @@
         "type": "Точилки",
         "collection": "ARCOS",
         "title": "Ручная точилка Lansky",
-        "price": 480,
+        "price": 1280,
         "status": "Popular",
         "material": "plastic",
         "img": {
@@ -378,7 +378,7 @@
         "status": "New",
         "material": "plastic",
         "img": {
-            "mainSlider": "./assets/img/main/slideBanner.png",
+            "mainSlider": "./assets/items/mainSlider/mainSlider3.webp",
             "title": "./assets/items/tochilka/3.png",
             "alt": "jackknife",
             "itemPage": {
@@ -482,7 +482,7 @@
         "type": "аксессуары",
         "collection": "Spooner",
         "title": "Кухонные ложки",
-        "price": 570,
+        "price": 970,
         "status": "Popular",
         "material": "stainless steel",
         "img": {
@@ -509,11 +509,11 @@
         "type": "аксессуары",
         "collection": "Hoolder",
         "title": "Кухонные подставки",
-        "price": 935,
+        "price": 1235,
         "status": "New",
         "material": "stainless steel",
         "img": {
-            "mainSlider": "./assets/img/main/slideBanner.png",
+            "mainSlider": "./assets/items/mainSlider/mainSlider4.webp",
             "title": "./assets/items/accessories/4.png",
             "alt": "jackknife",
             "itemPage": {
