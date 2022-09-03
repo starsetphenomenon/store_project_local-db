@@ -30,9 +30,14 @@ $hoverPluc: #C80000;
     border-radius: 14px;
     transition-duration: 0.3s;
 
-    a>img {
-        width: 100%;
-        height: 100%;
+    .img-wrapper {
+        width: 90%;
+        height: 300px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
     }
 
     &:hover {
@@ -122,6 +127,10 @@ $hoverPluc: #C80000;
     .item-img {
         padding: 85px 0;
         margin-bottom: 8px;
+
+        .img-wrapper {
+            height: 250px;
+        }
     }
 
     .item-text {
@@ -142,8 +151,8 @@ $hoverPluc: #C80000;
     .item-img {
         padding: 75px 0;
 
-        a {
-            width: 100%;
+        .img-wrapper {
+            height: 150px;
         }
     }
 }
@@ -167,6 +176,10 @@ $hoverPluc: #C80000;
         margin-bottom: 0;
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
+
+        .img-wrapper{
+            height: 150px;
+        }
 
         &:hover {
             box-shadow: none;

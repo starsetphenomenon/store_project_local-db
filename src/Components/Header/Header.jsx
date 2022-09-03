@@ -1,12 +1,16 @@
 import "./Header.scss";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+function Header({ menuVisibility, setSearchingItems }) {
 
-function Header({ menuVisibility }) {
+    let navigate = useNavigate();
 
     const onSearch = (e) => {
-        if(e.key === 'Enter') {
-            alert('YEAH')
-        }      
+        setSearchingItems(e.target.value.toLowerCase());
+        if (e.key === 'Enter') {
+            e.target.value = '';
+            return navigate('/search')
+        }
     }
 
     return (
@@ -76,12 +80,12 @@ function Header({ menuVisibility }) {
                 </div>
                 <div className="search">
                     <input onKeyDown={onSearch} onChange={onSearch} type="search" placeholder="Поиск" spellCheck="false" />
-                    <svg onClick={onSearch} width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <Link to="/search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.5556 18.1111C14.7284 18.1111 18.1111 14.7284 18.1111 10.5556C18.1111 6.38274 14.7284 3 10.5556 3C6.38274 3 3 6.38274
                              3 10.5556C3 14.7284 6.38274 18.1111 10.5556 18.1111Z" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                         <path d="M19.9999 19.9999L15.8916 15.8916" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-
+                    </Link>
                 </div>
             </div>
         </div>

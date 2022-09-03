@@ -4,9 +4,9 @@ function ItemCard({ data, className }) {
     return (
         <div className={className}>
             <div className="item-img" >
-                <a href=".">
+                <div className='img-wrapper'>
                     <img alt="itemKnife" src={data.img.title}></img>
-                </a>
+                </div>
                 <div className="plus">
                     <img alt="itemKnife" src='./assets/icons/plus.svg'></img>
                     <img alt="itemKnife" className="basket" src='./assets/icons/cart.svg'></img>

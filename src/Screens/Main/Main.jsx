@@ -3,9 +3,10 @@ import { useContext, useState, useEffect } from "react";
 import Slider from "../../Components/Slider/Slider"
 import ItemCard from "../../Components/ItemCard/ItemCard.jsx"
 import { DataContext } from '../../App';
+import { useNavigate } from 'react-router-dom';
 
 function Main() {
-
+    let navigate = useNavigate();
     const { data, mainSlides } = useContext(DataContext);
     const [dataByType, setDataByType] = useState([]);
     const [dataByStatus, setDataByStatus] = useState([]);
@@ -24,6 +25,10 @@ function Main() {
         } else {
             setDataByType(data.filter(el => el.type.toLowerCase().includes(e.currentTarget.getAttribute('value').toLowerCase())));
         }
+    }
+
+    const navigateToCollection = () => {
+        return navigate("/catalog");
     }
 
     return (
@@ -79,7 +84,9 @@ function Main() {
                         <img className="banner-img" src='../assets/img/main/banner.png' alt='banner'></img>
                         <div className="banner-text">
                             <p>Познакомьтесь с коллекцией ножей TUOTOWN</p>
-                            <img src='./assets/icons/arrow-right.svg' alt='arrow'></img>
+                            <div onClick={navigateToCollection} className="img-wrapper">
+                                <img src='./assets/icons/arrow-right.svg' alt='arrow'></img>
+                            </div>
                         </div>
                     </div>
                     {dataByType.map(item => {
