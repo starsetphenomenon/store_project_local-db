@@ -19,7 +19,11 @@ function Main() {
     }
 
     const filterDataByType = (e) => {
-        setDataByType(data.filter(el => el.topic.toLowerCase().includes(e.currentTarget.getAttribute('value').toLowerCase())));
+        if (e.currentTarget.getAttribute('value') === 'Складные' || e.currentTarget.getAttribute('value') === 'Кухонные') {
+            setDataByType(data.filter(el => el.topic.toLowerCase().includes(e.currentTarget.getAttribute('value').toLowerCase())));
+        } else {
+            setDataByType(data.filter(el => el.type.toLowerCase().includes(e.currentTarget.getAttribute('value').toLowerCase())));
+        }
     }
 
     return (
@@ -39,13 +43,13 @@ function Main() {
                         </div>
                         <div className="menu-element-item">Складные ножи</div>
                     </div>
-                    <div className="menu-element" value="Точильные" onClick={filterDataByType}>
+                    <div className="menu-element" value="Точилки" onClick={filterDataByType}>
                         <div className="menu-element-item">
                             <img alt="itemKnife" className="svg" src='./assets/icons/red-knifes.svg'></img>
                         </div>
                         <div className="menu-element-item">Точилки для ножей</div>
                     </div>
-                    <div className="menu-element" value="аксессуары" onClick={filterDataByType}>
+                    <div className="menu-element" value="Аксессуары" onClick={filterDataByType}>
                         <div className="menu-element-item">
                             <img alt="itemKnife" className="svg" src='./assets/icons/cookHat.svg'></img>
                         </div>

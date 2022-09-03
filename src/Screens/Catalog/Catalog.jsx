@@ -6,7 +6,7 @@ import { React, useContext, useState, useEffect } from 'react'
 import { DataContext } from '../../App';
 
 
-function Catalog({ filter1, currentELEM }) {
+function Catalog({ filter1 }) {
 
     let { data, filterLink } = useContext(DataContext);
     const [pageTitle, setPageTitle] = useState('Ножи')
@@ -51,10 +51,10 @@ function Catalog({ filter1, currentELEM }) {
         }
     }
 
-    const handleAllFilters = (filter) => { // handle All filters ~~~~~~~~~~
+    const handleAllFilters = (filter, db) => { // handle All filters ~~~~~~~~~~
         let result = [];
         let filterIsPassed = [];
-        data.filter(el => {
+        db.filter(el => {
             Object.values(filter).forEach(filter => {
                 if (JSON.stringify(el).includes(filter)) {
                     filterIsPassed.push(1) // filter match
@@ -63,6 +63,7 @@ function Catalog({ filter1, currentELEM }) {
                 }
             })
             if (filterIsPassed.every(el => el === 1)) { // if all filters are match ~~~~~~~~~~~
+
                 result.push(el);
             }
             return filterIsPassed = [];
@@ -92,25 +93,26 @@ function Catalog({ filter1, currentELEM }) {
     }
 
     useEffect(() => {
-        handleAllFilters(filter);
+        handleAllFilters(filter, data);
     }, [filter]);
 
     const handlePrice = (e) => {
-        setPriceRange({
-            ...priceRange,
-            [e.target.getAttribute('id')]: +e.target.value
-        })
-    }
-
-    const handleMaxRange = (e) => {
         let result = [];
-        result = data.filter(el => el.price >= +e.target.min && el.price <= +e.target.value);
-        setFilterData(result)
-        setPriceRange({
-            ...priceRange,
-            min: +e.target.min,
-            max: +e.target.value,
-        })
+        result = data.filter(el => el.price >= +e.target.min && el.price <= +e.target.value); // Filter by PRICE ~~~~~~~~~
+        handleAllFilters(filter, result); // Filter by current FILTERS ~~~~~~~~~
+        if (e.target.name === 'price') { // prcieRange from inputs
+            setPriceRange({
+                ...priceRange,
+                [e.target.getAttribute('id')]: +e.target.value
+            })
+        }
+        if (e.target.name === 'priceRange') {  // prcieRange from range
+            setPriceRange({
+                ...priceRange,
+                min: +e.target.min,
+                max: +e.target.value,
+            })
+        }
     }
 
     return (
@@ -150,7 +152,7 @@ function Catalog({ filter1, currentELEM }) {
                             <input type="number" name="price" id="min" value={priceRange.min} onChange={handlePrice} />
                             <input type="number" name="price" id="max" value={priceRange.max} onChange={handlePrice} />
                         </div>
-                        <input type="range" name="price" onChange={handleMaxRange}
+                        <input type="range" name="priceRange" onChange={handlePrice}
                             min={priceRange.min} max={priceRange.mainEdge} />
                     </div>
                 </div>
