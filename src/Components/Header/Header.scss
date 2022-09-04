@@ -108,6 +108,27 @@
             }
         }
 
+        .cart {
+            position: relative;
+
+            .totalCartItems {
+                position: absolute;
+                bottom: 0px;
+                right: 5px;
+                font-size: 12px;
+                height: 10px;
+                width: auto;
+                min-width: 10px;
+                background: rgba(255, 0, 0, 0.6);
+                padding: 3px;
+                backdrop-filter: blur(12px);
+                border-radius: 4px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
         .search {
             position: relative;
             margin-left: 10px;
@@ -208,6 +229,11 @@
 
             .cart {
                 padding: 15px;
+
+                .totalCartItems {
+                    bottom: 8px;
+                    right: 10px;
+                }
             }
         }
     }

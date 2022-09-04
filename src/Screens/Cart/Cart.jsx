@@ -1,5 +1,5 @@
 import './Cart.scss';
-import { React, useContext, useState } from 'react'
+import { React, useContext, useState, useEffect } from 'react'
 import Modal from '../../Components/Modal/Modal';
 import InputNumber from '../../Components/InputNumber/InputNumber';
 import PopUp from '../../Components/PopUp/PopUp';
@@ -7,7 +7,23 @@ import { DataContext } from '../../App';
 
 export default function Cart() {
 
-    const { data } = useContext(DataContext);
+    const { cart, setCart } = useContext(DataContext);
+    const [popUp, setPopUp] = useState(false);
+    const [modal, setModal] = useState(false);
+    const [totalPrice, setTotalPrice] = useState(0);
+
+    useEffect(() => {
+        let prices = [];
+        let cartTotalPrice = cart.map(el => {  // get total price from Cart items ~~~~~~~~~~~
+            return el = {
+                ...el,
+                totalPrice: el.price * el.amount,
+            }
+        })
+        prices = cartTotalPrice.map(el => el.totalPrice);
+        let totalPrices = prices.reduce((prev, curr) => prev + curr, 0);
+        setTotalPrice(totalPrices);
+    }, [cart])
 
     const [form, setForm] = useState({
         tel: false,
@@ -15,7 +31,7 @@ export default function Cart() {
         email: false,
     });
 
-    const [modal, setModal] = useState(false);
+
 
     const handleInputValidation = e => {
         handleClassName(e);
@@ -44,7 +60,7 @@ export default function Cart() {
         }
     };
 
-    const [popUp, setPopUp] = useState(false);
+
     const popTimer = () => {
         setPopUp(false);
     }
@@ -73,6 +89,12 @@ export default function Cart() {
         }
     }
 
+    const handleDeleteElem = (e) => {
+        let result = [];
+        result = cart.filter(item => +item.id !== +e.currentTarget.id);
+        setCart(result)
+    }
+
     return (
         <div className='Cart'>
             <Modal modal={modal} setModal={setModal}>Благодарим за ваш заказ! <br></br> Ожидайте звонка...</Modal>
@@ -86,16 +108,16 @@ export default function Cart() {
             </div>
             <div className="mid">
                 <ul className="items">
-                    {data.map(el => {
+                    {cart.map(el => {
                         return (
                             <li key={el.id} className="item">
                                 <div className="item_name">
                                     <img src={el.img.title} alt={el.img.alt} />
                                     <h3>{el.title}</h3></div>
                                 <div className="item_info">
-                                    <InputNumber>1</InputNumber>
-                                    <div className="price">{el.price} ₴</div>
-                                    <div className="close">
+                                    <InputNumber currentElem={el.id}>{el.amount}</InputNumber>
+                                    <div className="price">{el.price * el.amount} ₴</div>
+                                    <div id={el.id} onClick={handleDeleteElem} className="close">
                                         <span></span>
                                         <span></span>
                                     </div>
@@ -106,7 +128,7 @@ export default function Cart() {
                 </ul>
                 <div className="total">
                     <h3>К оплате:</h3>
-                    <div className="totalPrice">{750} UAH</div>
+                    <div className="totalPrice">{totalPrice} UAH</div>
                 </div>
             </div>
             <div className="bottom">
