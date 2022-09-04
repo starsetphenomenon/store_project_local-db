@@ -67,7 +67,7 @@ function App() {
   return (
 
     <div className="App">
-      <DataContext.Provider value={{ data, mainSlides, filterLink, cart, setCart }}>
+      <DataContext.Provider value={{ data, setData, mainSlides, filterLink, cart, setCart }}>
         <Header setSearchingItems={setSearchingItems} menuVisibility={handleMenuVisibility} />
         <Menu menuLinks={menuLinks} setFilterLink={setFilterLink} menuSubLinks={menuSubLinks} menuStatus={menu} menuVisibility={handleMenuVisibility} />
         <Routes>

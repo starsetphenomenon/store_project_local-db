@@ -77,6 +77,13 @@
         text-transform: uppercase;
         color: #fff;
         margin: 60px 0;
+        padding: 0 60px;
+
+        p {
+            margin-left: 5%;
+            font-size: 1.5rem;
+            border-bottom: 1px solid #FFF;
+        }
     }
 
     .content {
@@ -92,6 +99,54 @@
         .filters {
             height: 100%;
             width: 315px;
+
+            .resetFilter {
+                padding-bottom: 40px;
+                margin-bottom: 40px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+
+                &:hover {
+                    .res {
+                        opacity: 1;
+                        transform: scale(1.5);
+                    }
+                }
+
+                .res {
+                    width: 20px;
+                    height: 20px;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    opacity: 0.6;
+
+                    span {
+                        height: 2px;
+                        width: 100%;
+                        display: block;
+                        background: #fff;
+                        top: 50%;
+                        left: 50%;
+                        position: absolute;
+
+                        &:first-child {
+                            transform: translate(-50%, -50%) rotate(45deg);
+                        }
+
+                        &:last-child {
+                            transform: translate(-50%, -50%) rotate(-45deg);
+                        }
+                    }
+
+
+                }
+            }
 
             div {
                 &:hover {
@@ -123,7 +178,7 @@
                     width: 100%;
                     padding: 10px 0;
                     cursor: pointer;
-                    -webkit-tap-highlight-color: transparent;                    
+                    -webkit-tap-highlight-color: transparent;
 
                     input[type=radio]:checked+label {
                         color: #fff;

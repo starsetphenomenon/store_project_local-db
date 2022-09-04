@@ -25,7 +25,7 @@ export default function FilterSelect({ filter, name, handleFilter }) {
             </div>
             {isVisible && <ul className="links">
                 {filter.map((el, id) => {
-                    return <li value={el} onClick={handleFilter} key={id}>{el}</li>
+                    return <li value={el} name={name} onClick={handleFilter} key={id}>{el}</li>
                 })}
             </ul>}
         </div>

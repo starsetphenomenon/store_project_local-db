@@ -1,23 +1,37 @@
 import './ItemCard.scss';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { DataContext } from '../../App';
 
 function ItemCard({ data: item, className }) {
 
-    const { data, cart, setCart } = useContext(DataContext);
+    const { data, setData, cart, setCart } = useContext(DataContext);
+    const [counter, setCounter] = useState(0);
 
     const addToCart = (e) => {
+        setCounter(prev => prev + 1);
         let result = cart;
         let elemId = e.currentTarget.id;
         let item = data.find(item => item.id === elemId);
         if (result.some(el => el.id === elemId)) { // if Cart elem already exist, then just ++amount of elem ~~~~~~~~
             let amountItem = result.find(e => e.id === elemId);
             amountItem.amount++;
+            amountItem.counter++;
         } else {
-            item = { ...item, amount: 1, };
+            item = { ...item, amount: 1, counter: 1 };
             result.push(item);
             setCart(result);
         }
+        let newData = data.map(el => { // set counter of item do DATA
+            if (+el.id === +e.currentTarget.id) {
+                return el = {
+                    ...el,
+                    counter: counter + 1,
+                }
+            } else {
+                return el;
+            }
+        })
+        setData(newData);
         setCart([...cart]);
     }
 
@@ -28,6 +42,7 @@ function ItemCard({ data: item, className }) {
                     <img alt="itemKnife" src={item.img.title}></img>
                 </div>
                 <div id={item.id} onClick={addToCart} className="plus">
+                    {item.counter ? <div className="counter">{item.counter}</div> : null}
                     <img alt="itemKnife" src='./assets/icons/plus.svg'></img>
                     <img alt="itemKnife" className="basket" src='./assets/icons/cart.svg'></img>
                 </div>

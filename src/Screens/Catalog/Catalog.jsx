@@ -8,6 +8,8 @@ import { DataContext } from '../../App';
 
 function Catalog({ filter1 }) {
 
+    const filterMaterial = ['Все', 'Сталь', 'Нержавеющая сталь', 'Титан', 'Дерево'];
+
     let { data, filterLink } = useContext(DataContext);
     const [pageTitle, setPageTitle] = useState('Ножи')
     const [filterData, setFilterData] = useState(data);
@@ -29,24 +31,31 @@ function Catalog({ filter1 }) {
         getPriceRange(data)
     }, [data]);
 
-    const handleFilter = (e) => { // handle TYPE filters ~~~~~~~~~~
-        setPageTitle(e.target.getAttribute('value'));
-        setFilter({
-            ...filter,
-            filter1: e.target.getAttribute('value'),
-        })
+    const handleFilter = (e) => { // handle TYPE filters ~~~~~~~~~~     
+        if (e.target.getAttribute('value') === 'Все') {
+            setFilter({
+                ...filter,
+                [e.target.getAttribute('name')]: '',
+            })
+        } else {
+            setFilter({
+                ...filter,
+                [e.target.getAttribute('name')]: e.target.getAttribute('value').toLowerCase(),
+            })
+        }
+
     }
 
     const handleStatus = (e) => { // handle STATUS filter ~~~~~~~~~~
         if (e.target.getAttribute('id') === 'All') {
             setFilter({
                 ...filter,
-                filter2: '',
+                filterStatus: '',
             })
         } else {
             setFilter({
                 ...filter,
-                filter2: e.target.getAttribute('id'),
+                filterStatus: e.target.getAttribute('id').toLowerCase(),
             })
         }
     }
@@ -56,7 +65,7 @@ function Catalog({ filter1 }) {
         let filterIsPassed = [];
         db.filter(el => {
             Object.values(filter).forEach(filter => {
-                if (JSON.stringify(el).includes(filter)) {
+                if (JSON.stringify(el).toLowerCase().includes(filter)) {
                     filterIsPassed.push(1) // filter match
                 } else {
                     filterIsPassed.push(0) // filter failed
@@ -94,6 +103,8 @@ function Catalog({ filter1 }) {
 
     useEffect(() => {
         handleAllFilters(filter, data);
+        let title = Object.values(filter).filter(el => el !== '');
+        setPageTitle(title.join(' / '));
     }, [filter]);
 
     const handlePrice = (e) => {
@@ -115,6 +126,10 @@ function Catalog({ filter1 }) {
         }
     }
 
+    const resetFilters = () =>{
+        setFilter({});
+    }
+
     return (
         <div className='catalog'>
             <div className="header">
@@ -127,10 +142,18 @@ function Catalog({ filter1 }) {
                     <h3>Эксклюзивные технологии на страже чистоты и уюта в вашем доме</h3>
                 </div>
             </div>
-            <h2 className='catalog_heading'>{pageTitle}</h2>
+            <h2 className='catalog_heading'>Ваш фильтр: <p>{pageTitle}</p></h2>
             <div className="content">
                 <div className="filters">
+                    <div onClick={resetFilters} className="resetFilter">
+                        <h3>Сбросить фильтр</h3>
+                        <div className="res">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
                     <FilterSelect name="Что ищем?" handleFilter={handleFilter} filter={filter1} />
+                    <FilterSelect name="Материал" handleFilter={handleFilter} filter={filterMaterial} />
                     <div className="status">
                         <h3>Статус</h3>
                         <div>

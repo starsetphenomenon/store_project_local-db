@@ -6,7 +6,7 @@ export default function Menu({ menuVisibility, menuStatus, menuLinks, menuSubLin
 
     const handleLink = (e) => {
         menuVisibility();
-        setFilterLink(e.target.name)
+        setFilterLink(e.target.name.toLowerCase())
     }
 
     return (
