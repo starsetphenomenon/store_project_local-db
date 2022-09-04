@@ -21,6 +21,7 @@ function App() {
   const [mainSlides, setMainSlides] = useState([]);
   const [filterLink, setFilterLink] = useState('');
   const [searchingItems, setSearchingItems] = useState('');
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     fetch("data/data.json")
@@ -66,7 +67,7 @@ function App() {
   return (
 
     <div className="App">
-      <DataContext.Provider value={{ data, mainSlides, filterLink }}>
+      <DataContext.Provider value={{ data, mainSlides, filterLink, cart, setCart }}>
         <Header setSearchingItems={setSearchingItems} menuVisibility={handleMenuVisibility} />
         <Menu menuLinks={menuLinks} setFilterLink={setFilterLink} menuSubLinks={menuSubLinks} menuStatus={menu} menuVisibility={handleMenuVisibility} />
         <Routes>

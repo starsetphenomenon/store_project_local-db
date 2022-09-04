@@ -1,21 +1,41 @@
 import './InputNumber.scss';
 import { useState, useEffect } from "react";
+import { useContext } from 'react';
+import { DataContext } from '../../App';
 
-export default function InputNumber({ children }) {
+export default function InputNumber({ children, currentElem }) {
+
+    const { cart, setCart } = useContext(DataContext);
 
     const [amount, setAmount] = useState('');
 
+    const setNewAmount = (id, operator) => {
+        let elem = cart.find(el => +el.id === +id);
+        if (operator === '+') {
+            elem.amount++;
+        } else {
+            if (elem.amount > 1) {
+                elem.amount--;
+            } else {
+                elem.amount = 1;
+            }
+        }
+        setCart([...cart]);
+    }
+
     const handlePlus = () => {
         setAmount(+amount + 1);
+        setNewAmount(currentElem, '+')
     }
 
     const handleMinus = () => {
-        if (amount > 0) {
+        if (amount > 1) {
             setAmount(amount - 1);
         }
         else {
-            setAmount(+"0");
+            setAmount(+"1");
         }
+        setNewAmount(currentElem, '-')
     }
 
     useEffect(() => {

@@ -1,9 +1,19 @@
 import "./Header.scss";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { React, useContext, useState, useEffect } from 'react'
+import { DataContext } from '../../App';
+
 function Header({ menuVisibility, setSearchingItems }) {
 
     let navigate = useNavigate();
+
+    const { cart } = useContext(DataContext);
+
+    useEffect(() => {
+        setTotalCartItems(cart.length)
+    }, [cart])
+
+    const [totalCartItems, setTotalCartItems] = useState(0);
 
     const onSearch = (e) => {
         setSearchingItems(e.target.value.toLowerCase());
@@ -12,6 +22,8 @@ function Header({ menuVisibility, setSearchingItems }) {
             return navigate('/search')
         }
     }
+
+
 
     return (
         <div className="header">
@@ -43,6 +55,7 @@ function Header({ menuVisibility, setSearchingItems }) {
             </div>
             <div className="right">
                 <div className="cart">
+                    <div className="totalCartItems">{totalCartItems}</div>
                     <Link to="cart">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M11.9681 2C12.3023 2.06645 12.6486 2.11245 12.9767 2.20446C14.8663 2.75139 16.0632 
