@@ -5,7 +5,7 @@ import { DataContext } from '../../App';
 
 export default function InputNumber({ children, currentElem }) {
 
-    const { cart, setCart } = useContext(DataContext);
+    const { cart, setCart, setStorage } = useContext(DataContext);
 
     const [amount, setAmount] = useState('');
 
@@ -20,7 +20,8 @@ export default function InputNumber({ children, currentElem }) {
                 elem.amount = 1;
             }
         }
-        setCart([...cart]);
+        setCart([...cart]);  // force rerender cart to refresh each item amount ~~~~~~~~~~
+        setStorage('cart', [...cart])  // save each item amount from cart into localStorage ~~~~~~~~~~
     }
 
     const handlePlus = () => {

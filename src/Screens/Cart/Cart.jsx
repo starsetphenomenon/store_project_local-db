@@ -1,18 +1,23 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import './Cart.scss';
 import { React, useContext, useState, useEffect } from 'react'
 import Modal from '../../Components/Modal/Modal';
 import InputNumber from '../../Components/InputNumber/InputNumber';
 import PopUp from '../../Components/PopUp/PopUp';
 import { DataContext } from '../../App';
+import { Link } from 'react-router-dom';
 
 export default function Cart() {
-
-    const { cart, setCart } = useContext(DataContext);
+    const { cart, setCart, checkStorage, getStorage, setStorage } = useContext(DataContext);
     const [popUp, setPopUp] = useState(false);
     const [modal, setModal] = useState(false);
     const [totalPrice, setTotalPrice] = useState(0);
 
     useEffect(() => {
+        if (!cart.length && checkStorage('cart')) {
+            setCart(getStorage('cart'))
+        }
+
         let prices = [];
         let cartTotalPrice = cart.map(el => {  // get total price from Cart items ~~~~~~~~~~~
             return el = {
@@ -31,7 +36,16 @@ export default function Cart() {
         email: false,
     });
 
+    const [formValue, setFormValue] = useState(getStorage('cartForm') || // set Input values from Storage if it's not empty ~~~~~~~~~~~
+    {
+        name: '',
+        tel: '',
+        email: '',
+    });
 
+    useEffect(() => {
+        setStorage('cartForm', formValue);
+    }, [formValue]);
 
     const handleInputValidation = e => {
         handleClassName(e);
@@ -46,6 +60,10 @@ export default function Cart() {
             ...form,
             [e.target.name]: isMatch
         });
+        setFormValue({
+            ...formValue,
+            [e.target.name]: e.target.value,
+        })
     }
 
     const handleSubmit = e => {
@@ -100,10 +118,10 @@ export default function Cart() {
             <Modal modal={modal} setModal={setModal}>Благодарим за ваш заказ! <br></br> Ожидайте звонка...</Modal>
             <PopUp popUp={popUp} setPopUp={setPopUp}>Пожалуйста, заполните <br></br> все поля!</PopUp>
             <div className="top">
-                <div className="back">
+                <Link to="/catalog" className="back">
                     <img src="./assets/icons/arrow-toRight.svg" alt="." />
                     <h4>К покупкам</h4>
-                </div>
+                </Link>
                 <h2>Корзина</h2>
             </div>
             <div className="mid">
@@ -138,17 +156,17 @@ export default function Cart() {
                         <div className="info_item required">
                             <p className="name">Получатель</p>
                             <input pattern="[a-zA-Zа-яієїґА-ЯІЄЇ']{2,}\s[a-zA-Zа-яієїґА-ЯІЄЇ']{1,}'?-?[a-zA-Zа-яієїґА-ЯІЄЇ']{2,}\s?[a-zA-Zа-яієїґА-ЯІЄЇ']{1,}"
-                                name="name" onChange={handleInputValidation} spellCheck="false" placeholder='Имя Фамилия' type="text" />
+                                value={formValue.name} name="name" onChange={handleInputValidation} spellCheck="false" placeholder='Имя Фамилия' type="text" />
                         </div>
                         <div className="info_item required">
                             <p className="name">Мобильный телефон</p>
                             <input pattern="\+?[0-9]{2,3}\s?[0-9]{2,3}\s?[0-9]{2,3}\s?[0-9]{2,4}$"
-                                name="tel" onChange={handleInputValidation} spellCheck="false" placeholder='+380___  __  __' type="tel" />
+                              value={formValue.tel}  name="tel" onChange={handleInputValidation} spellCheck="false" placeholder='+380___  __  __' type="tel" />
                         </div>
                         <div className="info_item">
                             <p className="name">E-mail</p>
                             <input pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
-                                name="email" onChange={handleInputValidation} spellCheck="false" placeholder='Ваша почта' type="email" />
+                              value={formValue.email}  name="email" onChange={handleInputValidation} spellCheck="false" placeholder='Ваша почта' type="email" />
                         </div>
                     </div>
                     <div className="send">

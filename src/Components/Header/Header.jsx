@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import "./Header.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { React, useContext, useState, useEffect } from 'react'
@@ -7,11 +8,16 @@ function Header({ menuVisibility, setSearchingItems }) {
 
     let navigate = useNavigate();
 
-    const { cart } = useContext(DataContext);
+    const { cart, checkStorage, getStorage } = useContext(DataContext);
 
-    useEffect(() => {
+    useEffect(() => { // counter in HEADER under cart icon ~~~~~~~~~~~~~
         setTotalCartItems(cart.length)
+        if (checkStorage('cart') && !cart.length) { // take counter from storage if it's not empty ~~~~~~~~~~~~
+            setTotalCartItems(getStorage('cart').length)
+        }
     }, [cart])
+
+
 
     const [totalCartItems, setTotalCartItems] = useState(0);
 
