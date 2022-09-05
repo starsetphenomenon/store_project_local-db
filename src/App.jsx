@@ -8,12 +8,32 @@ import Menu from './Components/Menu/Menu';
 import Cart from './Screens/Cart/Cart';
 import NotFound from './Screens/NotFound/NotFound.jsx';
 import Search from './Screens/Search/Search.jsx';
+import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
 import { useState, useEffect, createContext } from 'react';
-import { Routes, Route, } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 export const DataContext = createContext();
 
 function App() {
+
+  // Local Storage ~~~~~~~~~~~~~~~~~~~~~~
+
+  const getStorage = (key) => {
+    return JSON.parse(localStorage.getItem(key));
+  }
+
+  const setStorage = (key, value) => {
+    return localStorage.setItem(key, JSON.stringify(value));
+  }
+
+  const checkStorage = (key) => {
+    if (JSON.parse(localStorage.getItem(key)) === null) {
+      return false;
+    }
+    return true;
+  }
+
+  // Local Storage ~~~~~~~~~~~~~~~~~~~~~~
 
   const [data, setData] = useState([]);
   const [menuLinks, setMenuLinks] = useState([]);
@@ -67,18 +87,20 @@ function App() {
   return (
 
     <div className="App">
-      <DataContext.Provider value={{ data, setData, mainSlides, filterLink, cart, setCart }}>
+      <DataContext.Provider value={{ data, setData, mainSlides, filterLink, cart, setCart, getStorage, setStorage, checkStorage }}>
         <Header setSearchingItems={setSearchingItems} menuVisibility={handleMenuVisibility} />
         <Menu menuLinks={menuLinks} setFilterLink={setFilterLink} menuSubLinks={menuSubLinks} menuStatus={menu} menuVisibility={handleMenuVisibility} />
-        <Routes>
-          <Route path="/" index element={<Main />} />
-          <Route path="/catalog" element={<Catalog filter1={menuLinks} />}>
-            <Route path="/catalog/:id" element={<Catalog />} />
-          </Route>
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/search" element={<Search setSearchingItems={setSearchingItems} searchingItems={searchingItems} />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <ScrollToTop>
+          <Routes>
+            <Route path="/" index element={<Main />} />
+            <Route path="/catalog" element={<Catalog filter1={menuLinks} />}>
+              <Route path="/catalog/:id" element={<Catalog />} />
+            </Route>
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/search" element={<Search setSearchingItems={setSearchingItems} searchingItems={searchingItems} />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </ScrollToTop>
         <Footer setFilterLink={setFilterLink} />
       </DataContext.Provider>
     </div >

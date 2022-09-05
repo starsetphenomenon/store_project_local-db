@@ -387,6 +387,15 @@
 
 @media (max-width: 767px) {
     .catalog {
+        &_heading {
+
+            font-size: 19px;
+
+            p {
+                font-size: 12px;
+            }
+        }
+
         .header {
             .bg {
                 img {
@@ -407,6 +416,16 @@
 
 @media (max-width: 575px) {
     .catalog {
+        &_heading {
+            flex-direction: column;
+            gap: 15px;
+            font-size: 19px;
+
+            p {
+                font-size: 12px;
+            }
+        }
+
         .content {
             flex-direction: column;
 

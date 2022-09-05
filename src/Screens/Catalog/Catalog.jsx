@@ -9,13 +9,12 @@ import { DataContext } from '../../App';
 function Catalog({ filter1 }) {
 
     const filterMaterial = ['Все', 'Сталь', 'Нержавеющая сталь', 'Титан', 'Дерево'];
-
     let { data, filterLink } = useContext(DataContext);
+
     const [pageTitle, setPageTitle] = useState('Ножи')
     const [filterData, setFilterData] = useState(data);
     const [filter, setFilter] = useState({
-        filter1: 'Ножи',
-        filter2: ''
+        filter: 'Ножи',
     });
     const [priceRange, setPriceRange] = useState({
         min: 0,
@@ -23,7 +22,7 @@ function Catalog({ filter1 }) {
     });
 
     useEffect(() => {
-        setFilter({ filter1: filterLink })
+        setFilter({ filter: filterLink }) // filterLink = link from MENU or FOOTER ~~~~~~~~~~~
     }, [filterLink])
 
     useEffect(() => {
@@ -31,7 +30,7 @@ function Catalog({ filter1 }) {
         getPriceRange(data)
     }, [data]);
 
-    const handleFilter = (e) => { // handle TYPE filters ~~~~~~~~~~     
+    const handleFilter = (e) => { // handle TYPE filters ~~~~~~~~~~           
         if (e.target.getAttribute('value') === 'Все') {
             setFilter({
                 ...filter,
@@ -40,10 +39,9 @@ function Catalog({ filter1 }) {
         } else {
             setFilter({
                 ...filter,
-                [e.target.getAttribute('name')]: e.target.getAttribute('value').toLowerCase(),
+                [e.target.getAttribute('name')]: e.target.getAttribute('value'),
             })
         }
-
     }
 
     const handleStatus = (e) => { // handle STATUS filter ~~~~~~~~~~
@@ -55,17 +53,17 @@ function Catalog({ filter1 }) {
         } else {
             setFilter({
                 ...filter,
-                filterStatus: e.target.getAttribute('id').toLowerCase(),
+                filterStatus: e.target.getAttribute('id'),
             })
         }
     }
 
-    const handleAllFilters = (filter, db) => { // handle All filters ~~~~~~~~~~
+    const handleAllFilters = (filter, db) => { // handle All filters ~~~~~~~~~~            
         let result = [];
         let filterIsPassed = [];
         db.filter(el => {
             Object.values(filter).forEach(filter => {
-                if (JSON.stringify(el).toLowerCase().includes(filter)) {
+                if (JSON.stringify(el).toLowerCase().includes(filter.toLowerCase())) {
                     filterIsPassed.push(1) // filter match
                 } else {
                     filterIsPassed.push(0) // filter failed
@@ -126,7 +124,7 @@ function Catalog({ filter1 }) {
         }
     }
 
-    const resetFilters = () =>{
+    const resetFilters = () => {
         setFilter({});
     }
 

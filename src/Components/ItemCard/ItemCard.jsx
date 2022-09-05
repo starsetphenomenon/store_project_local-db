@@ -4,7 +4,7 @@ import { DataContext } from '../../App';
 
 function ItemCard({ data: item, className }) {
 
-    const { data, setData, cart, setCart } = useContext(DataContext);
+    const { data, setData, cart, setCart, setStorage } = useContext(DataContext);
     const [counter, setCounter] = useState(0);
 
     const addToCart = (e) => {
@@ -20,8 +20,9 @@ function ItemCard({ data: item, className }) {
             item = { ...item, amount: 1, counter: 1 };
             result.push(item);
             setCart(result);
+            setStorage('cart', result)
         }
-        let newData = data.map(el => { // set counter of item do DATA
+        let newData = data.map(el => { // set counter of item to DATA
             if (+el.id === +e.currentTarget.id) {
                 return el = {
                     ...el,

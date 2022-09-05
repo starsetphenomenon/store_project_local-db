@@ -112,6 +112,7 @@
             position: relative;
 
             .totalCartItems {
+                z-index: -1;
                 position: absolute;
                 bottom: 0px;
                 right: 5px;
