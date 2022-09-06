@@ -13,14 +13,16 @@ export default function Review({ data: revDB, currentItemID }) {
 
     useEffect(() => {
         setReviews(revDB);
-        console.log(data)
     }, [revDB])
 
     const reviewInput = (e) => {
+        let date = new Date();
+
         setNewReview({
             ...newReview,
             [e.target.name]: e.target.value,
-            date: Date.now(),
+            date: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
+            time: `${date.getHours()}:${date.getMinutes()}`,
         });
     }
 
@@ -31,10 +33,22 @@ export default function Review({ data: revDB, currentItemID }) {
             ...reviews,
             newReview
         ];
-        setData([
+        newData = [
             ...newData,
             item,
-        ])
+        ]
+        setData(newData); // new data with reviews ~~~~~~~~~~~~~~
+        fetch('http://localhost:3001/updateItem', { // sending new data to server ~~~~~~~~~~~~~~~
+            method: 'POST',
+            body: JSON.stringify(newData),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            }
+        })
+            .then(res => res.json())
+            .then(db => {
+                setData(db)
+            });
     }
 
     return (
@@ -43,7 +57,11 @@ export default function Review({ data: revDB, currentItemID }) {
                 {reviews?.map(review => {
                     return (
                         <div key={review.date} className="item">
-                            <div className="name">{review.name}</div>
+                            <div className="name">{review.name}
+                                <div className="date">
+                                    <span>{review.date}</span>
+                                    <span>{review.time}</span></div>
+                            </div>
                             <div className="msg">{review.message}</div>
                         </div>
                     )

@@ -27,7 +27,7 @@
             box-shadow: 2px -2px 4px black;
             padding: 30px 5%;
             border-radius: 8px;
-            color: rgba(255, 255, 255, 0.6);    
+            color: rgba(255, 255, 255, 0.6);
 
             .name {
                 padding-bottom: 15px;
@@ -38,6 +38,28 @@
                 font-size: 24px;
                 line-height: 28px;
                 text-transform: uppercase;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+                .date {
+                    padding-top: 15px;
+                    font-family: 'Montserrat';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 19px;
+                    line-height: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-end;
+                    gap: 10px;
+                    :first-child{
+                        padding-bottom: 10px;
+                        border-bottom: 1px dashed #fff;
+                    }
+                }
             }
 
             .msg {
@@ -73,7 +95,7 @@
             font-style: normal;
             font-weight: 600;
             font-size: 14px;
-            line-height: 17px;         
+            line-height: 17px;
             text-align: center;
             text-transform: uppercase;
             color: #FFFFFF;

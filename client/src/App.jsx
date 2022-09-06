@@ -45,7 +45,7 @@ function App() {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    fetch("data/data.json")
+    fetch("http://localhost:3001/dataBase")
       .then((response) => response.json())
       .then((result) => {
         setData(result);
