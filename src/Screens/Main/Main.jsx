@@ -15,16 +15,21 @@ function Main() {
         setDataByType(data)
     }, [data])
 
+
+    const [activeStatus, setActiveStatus] = useState('Popular'); // set Active class to link and style
     const filterDataByStatus = (e) => {
         setDataByStatus(data.filter(el => el.status === e.target.getAttribute('value')));
+        setActiveStatus(e.target.getAttribute('value'))
     }
 
+    const [activeType, setActiveType] = useState(''); // set Active class to link and style
     const filterDataByType = (e) => {
         if (e.currentTarget.getAttribute('value') === 'Складные' || e.currentTarget.getAttribute('value') === 'Кухонные') {
             setDataByType(data.filter(el => el.topic.toLowerCase().includes(e.currentTarget.getAttribute('value').toLowerCase())));
         } else {
             setDataByType(data.filter(el => el.type.toLowerCase().includes(e.currentTarget.getAttribute('value').toLowerCase())));
         }
+        setActiveType(e.currentTarget.getAttribute('id') + '')
     }
 
     const navigateToCollection = () => {
@@ -36,25 +41,25 @@ function Main() {
             <Slider slides={mainSlides} />
             <div className="main-wrapper">
                 <div className="menu-list block-hidden">
-                    <div className="menu-element" value="Кухонные" onClick={filterDataByType}>
+                    <div className={activeType === '1' ? 'menu-element-item active' : 'menu-element-item'} id='1' value="Кухонные" onClick={filterDataByType}>
                         <div className="menu-element-item">
                             <img alt="itemKnife" className="svg" src='./assets/icons/knife.svg'></img>
                         </div>
                         <div className="menu-element-item">Кухонные ножи</div>
                     </div>
-                    <div className="menu-element" value="Складные" onClick={filterDataByType}>
+                    <div className={activeType === '2' ? 'menu-element-item active' : 'menu-element-item'} id='2' value="Складные" onClick={filterDataByType}>
                         <div className="menu-element-item">
                             <img alt="itemKnife" className="svg" src='./assets/icons/grey-knifes.svg'></img>
                         </div>
                         <div className="menu-element-item">Складные ножи</div>
                     </div>
-                    <div className="menu-element" value="Точилки" onClick={filterDataByType}>
+                    <div className={activeType === '3' ? 'menu-element-item active' : 'menu-element-item'} id='3' value="Точилки" onClick={filterDataByType}>
                         <div className="menu-element-item">
                             <img alt="itemKnife" className="svg" src='./assets/icons/red-knifes.svg'></img>
                         </div>
                         <div className="menu-element-item">Точилки для ножей</div>
                     </div>
-                    <div className="menu-element" value="Аксессуары" onClick={filterDataByType}>
+                    <div className={activeType === '4' ? 'menu-element-item active' : 'menu-element-item'} id='4' value="Аксессуары" onClick={filterDataByType}>
                         <div className="menu-element-item">
                             <img alt="itemKnife" className="svg" src='./assets/icons/cookHat.svg'></img>
                         </div>
@@ -75,10 +80,7 @@ function Main() {
                     <div className="collection-knives-min">
                         <img className="knives-min" alt="collectionKnives" src="../assets/img/main/collectionKnives.png" />
                     </div>
-                </div>
-                <div className="hidden accessories">
-                    <h3>Аксессуары</h3>
-                </div>
+                </div>           
                 <div className="collection-item">
                     <div className="banner block-hidden">
                         <img className="banner-img" src='../assets/img/main/banner.png' alt='banner'></img>
@@ -90,19 +92,19 @@ function Main() {
                         </div>
                     </div>
                     {dataByType.map(item => {
-                        return <ItemCard key={item.id} data={item} status={item.status} />
+                        return <ItemCard itemId={item.id} key={item.id} data={item} />
                     })}
                 </div>
             </div>
             <div className="line"></div>
             <div className="main-wrapper">
                 <div className="switcher-new-popular">
-                    <h3 value="New" onClick={filterDataByStatus} className="new">НОВИНКИ</h3>
-                    <h3 value="Popular" onClick={filterDataByStatus}>ПОПУЛЯРНОЕ</h3>
+                    <h3 value="New" onClick={filterDataByStatus} className={activeStatus === 'New' ? 'new active' : 'new'}>НОВИНКИ</h3>
+                    <h3 value="Popular" onClick={filterDataByStatus} className={activeStatus === 'Popular' ? 'active' : ''}>ПОПУЛЯРНОЕ</h3>
                 </div>
                 <div className="collection-item">
                     {dataByStatus.map(item => {
-                        return <ItemCard key={item.id} data={item} status={item.status} />
+                        return <ItemCard itemId={item.id} key={item.id} data={item} />
                     })}
                 </div>
             </div>

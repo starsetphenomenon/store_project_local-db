@@ -9,6 +9,7 @@ import Cart from './Screens/Cart/Cart';
 import NotFound from './Screens/NotFound/NotFound.jsx';
 import Search from './Screens/Search/Search.jsx';
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
+import TestPage from './Screens/TestPage/TestPage.jsx';
 import { useState, useEffect, createContext } from 'react';
 import { Routes, Route } from "react-router-dom";
 
@@ -93,9 +94,8 @@ function App() {
         <ScrollToTop>
           <Routes>
             <Route path="/" index element={<Main />} />
-            <Route path="/catalog" element={<Catalog filter1={menuLinks} />}>
-              <Route path="/catalog/:id" element={<Catalog />} />
-            </Route>
+            <Route path="/catalog" element={<Catalog filter1={menuLinks} />} />
+            <Route path="/:id" element={<TestPage />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/search" element={<Search setSearchingItems={setSearchingItems} searchingItems={searchingItems} />} />
             <Route path="*" element={<NotFound />} />
