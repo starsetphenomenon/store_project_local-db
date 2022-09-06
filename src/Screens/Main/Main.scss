@@ -70,7 +70,22 @@ a {
         color: #fff;
 
         &:hover {
+            .menu-element-item {
+                opacity: 100%;
+            }
+        }
+    }
+
+    .menu-element-item.active {
+        .svg {
+            filter: brightness(0) saturate(100%) invert(12%) sepia(97%) saturate(6206%) hue-rotate(0deg) brightness(107%) contrast(114%);
+        }
+
+        opacity: 100%;
+
+        .menu-element-item {
             color: $hoverBasic;
+            opacity: 100%;
         }
     }
 }
@@ -85,14 +100,12 @@ a {
     }
 
     &-item {
-        color: $hoverBasic;
         opacity: 100%;
     }
 
     &:hover {
         .menu-element-item {
-            color: $hoverBasic;
-            opacity: 1;
+            opacity: 100%;
         }
     }
 }
@@ -135,7 +148,8 @@ a {
             width: 100%;
             transform-origin: left;
             cursor: pointer;
-            &:hover{
+
+            &:hover {
                 transform: scaleX(2);
             }
         }
@@ -191,6 +205,19 @@ a {
                 height: 2px;
                 background-color: #C80000;
             }
+        }
+    }
+
+    h3.active {
+        opacity: 1;
+
+        &::before {
+            @include pseudo;
+            top: 21px;
+            left: 1px;
+            width: 100%;
+            height: 2px;
+            background-color: #C80000;
         }
     }
 

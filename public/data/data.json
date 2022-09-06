@@ -26,7 +26,19 @@
                     "./assets/img/knifeCatalog.png"
                 ]
             }
-        }
+        },
+        "reviews": [
+            {
+                "name": "John Doe",
+                "message": "Lorem ipsum message for item reveiw....",
+                "date": "15/11/2022"
+            },
+            {
+                "name": "Gordon Levitt",
+                "message": "Some other review for item....",
+                "date": "5/04/2022"
+            }
+        ]
     },
     {
         "id": "6",
@@ -55,7 +67,14 @@
                     "./assets/img/knifeCatalog.png"
                 ]
             }
-        }
+        },
+        "reviews": [
+            {
+                "name": "John Doe",
+                "message": "Lorem ipsum message for item reveiw....",
+                "date": "15/11/2022"
+            }
+        ]
     },
     {
         "id": "25",
@@ -84,7 +103,14 @@
                     "./assets/img/knifeCatalog.png"
                 ]
             }
-        }
+        },
+        "reviews": [
+            {
+                "name": "John Doe",
+                "message": "Lorem ipsum message for item reveiw....",
+                "date": "15/11/2022"
+            }
+        ]
     },
     {
         "id": "9",
@@ -113,7 +139,14 @@
                     "./assets/img/knifeCatalog.png"
                 ]
             }
-        }
+        },
+        "reviews": [
+            {
+                "name": "John Doe",
+                "message": "Lorem ipsum message for item reveiw....",
+                "date": "15/11/2022"
+            }
+        ]
     },
     {
         "id": "10",
@@ -142,7 +175,14 @@
                     "./assets/img/knifeCatalog.png"
                 ]
             }
-        }
+        },
+        "reviews": [
+            {
+                "name": "John Doe",
+                "message": "Lorem ipsum message for item reveiw....",
+                "date": "15/11/2022"
+            }
+        ]
     },
     {
         "id": "11",
@@ -171,7 +211,14 @@
                     "./assets/img/knifeCatalog.png"
                 ]
             }
-        }
+        },
+        "reviews": [
+            {
+                "name": "John Doe",
+                "message": "Lorem ipsum message for item reveiw....",
+                "date": "15/11/2022"
+            }
+        ]
     },
     {
         "id": "12",
@@ -200,7 +247,14 @@
                     "./assets/img/knifeCatalog.png"
                 ]
             }
-        }
+        },
+        "reviews": [
+            {
+                "name": "John Doe",
+                "message": "Lorem ipsum message for item reveiw....",
+                "date": "15/11/2022"
+            }
+        ]
     },
     {
         "id": "13",
@@ -228,7 +282,14 @@
                     "./assets/img/knifeCatalog.png"
                 ]
             }
-        }
+        },
+        "reviews": [
+            {
+                "name": "John Doe",
+                "message": "Lorem ipsum message for item reveiw....",
+                "date": "15/11/2022"
+            }
+        ]
     },
     {
         "id": "14",
@@ -256,7 +317,14 @@
                     "./assets/img/knifeCatalog.png"
                 ]
             }
-        }
+        },
+        "reviews": [
+            {
+                "name": "John Doe",
+                "message": "Lorem ipsum message for item reveiw....",
+                "date": "15/11/2022"
+            }
+        ]
     },
     {
         "id": "15",
@@ -284,7 +352,14 @@
                     "./assets/img/knifeCatalog.png"
                 ]
             }
-        }
+        },
+        "reviews": [
+            {
+                "name": "John Doe",
+                "message": "Lorem ipsum message for item reveiw....",
+                "date": "15/11/2022"
+            }
+        ]
     },
     {
         "id": "16",
@@ -312,7 +387,14 @@
                     "./assets/img/knifeCatalog.png"
                 ]
             }
-        }
+        },
+        "reviews": [
+            {
+                "name": "John Doe",
+                "message": "Lorem ipsum message for item reveiw....",
+                "date": "15/11/2022"
+            }
+        ]
     },
     {
         "id": "17",
@@ -339,7 +421,14 @@
                     "./assets/img/knifeCatalog.png"
                 ]
             }
-        }
+        },
+        "reviews": [
+            {
+                "name": "John Doe",
+                "message": "Lorem ipsum message for item reveiw....",
+                "date": "15/11/2022"
+            }
+        ]
     },
     {
         "id": "18",
@@ -366,7 +455,14 @@
                     "./assets/img/knifeCatalog.png"
                 ]
             }
-        }
+        },
+        "reviews": [
+            {
+                "name": "John Doe",
+                "message": "Lorem ipsum message for item reveiw....",
+                "date": "15/11/2022"
+            }
+        ]
     },
     {
         "id": "19",
@@ -393,7 +489,14 @@
                     "./assets/img/knifeCatalog.png"
                 ]
             }
-        }
+        },
+        "reviews": [
+            {
+                "name": "John Doe",
+                "message": "Lorem ipsum message for item reveiw....",
+                "date": "15/11/2022"
+            }
+        ]
     },
     {
         "id": "20",
@@ -420,7 +523,14 @@
                     "./assets/img/knifeCatalog.png"
                 ]
             }
-        }
+        },
+        "reviews": [
+            {
+                "name": "John Doe",
+                "message": "Lorem ipsum message for item reveiw....",
+                "date": "15/11/2022"
+            }
+        ]
     },
     {
         "id": "21",
@@ -447,7 +557,14 @@
                     "./assets/img/knifeCatalog.png"
                 ]
             }
-        }
+        },
+        "reviews": [
+            {
+                "name": "John Doe",
+                "message": "Lorem ipsum message for item reveiw....",
+                "date": "15/11/2022"
+            }
+        ]
     },
     {
         "id": "22",
@@ -474,7 +591,14 @@
                     "./assets/img/knifeCatalog.png"
                 ]
             }
-        }
+        },
+        "reviews": [
+            {
+                "name": "John Doe",
+                "message": "Lorem ipsum message for item reveiw....",
+                "date": "15/11/2022"
+            }
+        ]
     },
     {
         "id": "23",
@@ -501,7 +625,14 @@
                     "./assets/img/knifeCatalog.png"
                 ]
             }
-        }
+        },
+        "reviews": [
+            {
+                "name": "John Doe",
+                "message": "Lorem ipsum message for item reveiw....",
+                "date": "15/11/2022"
+            }
+        ]
     },
     {
         "id": "24",
@@ -528,6 +659,13 @@
                     "./assets/img/knifeCatalog.png"
                 ]
             }
-        }
+        },
+        "reviews": [
+            {
+                "name": "John Doe",
+                "message": "Lorem ipsum message for item reveiw....",
+                "date": "15/11/2022"
+            }
+        ]
     }
 ]

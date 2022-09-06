@@ -1,0 +1,138 @@
+.reviews {
+    background: #373737;
+    height: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    padding: 60px 10%;
+
+    .items,
+    .add {
+        width: 70%;
+    }
+
+    .items {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 30px;
+        padding: 60px 0;
+
+        .item {
+            width: 90%;
+            box-shadow: 2px -2px 4px black;
+            padding: 30px 5%;
+            border-radius: 8px;
+            color: rgba(255, 255, 255, 0.6);    
+
+            .name {
+                padding-bottom: 15px;
+                border-bottom: 1px solid #fff;
+                font-family: 'Jura';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 28px;
+                text-transform: uppercase;
+            }
+
+            .msg {
+                padding-top: 15px;
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 19px;
+                line-height: 20px;
+            }
+        }
+    }
+
+    .add {
+        border-top: 1px solid #000;
+        padding: 60px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 30px;
+        color: #fff;
+        box-shadow: 2px 2px 4px black;
+        border-radius: 8px;
+
+        button {
+            width: 90%;
+            height: 40px;
+            padding: 10px 15px;
+            background: #C80000;
+            border-radius: 27px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;         
+            text-align: center;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            border: none;
+            cursor: pointer;
+        }
+
+        h3 {
+            width: auto;
+            font-family: 'Jura';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 28px;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 0 auto;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 20px;
+        }
+
+        .revName,
+        .revMsg {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 20px;
+
+            label {
+                margin-left: 15px;
+            }
+
+            input,
+            textarea {
+                width: 90%;
+                background: transparent;
+                color: #fff;
+                padding: 15px 5% 15px 15px;
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 19px;
+                line-height: 20px;
+                border-radius: 8px;
+                resize: none;
+            }
+        }
+
+        .revName,
+        .revMsg {
+            padding-bottom: 15px;
+            font-family: 'Jura';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 28px;
+            text-transform: uppercase;
+        }
+    }
+}

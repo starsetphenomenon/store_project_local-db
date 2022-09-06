@@ -61,8 +61,8 @@ function Header({ menuVisibility, setSearchingItems }) {
             </div>
             <div className="right">
                 <div className="cart">
-                    <div className="totalCartItems">{totalCartItems}</div>
-                    <Link to="cart">
+                    <Link to="/cart" className="totalCartItems">{totalCartItems}</Link>
+                    <Link to="/cart">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M11.9681 2C12.3023 2.06645 12.6486 2.11245 12.9767 2.20446C14.8663 2.75139 16.0632 
                             4.0855 16.1908 5.76719C16.1908 5.79786 16.203 5.82853 16.2091 5.88987C16.2941 5.88987 16.3792

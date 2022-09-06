@@ -112,7 +112,6 @@
             position: relative;
 
             .totalCartItems {
-                z-index: -1;
                 position: absolute;
                 bottom: 0px;
                 right: 5px;
@@ -126,7 +125,7 @@
                 border-radius: 4px;
                 display: flex;
                 justify-content: center;
-                align-items: center;
+                align-items: center;                
             }
         }
 

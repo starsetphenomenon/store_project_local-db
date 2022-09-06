@@ -1,9 +1,11 @@
 import './ItemCard.scss';
 import { useContext, useState } from 'react';
 import { DataContext } from '../../App';
+import { useNavigate } from 'react-router-dom';
 
-function ItemCard({ data: item, className }) {
+function ItemCard({ data: item, className, itemId }) {
 
+    let navigate = useNavigate();
     const { data, setData, cart, setCart, setStorage } = useContext(DataContext);
     const [counter, setCounter] = useState(0);
 
@@ -22,7 +24,7 @@ function ItemCard({ data: item, className }) {
             setCart(result);
             setStorage('cart', result)
         }
-        let newData = data.map(el => { // set counter of item to DATA
+        let newData = data.map(el => { // set counter of item to DATA ~~~~~~~~~~
             if (+el.id === +e.currentTarget.id) {
                 return el = {
                     ...el,
@@ -33,11 +35,15 @@ function ItemCard({ data: item, className }) {
             }
         })
         setData(newData);
-        setCart([...cart]);
+        setCart([...cart]); // force rerender for counter ~~~~~~~~~
+    }
+
+    const goToItemPage = (e) => {
+        navigate(`/itemID_#${e.currentTarget.getAttribute('id')}`);
     }
 
     return (
-        <div className={className}>
+        <div id={itemId} onClick={goToItemPage} className={className}>
             <div className="item-img" >
                 <div className='img-wrapper'>
                     <img alt="itemKnife" src={item.img.title}></img>

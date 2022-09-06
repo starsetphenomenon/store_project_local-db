@@ -180,7 +180,7 @@ function Catalog({ filter1 }) {
                 <div className="items">
                     <div className="items__wrapper">
                         {filterData.map(item => {
-                            return <ItemCard data={item} key={item.id} className={'item-card-catalog'} status={item.status} />
+                            return <ItemCard itemId={item.id} data={item} key={item.id} className={'item-card-catalog'} status={item.status} />
                         })}
                     </div>
                 </div>
