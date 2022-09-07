@@ -9,13 +9,47 @@ import Cart from './Screens/Cart/Cart';
 import NotFound from './Screens/NotFound/NotFound.jsx';
 import Search from './Screens/Search/Search.jsx';
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
-import TestPage from './Screens/TestPage/TestPage.jsx';
 import { useState, useEffect, createContext } from 'react';
 import { Routes, Route } from "react-router-dom";
+import ItemPage from './Screens/ItemPage/ItemPage.jsx';
 
 export const DataContext = createContext();
 
 function App() {
+
+  // ADD TO CART FUNCTION ~~~~~~~~~~~~~~~~~~~~
+
+  const addToCart = (target, data, counter, setCounter) => {
+    setCounter(prev => prev + 1);
+    let result = cart;
+    let elemId = target.id;
+    let item = data.find(item => +item.id === +elemId);
+    if (result.some(el => +el.id === +elemId)) { // if Cart elem already exist, then just ++amount of elem ~~~~~~~~
+      let amountItem = result.find(e => +e.id === +elemId);
+      amountItem.amount++;
+      amountItem.counter++;
+    } else {
+      item = { ...item, amount: 1, counter: 1 };
+      result.push(item);
+      setCart(result);
+      setStorage('cart', result)
+    }
+    let newData = data.map(el => { // set counter of item to DATA ~~~~~~~~~~
+      if (+el.id === +target.id) {
+        return el = {
+          ...el,
+          counter: counter + 1,
+        }
+      } else {
+        return el;
+      }
+    })
+    setData(newData);
+    setStorage('cart', cart)
+    setCart([...cart]); // force rerender for counter ~~~~~~~~~
+  }
+
+  // ADD TO CART FUNCTION ~~~~~~~~~~~~~~~~~~~~
 
   // Local Storage ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -28,10 +62,7 @@ function App() {
   }
 
   const checkStorage = (key) => {
-    if (JSON.parse(localStorage.getItem(key)) === null) {
-      return false;
-    }
-    return true;
+    return (JSON.parse(localStorage.getItem(key)) !== 'undefined' || JSON.parse(localStorage.getItem(key)).length);
   }
 
   // Local Storage ~~~~~~~~~~~~~~~~~~~~~~
@@ -63,8 +94,8 @@ function App() {
         [el.type]: el.topic,
       })
     })
-    let slider = data.filter(el => el.status === 'New')
-    slider.forEach(el => { // main slider slides
+    let slide = data.filter(el => el.status === 'New')
+    slide.forEach(el => { // main slider slides
       slides.push({
         price: el.price,
         title: el.title,
@@ -88,14 +119,14 @@ function App() {
   return (
 
     <div className="App">
-      <DataContext.Provider value={{ data, setData, mainSlides, filterLink, cart, setCart, getStorage, setStorage, checkStorage }}>
+      <DataContext.Provider value={{ addToCart, data, setData, mainSlides, filterLink, cart, setCart, getStorage, setStorage, checkStorage }}>
         <Header setSearchingItems={setSearchingItems} menuVisibility={handleMenuVisibility} />
         <Menu menuLinks={menuLinks} setFilterLink={setFilterLink} menuSubLinks={menuSubLinks} menuStatus={menu} menuVisibility={handleMenuVisibility} />
         <ScrollToTop>
           <Routes>
             <Route path="/" index element={<Main />} />
             <Route path="/catalog" element={<Catalog filter1={menuLinks} />} />
-            <Route path="/:id" element={<TestPage />} />
+            <Route path="/:id" element={<ItemPage />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/search" element={<Search setSearchingItems={setSearchingItems} searchingItems={searchingItems} />} />
             <Route path="*" element={<NotFound />} />

@@ -16,8 +16,7 @@ $hoverPluc: #C80000;
     width: 30.8%;
 }
 
-.item-img {
-    cursor: pointer;
+.item-img {   
     -webkit-tap-highlight-color: transparent;
     position: relative;
     display: flex;
@@ -29,10 +28,12 @@ $hoverPluc: #C80000;
     margin-bottom: 12px;
     border-radius: 14px;
     transition-duration: 0.3s;
+    z-index: 0;
 
     .img-wrapper {
         width: 90%;
         height: 300px;
+        cursor: pointer;
 
         img {
             width: 100%;
@@ -64,7 +65,9 @@ $hoverPluc: #C80000;
     align-items: center;
     justify-content: center;
     transition-duration: 0.2s;
+    z-index: 10;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 
     &:hover {
         width: 72px;

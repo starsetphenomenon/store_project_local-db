@@ -9,6 +9,16 @@
     gap: 30px;
     padding: 60px 10%;
 
+    .title {
+        font-family: 'Jura';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 10px;
+    }
+
     .items,
     .add {
         width: 70%;
@@ -20,43 +30,66 @@
         justify-content: flex-start;
         align-items: flex-start;
         gap: 30px;
-        padding: 60px 0;
+        padding: 30px 0;
+
+        .worst {
+            box-shadow: 2px -2px 4px lightcoral !important;
+        }
+
+        .best {
+            box-shadow: 2px -2px 4px lightgreen !important;
+        }
 
         .item {
             width: 90%;
-            box-shadow: 2px -2px 4px black;
-            padding: 30px 5%;
+            box-shadow: 2px -2px 4px rgba(255, 255, 255, 0.6);
+            padding: 15px 5%;
             border-radius: 8px;
             color: rgba(255, 255, 255, 0.6);
 
-            .name {
-                padding-bottom: 15px;
-                border-bottom: 1px solid #fff;
-                font-family: 'Jura';
-                font-style: normal;
-                font-weight: 500;
-                font-size: 24px;
-                line-height: 28px;
-                text-transform: uppercase;
+            .info {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
 
+                .name {
+                    padding-bottom: 15px;
+                    border-bottom: 1px solid #fff;
+                    font-family: 'Jura';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 24px;
+                    line-height: 28px;
+                    text-transform: uppercase;
+                }
+
                 .date {
-                    padding-top: 15px;
+                    padding-top: 5px;
                     font-family: 'Montserrat';
                     font-style: normal;
                     font-weight: 400;
-                    font-size: 19px;
+                    font-size: 14px;
                     line-height: 20px;
                     display: flex;
                     flex-direction: column;
                     justify-content: flex-start;
                     align-items: flex-end;
-                    gap: 10px;
-                    :first-child{
-                        padding-bottom: 10px;
+                    gap: 5px;
+
+                    .rates {
+                        display: flex;
+                        flex-direction: row;
+                        padding-bottom: 0 !important;
+
+                        :nth-child(-n+2) {
+                            padding-bottom: 0;
+                            border-bottom: none;
+                        }
+                    }
+
+                    :nth-child(-n+2) {
+                        padding-bottom: 5px;
                         border-bottom: 1px dashed #fff;
                     }
                 }
@@ -69,6 +102,7 @@
                 font-weight: 400;
                 font-size: 19px;
                 line-height: 20px;
+                padding-bottom: 5px;
             }
         }
     }
@@ -84,6 +118,33 @@
         color: #fff;
         box-shadow: 2px 2px 4px black;
         border-radius: 8px;
+
+        .rating {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            width: 90%;
+            gap: 15px;
+            font-size: 1.5rem;
+
+            .stars {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 5px;
+
+                .star {
+                    font-size: 32px;
+                    cursor: pointer;
+                }
+
+                .yellow {
+                    color: yellow;
+                }
+            }
+        }
 
         button {
             width: 90%;
@@ -101,6 +162,12 @@
             color: #FFFFFF;
             border: none;
             cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.6);
+                color: #000;
+            }
         }
 
         h3 {
@@ -155,6 +222,116 @@
             font-size: 24px;
             line-height: 28px;
             text-transform: uppercase;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .reviews {
+        .add {
+            padding: 30px;
+
+            h3 {
+                font-size: 22px;
+            }
+
+            .rating {
+                .stars {
+                    gap: 15px;
+
+                    .star {
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+
+        .revMsg,
+        .revName {
+            gap: 5px !important;
+        }
+
+        label {
+            font-size: 19px;
+        }
+
+        input,
+        textarea {
+            font-size: 17px;
+        }
+
+        .items {
+            .item {
+                padding: 10px 5%;
+
+                .info {
+                    margin-top: -15px;
+
+                    .name {
+                        font-size: 19px;
+                    }
+                }
+
+                .msg {
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .reviews {
+        .add {
+            h3 {
+                font-size: 19px;
+            }
+
+            .rating {
+                .stars {
+                    gap: 5px;
+
+                    .star {
+                        font-size: 19px;
+                    }
+                }
+            }
+        }
+
+        .revMsg,
+        .revName {
+            gap: 5px !important;
+        }
+
+        label {
+            font-size: 14px;
+        }
+
+        input,
+        textarea {
+            font-size: 14px !important;
+        }
+
+        .items {
+            .item {
+                padding: 10px 5%;
+
+                .info {
+                    margin-top: -15px;
+
+                    .name {
+                        font-size: 15px;
+                    }
+
+                    .date {
+                        font-size: 11px;
+                    }
+                }
+
+                .msg {
+                    font-size: 14px;
+                }
+            }
         }
     }
 }

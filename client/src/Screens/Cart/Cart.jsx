@@ -15,9 +15,12 @@ export default function Cart() {
 
     useEffect(() => {
         if (!cart.length && checkStorage('cart')) {
-            setCart(getStorage('cart'))
+            if (getStorage('cart').length > 0) {
+                setCart(getStorage('cart'))
+            } else {
+                return
+            }
         }
-
         let prices = [];
         let cartTotalPrice = cart.map(el => {  // get total price from Cart items ~~~~~~~~~~~
             return el = {
@@ -28,6 +31,7 @@ export default function Cart() {
         prices = cartTotalPrice.map(el => el.totalPrice);
         let totalPrices = prices.reduce((prev, curr) => prev + curr, 0);
         setTotalPrice(totalPrices);
+        setStorage('cart', cart)
     }, [cart])
 
     const [form, setForm] = useState({
@@ -111,6 +115,7 @@ export default function Cart() {
         let result = [];
         result = cart.filter(item => +item.id !== +e.currentTarget.id);
         setCart(result)
+        setStorage('cart', result)
     }
 
     return (
@@ -126,7 +131,7 @@ export default function Cart() {
             </div>
             <div className="mid">
                 <ul className="items">
-                    {cart.map(el => {
+                    {cart.length ? cart.map(el => {
                         return (
                             <li key={el.id} className="item">
                                 <div className="item_name">
@@ -142,7 +147,7 @@ export default function Cart() {
                                 </div>
                             </li>
                         )
-                    })}
+                    }) : null}
                 </ul>
                 <div className="total">
                     <h3>К оплате:</h3>
@@ -161,12 +166,12 @@ export default function Cart() {
                         <div className="info_item required">
                             <p className="name">Мобильный телефон</p>
                             <input pattern="\+?[0-9]{2,3}\s?[0-9]{2,3}\s?[0-9]{2,3}\s?[0-9]{2,4}$"
-                              value={formValue.tel}  name="tel" onChange={handleInputValidation} spellCheck="false" placeholder='+380___  __  __' type="tel" />
+                                value={formValue.tel} name="tel" onChange={handleInputValidation} spellCheck="false" placeholder='+380___  __  __' type="tel" />
                         </div>
                         <div className="info_item">
                             <p className="name">E-mail</p>
                             <input pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
-                              value={formValue.email}  name="email" onChange={handleInputValidation} spellCheck="false" placeholder='Ваша почта' type="email" />
+                                value={formValue.email} name="email" onChange={handleInputValidation} spellCheck="false" placeholder='Ваша почта' type="email" />
                         </div>
                     </div>
                     <div className="send">
