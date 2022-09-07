@@ -43,6 +43,7 @@ a {
 }
 
 .menu-list {
+    -webkit-tap-highlight-color: transparent;
     margin-top: 60px;
     display: flex;
     justify-content: space-between;
@@ -68,6 +69,7 @@ a {
         transition-duration: 0.2s;
         opacity: 40%;
         color: #fff;
+        -webkit-tap-highlight-color: transparent;
 
         &:hover {
             .menu-element-item {
@@ -314,7 +316,9 @@ a {
     bottom: 0;
     width: 100%;
     padding: 33px 0;
-    transition-duration: 0.3s;
+    transition: all 0.3s;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
 
     a {
         display: inline-block;
@@ -326,8 +330,6 @@ a {
 
     &:hover {
         background-color: $hoverBasic;
-        border-bottom-left-radius: 18px;
-        border-bottom-right-radius: 18px;
     }
 }
 

@@ -1,79 +1,5 @@
 [
   {
-    "id": "10",
-    "topic": "Кухонные ножи TUOTOWN",
-    "type": "Ножи",
-    "collection": "TUOTOWN",
-    "title": "Кухонный нож SQ01-B",
-    "price": 1125,
-    "status": "",
-    "bladeMaterial": "нержавеющая сталь Nitrum",
-    "bladeLength": "210",
-    "handleMaterial": "дерево",
-    "img": {
-      "mainSlider": "./assets/img/main/slideBanner.png",
-      "title": "./assets/items/kuhonnij/1.png",
-      "alt": "jackknife",
-      "itemPage": {
-        "product": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ],
-        "slider": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ]
-      }
-    },
-    "reviews": [
-      {
-        "name": "John Doe",
-        "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2022",
-        "time": "14:27"
-      }
-    ]
-  },
-  {
-    "id": "11",
-    "topic": "Кухонные ножи TUOTOWN",
-    "type": "Ножи",
-    "collection": "TUOTOWN",
-    "title": "Кухонный нож FT-B-1534",
-    "price": 3455,
-    "status": "New",
-    "bladeMaterial": "титан",
-    "bladeLength": "210",
-    "handleMaterial": "полиоксиметилен",
-    "img": {
-      "mainSlider": "./assets/items/mainSlider/mainSlider1.webp",
-      "title": "./assets/items/kuhonnij/2.png",
-      "alt": "jackknife",
-      "itemPage": {
-        "product": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ],
-        "slider": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ]
-      }
-    },
-    "reviews": [
-      {
-        "name": "John Doe",
-        "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2022",
-        "time": "14:27"
-      }
-    ]
-  },
-  {
     "id": "12",
     "topic": "Кухонные ножи TUOTOWN",
     "type": "Ножи",
@@ -88,25 +14,35 @@
       "mainSlider": "./assets/img/main/slideBanner.png",
       "title": "./assets/items/kuhonnij/3.png",
       "alt": "jackknife",
-      "itemPage": {
-        "product": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ],
-        "slider": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ]
-      }
+      "itemPageSlider": [
+        "./assets/items/slider/1.webp",
+        "./assets/items/slider/2.webp",
+        "./assets/items/slider/3.webp",
+        "./assets/items/slider/4.webp",
+        "./assets/items/slider/5.webp"
+      ]
     },
     "reviews": [
       {
         "name": "John Doe",
         "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2022",
-        "time": "14:27"
+        "date": "15/11/2021",
+        "time": "14:27",
+        "rating": 4
+      },
+      {
+        "name": "Elizabeth Vinigret",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/09/2021",
+        "time": "11:07",
+        "rating": 5
+      },
+      {
+        "name": "Northen Ethan",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "05/07/2022",
+        "time": "21:52",
+        "rating": 1
       }
     ]
   },
@@ -124,25 +60,35 @@
       "mainSlider": "./assets/img/main/slideBanner.png",
       "title": "./assets/items/nabor/1.png",
       "alt": "jackknife",
-      "itemPage": {
-        "product": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ],
-        "slider": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ]
-      }
+      "itemPageSlider": [
+        "./assets/items/slider/1.webp",
+        "./assets/items/slider/2.webp",
+        "./assets/items/slider/3.webp",
+        "./assets/items/slider/4.webp",
+        "./assets/items/slider/5.webp"
+      ]
     },
     "reviews": [
       {
         "name": "John Doe",
         "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2022",
-        "time": "14:27"
+        "date": "15/11/2021",
+        "time": "14:27",
+        "rating": 4
+      },
+      {
+        "name": "Elizabeth Vinigret",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/09/2021",
+        "time": "11:07",
+        "rating": 5
+      },
+      {
+        "name": "Northen Ethan",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "05/07/2022",
+        "time": "21:52",
+        "rating": 1
       }
     ]
   },
@@ -160,25 +106,35 @@
       "mainSlider": "./assets/img/main/slideBanner.png",
       "title": "./assets/items/nabor/2.png",
       "alt": "jackknife",
-      "itemPage": {
-        "product": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ],
-        "slider": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ]
-      }
+      "itemPageSlider": [
+        "./assets/items/slider/1.webp",
+        "./assets/items/slider/2.webp",
+        "./assets/items/slider/3.webp",
+        "./assets/items/slider/4.webp",
+        "./assets/items/slider/5.webp"
+      ]
     },
     "reviews": [
       {
         "name": "John Doe",
         "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2022",
-        "time": "14:27"
+        "date": "15/11/2021",
+        "time": "14:27",
+        "rating": 4
+      },
+      {
+        "name": "Elizabeth Vinigret",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/09/2021",
+        "time": "11:07",
+        "rating": 5
+      },
+      {
+        "name": "Northen Ethan",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "05/07/2022",
+        "time": "21:52",
+        "rating": 1
       }
     ]
   },
@@ -196,25 +152,35 @@
       "mainSlider": "./assets/img/main/slideBanner.png",
       "title": "./assets/items/nabor/3.png",
       "alt": "jackknife",
-      "itemPage": {
-        "product": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ],
-        "slider": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ]
-      }
+      "itemPageSlider": [
+        "./assets/items/slider/1.webp",
+        "./assets/items/slider/2.webp",
+        "./assets/items/slider/3.webp",
+        "./assets/items/slider/4.webp",
+        "./assets/items/slider/5.webp"
+      ]
     },
     "reviews": [
       {
         "name": "John Doe",
         "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2022",
-        "time": "14:27"
+        "date": "15/11/2021",
+        "time": "14:27",
+        "rating": 4
+      },
+      {
+        "name": "Elizabeth Vinigret",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/09/2021",
+        "time": "11:07",
+        "rating": 5
+      },
+      {
+        "name": "Northen Ethan",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "05/07/2022",
+        "time": "21:52",
+        "rating": 1
       }
     ]
   },
@@ -232,25 +198,35 @@
       "mainSlider": "./assets/items/mainSlider/mainSlider2.webp",
       "title": "./assets/items/nabor/4.png",
       "alt": "jackknife",
-      "itemPage": {
-        "product": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ],
-        "slider": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ]
-      }
+      "itemPageSlider": [
+        "./assets/items/slider/1.webp",
+        "./assets/items/slider/2.webp",
+        "./assets/items/slider/3.webp",
+        "./assets/items/slider/4.webp",
+        "./assets/items/slider/5.webp"
+      ]
     },
     "reviews": [
       {
         "name": "John Doe",
         "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2022",
-        "time": "14:27"
+        "date": "15/11/2021",
+        "time": "14:27",
+        "rating": 4
+      },
+      {
+        "name": "Elizabeth Vinigret",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/09/2021",
+        "time": "11:07",
+        "rating": 5
+      },
+      {
+        "name": "Northen Ethan",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "05/07/2022",
+        "time": "21:52",
+        "rating": 1
       }
     ]
   },
@@ -267,25 +243,35 @@
       "mainSlider": "./assets/img/main/slideBanner.png",
       "title": "./assets/items/tochilka/1.png",
       "alt": "jackknife",
-      "itemPage": {
-        "product": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ],
-        "slider": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ]
-      }
+      "itemPageSlider": [
+        "./assets/items/slider/1.webp",
+        "./assets/items/slider/2.webp",
+        "./assets/items/slider/3.webp",
+        "./assets/items/slider/4.webp",
+        "./assets/items/slider/5.webp"
+      ]
     },
     "reviews": [
       {
         "name": "John Doe",
         "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2022",
-        "time": "14:27"
+        "date": "15/11/2021",
+        "time": "14:27",
+        "rating": 4
+      },
+      {
+        "name": "Elizabeth Vinigret",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/09/2021",
+        "time": "11:07",
+        "rating": 5
+      },
+      {
+        "name": "Northen Ethan",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "05/07/2022",
+        "time": "21:52",
+        "rating": 1
       }
     ]
   },
@@ -302,25 +288,35 @@
       "mainSlider": "./assets/img/main/slideBanner.png",
       "title": "./assets/items/tochilka/2.png",
       "alt": "jackknife",
-      "itemPage": {
-        "product": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ],
-        "slider": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ]
-      }
+      "itemPageSlider": [
+        "./assets/items/slider/1.webp",
+        "./assets/items/slider/2.webp",
+        "./assets/items/slider/3.webp",
+        "./assets/items/slider/4.webp",
+        "./assets/items/slider/5.webp"
+      ]
     },
     "reviews": [
       {
         "name": "John Doe",
         "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2022",
-        "time": "14:27"
+        "date": "15/11/2021",
+        "time": "14:27",
+        "rating": 4
+      },
+      {
+        "name": "Elizabeth Vinigret",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/09/2021",
+        "time": "11:07",
+        "rating": 5
+      },
+      {
+        "name": "Northen Ethan",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "05/07/2022",
+        "time": "21:52",
+        "rating": 1
       }
     ]
   },
@@ -337,25 +333,35 @@
       "mainSlider": "./assets/items/mainSlider/mainSlider3.webp",
       "title": "./assets/items/tochilka/3.png",
       "alt": "jackknife",
-      "itemPage": {
-        "product": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ],
-        "slider": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ]
-      }
+      "itemPageSlider": [
+        "./assets/items/slider/1.webp",
+        "./assets/items/slider/2.webp",
+        "./assets/items/slider/3.webp",
+        "./assets/items/slider/4.webp",
+        "./assets/items/slider/5.webp"
+      ]
     },
     "reviews": [
       {
         "name": "John Doe",
         "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2022",
-        "time": "14:27"
+        "date": "15/11/2021",
+        "time": "14:27",
+        "rating": 4
+      },
+      {
+        "name": "Elizabeth Vinigret",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/09/2021",
+        "time": "11:07",
+        "rating": 5
+      },
+      {
+        "name": "Northen Ethan",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "05/07/2022",
+        "time": "21:52",
+        "rating": 1
       }
     ]
   },
@@ -372,25 +378,35 @@
       "mainSlider": "./assets/img/main/slideBanner.png",
       "title": "./assets/items/tochilka/4.png",
       "alt": "jackknife",
-      "itemPage": {
-        "product": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ],
-        "slider": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ]
-      }
+      "itemPageSlider": [
+        "./assets/items/slider/1.webp",
+        "./assets/items/slider/2.webp",
+        "./assets/items/slider/3.webp",
+        "./assets/items/slider/4.webp",
+        "./assets/items/slider/5.webp"
+      ]
     },
     "reviews": [
       {
         "name": "John Doe",
         "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2022",
-        "time": "14:27"
+        "date": "15/11/2021",
+        "time": "14:27",
+        "rating": 4
+      },
+      {
+        "name": "Elizabeth Vinigret",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/09/2021",
+        "time": "11:07",
+        "rating": 5
+      },
+      {
+        "name": "Northen Ethan",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "05/07/2022",
+        "time": "21:52",
+        "rating": 1
       }
     ]
   },
@@ -398,7 +414,7 @@
     "id": "21",
     "topic": "Дизайн",
     "type": "Аксессуары",
-    "collection": "Timer",
+    "collection": "Раритет",
     "title": "Кухонные часы",
     "price": 510,
     "status": "",
@@ -407,25 +423,35 @@
       "mainSlider": "./assets/img/main/slideBanner.png",
       "title": "./assets/items/accessories/1.png",
       "alt": "jackknife",
-      "itemPage": {
-        "product": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ],
-        "slider": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ]
-      }
+      "itemPageSlider": [
+        "./assets/items/slider/1.webp",
+        "./assets/items/slider/2.webp",
+        "./assets/items/slider/3.webp",
+        "./assets/items/slider/4.webp",
+        "./assets/items/slider/5.webp"
+      ]
     },
     "reviews": [
       {
         "name": "John Doe",
         "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2022",
-        "time": "14:27"
+        "date": "15/11/2021",
+        "time": "14:27",
+        "rating": 4
+      },
+      {
+        "name": "Elizabeth Vinigret",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/09/2021",
+        "time": "11:07",
+        "rating": 5
+      },
+      {
+        "name": "Northen Ethan",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "05/07/2022",
+        "time": "21:52",
+        "rating": 1
       }
     ]
   },
@@ -442,25 +468,35 @@
       "mainSlider": "./assets/img/main/slideBanner.png",
       "title": "./assets/items/accessories/2.png",
       "alt": "jackknife",
-      "itemPage": {
-        "product": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ],
-        "slider": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ]
-      }
+      "itemPageSlider": [
+        "./assets/items/slider/1.webp",
+        "./assets/items/slider/2.webp",
+        "./assets/items/slider/3.webp",
+        "./assets/items/slider/4.webp",
+        "./assets/items/slider/5.webp"
+      ]
     },
     "reviews": [
       {
         "name": "John Doe",
         "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2022",
-        "time": "14:27"
+        "date": "15/11/2021",
+        "time": "14:27",
+        "rating": 4
+      },
+      {
+        "name": "Elizabeth Vinigret",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/09/2021",
+        "time": "11:07",
+        "rating": 5
+      },
+      {
+        "name": "Northen Ethan",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "05/07/2022",
+        "time": "21:52",
+        "rating": 1
       }
     ]
   },
@@ -477,25 +513,35 @@
       "mainSlider": "./assets/img/main/slideBanner.png",
       "title": "./assets/items/accessories/3.png",
       "alt": "jackknife",
-      "itemPage": {
-        "product": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ],
-        "slider": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ]
-      }
+      "itemPageSlider": [
+        "./assets/items/slider/1.webp",
+        "./assets/items/slider/2.webp",
+        "./assets/items/slider/3.webp",
+        "./assets/items/slider/4.webp",
+        "./assets/items/slider/5.webp"
+      ]
     },
     "reviews": [
       {
         "name": "John Doe",
         "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2022",
-        "time": "14:27"
+        "date": "15/11/2021",
+        "time": "14:27",
+        "rating": 4
+      },
+      {
+        "name": "Elizabeth Vinigret",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/09/2021",
+        "time": "11:07",
+        "rating": 5
+      },
+      {
+        "name": "Northen Ethan",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "05/07/2022",
+        "time": "21:52",
+        "rating": 1
       }
     ]
   },
@@ -512,25 +558,35 @@
       "mainSlider": "./assets/items/mainSlider/mainSlider4.webp",
       "title": "./assets/items/accessories/4.png",
       "alt": "jackknife",
-      "itemPage": {
-        "product": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ],
-        "slider": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ]
-      }
+      "itemPageSlider": [
+        "./assets/items/slider/1.webp",
+        "./assets/items/slider/2.webp",
+        "./assets/items/slider/3.webp",
+        "./assets/items/slider/4.webp",
+        "./assets/items/slider/5.webp"
+      ]
     },
     "reviews": [
       {
         "name": "John Doe",
         "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2022",
-        "time": "14:27"
+        "date": "15/11/2021",
+        "time": "14:27",
+        "rating": 4
+      },
+      {
+        "name": "Elizabeth Vinigret",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/09/2021",
+        "time": "11:07",
+        "rating": 5
+      },
+      {
+        "name": "Northen Ethan",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "05/07/2022",
+        "time": "21:52",
+        "rating": 1
       }
     ]
   },
@@ -549,37 +605,49 @@
       "mainSlider": "./assets/img/main/slideBanner.png",
       "title": "./assets/items/skladnoj/1.png",
       "alt": "jackknife",
-      "itemPage": {
-        "product": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ],
-        "slider": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ]
-      }
+      "itemPageSlider": [
+        "./assets/items/slider/1.webp",
+        "./assets/items/slider/2.webp",
+        "./assets/items/slider/3.webp",
+        "./assets/items/slider/4.webp",
+        "./assets/items/slider/5.webp"
+      ]
     },
     "reviews": [
       {
         "name": "John Doe",
         "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2022",
-        "time": "14:27"
+        "date": "15/11/2021",
+        "time": "14:27",
+        "rating": 4
+      },
+      {
+        "name": "Elizabeth Vinigret",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/09/2021",
+        "time": "11:07",
+        "rating": 5
+      },
+      {
+        "name": "Northen Ethan",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "05/07/2022",
+        "time": "21:52",
+        "rating": 1
       },
       {
         "name": "Gordon Levitt",
         "message": "Some other review for item....",
         "date": "5/04/2022",
-        "time": "14:27"
+        "time": "14:27",
+        "rating": 3
       },
       {
         "name": "Bruce Wayne",
         "date": "6/8/2022",
         "time": "15:48",
-        "message": "Lorem ipsum message for item reveiw...."
+        "message": "Lorem ipsum message for item reveiw....",
+        "rating": 5
       }
     ]
   },
@@ -598,74 +666,42 @@
       "mainSlider": "./assets/img/main/slideBanner.png",
       "title": "./assets/img/knifeCatalog.png",
       "alt": "jackknife",
-      "itemPage": {
-        "product": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ],
-        "slider": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ]
-      }
+      "itemPageSlider": [
+        "./assets/items/slider/1.webp",
+        "./assets/items/slider/2.webp",
+        "./assets/items/slider/3.webp",
+        "./assets/items/slider/4.webp",
+        "./assets/items/slider/5.webp"
+      ]
     },
     "reviews": [
       {
         "name": "John Doe",
         "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2022",
-        "time": "14:27"
+        "date": "15/11/2021",
+        "time": "14:27",
+        "rating": 4
+      },
+      {
+        "name": "Elizabeth Vinigret",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/09/2021",
+        "time": "11:07",
+        "rating": 5
+      },
+      {
+        "name": "Northen Ethan",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "05/07/2022",
+        "time": "21:52",
+        "rating": 1
       },
       {
         "name": "Aragorn Lordof",
         "date": "6/8/2022",
         "time": "16:26",
-        "message": "tesssttsstst"
-      }
-    ]
-  },
-  {
-    "id": "25",
-    "topic": "Складные ножи TUOTOWN",
-    "type": "Ножи",
-    "collection": "TUOTOWN",
-    "title": "Складной нож FT-12P",
-    "price": 1620,
-    "status": "Popular",
-    "bladeMaterial": "сталь 440С",
-    "bladeLength": "86",
-    "handleMaterial": "пластик",
-    "img": {
-      "mainSlider": "./assets/img/main/slideBanner.png",
-      "title": "./assets/items/skladnoj/2.png",
-      "alt": "jackknife",
-      "itemPage": {
-        "product": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ],
-        "slider": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ]
-      }
-    },
-    "reviews": [
-      {
-        "name": "John Doe",
-        "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2022",
-        "time": "14:27"
-      },
-      {
-        "name": "Alice Wonderlander",
-        "date": "6/8/2022",
-        "time": "16:26",
-        "message": "teststtsst"
+        "message": "tesssttsstst",
+        "rating": 1
       }
     ]
   },
@@ -684,31 +720,204 @@
       "mainSlider": "./assets/img/main/slideBanner.png",
       "title": "./assets/items/skladnoj/3.png",
       "alt": "jackknife",
-      "itemPage": {
-        "product": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ],
-        "slider": [
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png",
-          "./assets/img/knifeCatalog.png"
-        ]
-      }
+      "itemPageSlider": [
+        "./assets/items/slider/1.webp",
+        "./assets/items/slider/2.webp",
+        "./assets/items/slider/3.webp",
+        "./assets/items/slider/4.webp",
+        "./assets/items/slider/5.webp"
+      ]
     },
     "reviews": [
       {
         "name": "John Doe",
         "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2022",
-        "time": "14:27"
+        "date": "15/11/2021",
+        "time": "14:27",
+        "rating": 4
+      },
+      {
+        "name": "Elizabeth Vinigret",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/09/2021",
+        "time": "11:07",
+        "rating": 5
+      },
+      {
+        "name": "Northen Ethan",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "05/07/2022",
+        "time": "21:52",
+        "rating": 1
       },
       {
         "name": "Peti Varosi",
         "date": "6/8/2022",
         "time": "16:28",
-        "message": "test msg"
+        "message": "test msg",
+        "rating": 5
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "topic": "Кухонные ножи TUOTOWN",
+    "type": "Ножи",
+    "collection": "TUOTOWN",
+    "title": "Кухонный нож SQ01-B",
+    "price": 1125,
+    "status": "",
+    "bladeMaterial": "нержавеющая сталь Nitrum",
+    "bladeLength": "210",
+    "handleMaterial": "дерево",
+    "img": {
+      "mainSlider": "./assets/img/main/slideBanner.png",
+      "title": "./assets/items/kuhonnij/1.png",
+      "alt": "jackknife",
+      "itemPageSlider": [
+        "./assets/items/slider/1.webp",
+        "./assets/items/slider/2.webp",
+        "./assets/items/slider/3.webp",
+        "./assets/items/slider/4.webp",
+        "./assets/items/slider/5.webp"
+      ]
+    },
+    "reviews": [
+      {
+        "name": "John Doe",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/11/2021",
+        "time": "14:27",
+        "rating": 4
+      },
+      {
+        "name": "Elizabeth Vinigret",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/09/2021",
+        "time": "11:07",
+        "rating": 5
+      },
+      {
+        "name": "Northen Ethan",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "05/07/2022",
+        "time": "21:52",
+        "rating": 1
+      },
+      {
+        "name": "Simon Baker",
+        "date": "6/8/2022",
+        "time": "16:54",
+        "message": "This item is awesome!\n",
+        "rating": 5
+      },
+      {
+        "name": "S. Niovan",
+        "date": "6/8/2022",
+        "time": "18:9",
+        "message": "msg.....",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "topic": "Кухонные ножи TUOTOWN",
+    "type": "Ножи",
+    "collection": "TUOTOWN",
+    "title": "Кухонный нож FT-B-1534",
+    "price": 3455,
+    "status": "New",
+    "bladeMaterial": "титан",
+    "bladeLength": "210",
+    "handleMaterial": "полиоксиметилен",
+    "img": {
+      "mainSlider": "./assets/items/mainSlider/mainSlider1.webp",
+      "title": "./assets/items/kuhonnij/2.png",
+      "alt": "jackknife",
+      "itemPageSlider": [
+        "./assets/items/slider/1.webp",
+        "./assets/items/slider/2.webp",
+        "./assets/items/slider/3.webp",
+        "./assets/items/slider/4.webp",
+        "./assets/items/slider/5.webp"
+      ]
+    },
+    "reviews": [
+      {
+        "name": "John Doe",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/11/2021",
+        "time": "14:27",
+        "rating": 4
+      },
+      {
+        "name": "Elizabeth Vinigret",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/09/2021",
+        "time": "11:07",
+        "rating": 5
+      },
+      {
+        "name": "Northen Ethan",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "05/07/2022",
+        "time": "21:52",
+        "rating": 1
+      }
+    ]
+  },
+  {
+    "id": "25",
+    "topic": "Складные ножи TUOTOWN",
+    "type": "Ножи",
+    "collection": "TUOTOWN",
+    "title": "Складной нож FT-12P",
+    "price": 1620,
+    "status": "Popular",
+    "bladeMaterial": "сталь 440С",
+    "bladeLength": "86",
+    "handleMaterial": "пластик",
+    "img": {
+      "mainSlider": "./assets/img/main/slideBanner.png",
+      "title": "./assets/items/skladnoj/2.png",
+      "alt": "jackknife",
+      "itemPageSlider": [
+        "./assets/items/slider/1.webp",
+        "./assets/items/slider/2.webp",
+        "./assets/items/slider/3.webp",
+        "./assets/items/slider/4.webp",
+        "./assets/items/slider/5.webp"
+      ]
+    },
+    "reviews": [
+      {
+        "name": "John Doe",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/11/2021",
+        "time": "14:27",
+        "rating": 4
+      },
+      {
+        "name": "Elizabeth Vinigret",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/09/2021",
+        "time": "11:07",
+        "rating": 5
+      },
+      {
+        "name": "Northen Ethan",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "05/07/2022",
+        "time": "21:52",
+        "rating": 1
+      },
+      {
+        "name": "Alice Wonderlander",
+        "date": "6/8/2022",
+        "time": "16:26",
+        "message": "teststtsst",
+        "rating": 2
       }
     ]
   }

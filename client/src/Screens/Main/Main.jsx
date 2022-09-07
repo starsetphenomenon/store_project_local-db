@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import './Main.scss';
 import { useContext, useState, useEffect } from "react";
 import Slider from "../../Components/Slider/Slider"
@@ -7,22 +8,26 @@ import { useNavigate } from 'react-router-dom';
 
 function Main() {
     let navigate = useNavigate();
-    const { data, mainSlides } = useContext(DataContext);
+    const { data, mainSlides, setCart, checkStorage, getStorage } = useContext(DataContext);
     const [dataByType, setDataByType] = useState([]);
     const [dataByStatus, setDataByStatus] = useState([]);
+
     useEffect(() => {
+        if (checkStorage('cart')) { // put cartStorage to CART if it's not empty ~~~~~~~~~~
+            setCart(getStorage('cart'))
+        }      
         setDataByStatus(data.filter(el => el.status === 'Popular'));
-        setDataByType(data)
+        setDataByType(data);        
     }, [data])
 
 
-    const [activeStatus, setActiveStatus] = useState('Popular'); // set Active class to link and style
+    const [activeStatus, setActiveStatus] = useState('Popular'); // set Active class to link and style ~~~~~~~~
     const filterDataByStatus = (e) => {
         setDataByStatus(data.filter(el => el.status === e.target.getAttribute('value')));
         setActiveStatus(e.target.getAttribute('value'))
     }
 
-    const [activeType, setActiveType] = useState(''); // set Active class to link and style
+    const [activeType, setActiveType] = useState(''); // set Active class to link and style ~~~~~~~~~~~~
     const filterDataByType = (e) => {
         if (e.currentTarget.getAttribute('value') === 'Складные' || e.currentTarget.getAttribute('value') === 'Кухонные') {
             setDataByType(data.filter(el => el.topic.toLowerCase().includes(e.currentTarget.getAttribute('value').toLowerCase())));
@@ -80,7 +85,7 @@ function Main() {
                     <div className="collection-knives-min">
                         <img className="knives-min" alt="collectionKnives" src="../assets/img/main/collectionKnives.png" />
                     </div>
-                </div>           
+                </div>
                 <div className="collection-item">
                     <div className="banner block-hidden">
                         <img className="banner-img" src='../assets/img/main/banner.png' alt='banner'></img>

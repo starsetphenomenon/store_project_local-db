@@ -1,61 +1,43 @@
 import './ItemCard.scss';
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { DataContext } from '../../App';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function ItemCard({ data: item, className, itemId }) {
 
     let navigate = useNavigate();
-    const { data, setData, cart, setCart, setStorage } = useContext(DataContext);
+    const { data, addToCart, checkStorage, setCart, getStorage } = useContext(DataContext);
     const [counter, setCounter] = useState(0);
 
-    const addToCart = (e) => {
-        setCounter(prev => prev + 1);
-        let result = cart;
-        let elemId = e.currentTarget.id;
-        let item = data.find(item => item.id === elemId);
-        if (result.some(el => el.id === elemId)) { // if Cart elem already exist, then just ++amount of elem ~~~~~~~~
-            let amountItem = result.find(e => e.id === elemId);
-            amountItem.amount++;
-            amountItem.counter++;
-        } else {
-            item = { ...item, amount: 1, counter: 1 };
-            result.push(item);
-            setCart(result);
-            setStorage('cart', result)
+    useEffect(()=>{
+        if (checkStorage('cart')) { // put cartStorage to CART if it's not empty ~~~~~~~~~~
+            setCart(getStorage('cart'))            
         }
-        let newData = data.map(el => { // set counter of item to DATA ~~~~~~~~~~
-            if (+el.id === +e.currentTarget.id) {
-                return el = {
-                    ...el,
-                    counter: counter + 1,
-                }
-            } else {
-                return el;
-            }
-        })
-        setData(newData);
-        setCart([...cart]); // force rerender for counter ~~~~~~~~~
+    },[item])
+
+    const handleAddToCart = (e) => {
+        addToCart(e.currentTarget, data, counter, setCounter);
     }
 
     const goToItemPage = (e) => {
+        e.stopPropagation();
         navigate(`/itemID_#${e.currentTarget.getAttribute('id')}`);
     }
 
     return (
-        <div id={itemId} onClick={goToItemPage} className={className}>
+        <div className={className}>
             <div className="item-img" >
-                <div className='img-wrapper'>
+                <div id={itemId} onClick={goToItemPage} className='img-wrapper'>
                     <img alt="itemKnife" src={item.img.title}></img>
                 </div>
-                <div id={item.id} onClick={addToCart} className="plus">
+                <div id={item.id} onClick={handleAddToCart} className="plus">
                     {item.counter ? <div className="counter">{item.counter}</div> : null}
                     <img alt="itemKnife" src='./assets/icons/plus.svg'></img>
                     <img alt="itemKnife" className="basket" src='./assets/icons/cart.svg'></img>
                 </div>
             </div>
             <div className="item-text">
-                <a alt="itemKnife" href=".">{item.title}</a>
+                <Link to={`/itemID_#${item.id}`} alt="itemKnife" href=".">{item.title}</Link>
                 <div className="item-price">
                     <p>{item.price} UAH</p>
                     <p className="new-product">{item.status}</p>

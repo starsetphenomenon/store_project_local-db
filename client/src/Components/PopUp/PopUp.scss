@@ -61,3 +61,12 @@
 .active {
     transform: translateY(0%);
 }
+
+@media (max-width: 992px) {
+    .active{
+        width: 50%;
+        right: 50%;
+        bottom: 5%;
+        transform: translateX(50%);
+    }
+}
