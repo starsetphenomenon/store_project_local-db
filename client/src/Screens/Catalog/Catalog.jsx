@@ -26,8 +26,9 @@ function Catalog({ filter1 }) {
     }, [filterLink])
 
     useEffect(() => {
-        setFilterData(data.filter(el => el.type === 'Ножи'))
+        handleAllFilters(filter, data);
         getPriceRange(data)
+        console.log(data[0])
     }, [data]);
 
     const handleFilter = (e) => { // handle TYPE filters ~~~~~~~~~~           

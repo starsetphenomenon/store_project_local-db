@@ -13,16 +13,9 @@ export default function Cart() {
     const [modal, setModal] = useState(false);
     const [totalPrice, setTotalPrice] = useState(0);
 
-    useEffect(() => {
-        if (!cart.length && checkStorage('cart')) {
-            if (getStorage('cart').length > 0) {
-                setCart(getStorage('cart'))
-            } else {
-                return
-            }
-        }
+    const updateTotalPrice = (db) => {
         let prices = [];
-        let cartTotalPrice = cart.map(el => {  // get total price from Cart items ~~~~~~~~~~~
+        let cartTotalPrice = db.map(el => {  // get total price from Cart items ~~~~~~~~~~~
             return el = {
                 ...el,
                 totalPrice: el.price * el.amount,
@@ -31,7 +24,18 @@ export default function Cart() {
         prices = cartTotalPrice.map(el => el.totalPrice);
         let totalPrices = prices.reduce((prev, curr) => prev + curr, 0);
         setTotalPrice(totalPrices);
-        setStorage('cart', cart)
+    }
+
+    useEffect(() => {
+        if (!cart.length && checkStorage('cart')) {
+            updateTotalPrice([])
+            if (getStorage('cart').length > 0) {
+                setCart(getStorage('cart'))
+            } else {
+                return
+            }
+        }
+        updateTotalPrice(cart)
     }, [cart])
 
     const [form, setForm] = useState({

@@ -17,7 +17,7 @@ function Main() {
             setCart(getStorage('cart'))
         }      
         setDataByStatus(data.filter(el => el.status === 'Popular'));
-        setDataByType(data);        
+        setDataByType(data);     
     }, [data])
 
 

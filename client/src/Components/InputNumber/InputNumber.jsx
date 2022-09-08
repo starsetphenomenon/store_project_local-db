@@ -20,6 +20,7 @@ export default function InputNumber({ children, currentElem }) {
                 elem.amount = 1;
             }
         }
+        console.log(cart)
         setCart([...cart]);  // force rerender cart to refresh each item amount ~~~~~~~~~~
         setStorage('cart', [...cart])  // save each item amount from cart into localStorage ~~~~~~~~~~
     }

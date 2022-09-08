@@ -21,25 +21,25 @@ function App() {
 
   const addToCart = (target, data, counter, setCounter) => {
     setCounter(prev => prev + 1);
-    let result = cart;
     let elemId = target.id;
     let item = data.find(item => +item.id === +elemId);
-    if (result.some(el => +el.id === +elemId)) { // if Cart elem already exist, then just ++amount of elem ~~~~~~~~
-      let amountItem = result.find(e => +e.id === +elemId);
+    if (cart.some(el => +el.id === +elemId)) { // if Cart elem already exist, then just ++amount of elem ~~~~~~~~
+      let amountItem = cart.find(e => +e.id === +elemId);
       amountItem.amount++;
       amountItem.counter++;
     } else {
       item = { ...item, amount: 1, counter: 1 };
-      result.push(item);
-      setCart(result);
-      setStorage('cart', result)
+      cart.push(item);
+      setCart(cart);
+      setStorage('cart', cart)
     }
     let newData = data.map(el => { // set counter of item to DATA ~~~~~~~~~~
       if (+el.id === +target.id) {
-        return el = {
+        el = {
           ...el,
           counter: counter + 1,
         }
+        return el;
       } else {
         return el;
       }
@@ -62,7 +62,7 @@ function App() {
   }
 
   const checkStorage = (key) => {
-    return (JSON.parse(localStorage.getItem(key)) !== 'undefined' || JSON.parse(localStorage.getItem(key)).length);
+    return (JSON.parse(localStorage.getItem(key)) === 'undefined' || JSON.parse(localStorage.getItem(key)).length);
   }
 
   // Local Storage ~~~~~~~~~~~~~~~~~~~~~~
@@ -125,10 +125,11 @@ function App() {
         <ScrollToTop>
           <Routes>
             <Route path="/" index element={<Main />} />
-            <Route path="/catalog" element={<Catalog filter1={menuLinks} />} />
-            <Route path="/:id" element={<ItemPage />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/search" element={<Search setSearchingItems={setSearchingItems} searchingItems={searchingItems} />} />
+            <Route path="catalog" element={<Catalog filter1={menuLinks} />} />
+            <Route path="catalog/items/:id" element={<ItemPage />} />
+            <Route path="cart" element={<Cart />} />
+            <Route path="search" element={<Search setSearchingItems={setSearchingItems} searchingItems={searchingItems} />} />
+            <Route path="items/:id" element={<ItemPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </ScrollToTop>
