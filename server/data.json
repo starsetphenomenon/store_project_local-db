@@ -11,15 +11,15 @@
     "bladeLength": "210",
     "handleMaterial": "полиоксиметилен",
     "img": {
-      "mainSlider": "./assets/img/main/slideBanner.png",
-      "title": "./assets/items/kuhonnij/3.png",
+      "mainSlider": "/assets/img/main/slideBanner.png",
+      "title": "/assets/items/kuhonnij/3.png",
       "alt": "jackknife",
       "itemPageSlider": [
-        "./assets/items/slider/1.webp",
-        "./assets/items/slider/2.webp",
-        "./assets/items/slider/3.webp",
-        "./assets/items/slider/4.webp",
-        "./assets/items/slider/5.webp"
+        "/assets/items/slider/1.webp",
+        "/assets/items/slider/2.webp",
+        "/assets/items/slider/3.webp",
+        "/assets/items/slider/4.webp",
+        "/assets/items/slider/5.webp"
       ]
     },
     "reviews": [
@@ -44,7 +44,8 @@
         "time": "21:52",
         "rating": 1
       }
-    ]
+    ],
+    "counter": 9
   },
   {
     "id": "13",
@@ -57,61 +58,15 @@
     "bladeMaterial": "татин",
     "handleMaterial": "полиоксиметилен",
     "img": {
-      "mainSlider": "./assets/img/main/slideBanner.png",
-      "title": "./assets/items/nabor/1.png",
+      "mainSlider": "/assets/img/main/slideBanner.png",
+      "title": "/assets/items/nabor/1.png",
       "alt": "jackknife",
       "itemPageSlider": [
-        "./assets/items/slider/1.webp",
-        "./assets/items/slider/2.webp",
-        "./assets/items/slider/3.webp",
-        "./assets/items/slider/4.webp",
-        "./assets/items/slider/5.webp"
-      ]
-    },
-    "reviews": [
-      {
-        "name": "John Doe",
-        "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2021",
-        "time": "14:27",
-        "rating": 4
-      },
-      {
-        "name": "Elizabeth Vinigret",
-        "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/09/2021",
-        "time": "11:07",
-        "rating": 5
-      },
-      {
-        "name": "Northen Ethan",
-        "message": "Lorem ipsum message for item reveiw....",
-        "date": "05/07/2022",
-        "time": "21:52",
-        "rating": 1
-      }
-    ]
-  },
-  {
-    "id": "14",
-    "topic": "Набор швейцарских ножей",
-    "type": "Наборы ножей",
-    "collection": "TUOTOWN",
-    "title": "Набор ножей EXTRA",
-    "price": 1785,
-    "status": "Popular",
-    "bladeMaterial": "нержавеющая сталь Nitrum",
-    "handleMaterial": "полиоксиметилен",
-    "img": {
-      "mainSlider": "./assets/img/main/slideBanner.png",
-      "title": "./assets/items/nabor/2.png",
-      "alt": "jackknife",
-      "itemPageSlider": [
-        "./assets/items/slider/1.webp",
-        "./assets/items/slider/2.webp",
-        "./assets/items/slider/3.webp",
-        "./assets/items/slider/4.webp",
-        "./assets/items/slider/5.webp"
+        "/assets/items/slider/1.webp",
+        "/assets/items/slider/2.webp",
+        "/assets/items/slider/3.webp",
+        "/assets/items/slider/4.webp",
+        "/assets/items/slider/5.webp"
       ]
     },
     "reviews": [
@@ -149,15 +104,15 @@
     "bladeMaterial": "нержавеющая сталь Nitrum",
     "handleMaterial": "полиоксиметилен",
     "img": {
-      "mainSlider": "./assets/img/main/slideBanner.png",
-      "title": "./assets/items/nabor/3.png",
+      "mainSlider": "/assets/img/main/slideBanner.png",
+      "title": "/assets/items/nabor/3.png",
       "alt": "jackknife",
       "itemPageSlider": [
-        "./assets/items/slider/1.webp",
-        "./assets/items/slider/2.webp",
-        "./assets/items/slider/3.webp",
-        "./assets/items/slider/4.webp",
-        "./assets/items/slider/5.webp"
+        "/assets/items/slider/1.webp",
+        "/assets/items/slider/2.webp",
+        "/assets/items/slider/3.webp",
+        "/assets/items/slider/4.webp",
+        "/assets/items/slider/5.webp"
       ]
     },
     "reviews": [
@@ -182,7 +137,8 @@
         "time": "21:52",
         "rating": 1
       }
-    ]
+    ],
+    "counter": 3
   },
   {
     "id": "16",
@@ -195,15 +151,15 @@
     "bladeMaterial": "титан",
     "handleMaterial": "полиоксиметилен",
     "img": {
-      "mainSlider": "./assets/items/mainSlider/mainSlider2.webp",
-      "title": "./assets/items/nabor/4.png",
+      "mainSlider": "/assets/items/mainSlider/mainSlider2.webp",
+      "title": "/assets/items/nabor/4.png",
       "alt": "jackknife",
       "itemPageSlider": [
-        "./assets/items/slider/1.webp",
-        "./assets/items/slider/2.webp",
-        "./assets/items/slider/3.webp",
-        "./assets/items/slider/4.webp",
-        "./assets/items/slider/5.webp"
+        "/assets/items/slider/1.webp",
+        "/assets/items/slider/2.webp",
+        "/assets/items/slider/3.webp",
+        "/assets/items/slider/4.webp",
+        "/assets/items/slider/5.webp"
       ]
     },
     "reviews": [
@@ -240,15 +196,15 @@
     "status": "",
     "material": "пластик/сталь",
     "img": {
-      "mainSlider": "./assets/img/main/slideBanner.png",
-      "title": "./assets/items/tochilka/1.png",
+      "mainSlider": "/assets/img/main/slideBanner.png",
+      "title": "/assets/items/tochilka/1.png",
       "alt": "jackknife",
       "itemPageSlider": [
-        "./assets/items/slider/1.webp",
-        "./assets/items/slider/2.webp",
-        "./assets/items/slider/3.webp",
-        "./assets/items/slider/4.webp",
-        "./assets/items/slider/5.webp"
+        "/assets/items/slider/1.webp",
+        "/assets/items/slider/2.webp",
+        "/assets/items/slider/3.webp",
+        "/assets/items/slider/4.webp",
+        "/assets/items/slider/5.webp"
       ]
     },
     "reviews": [
@@ -285,15 +241,15 @@
     "status": "Popular",
     "material": "пластик/сталь",
     "img": {
-      "mainSlider": "./assets/img/main/slideBanner.png",
-      "title": "./assets/items/tochilka/2.png",
+      "mainSlider": "/assets/img/main/slideBanner.png",
+      "title": "/assets/items/tochilka/2.png",
       "alt": "jackknife",
       "itemPageSlider": [
-        "./assets/items/slider/1.webp",
-        "./assets/items/slider/2.webp",
-        "./assets/items/slider/3.webp",
-        "./assets/items/slider/4.webp",
-        "./assets/items/slider/5.webp"
+        "/assets/items/slider/1.webp",
+        "/assets/items/slider/2.webp",
+        "/assets/items/slider/3.webp",
+        "/assets/items/slider/4.webp",
+        "/assets/items/slider/5.webp"
       ]
     },
     "reviews": [
@@ -330,15 +286,15 @@
     "status": "New",
     "material": "водный камень корунд",
     "img": {
-      "mainSlider": "./assets/items/mainSlider/mainSlider3.webp",
-      "title": "./assets/items/tochilka/3.png",
+      "mainSlider": "/assets/items/mainSlider/mainSlider3.webp",
+      "title": "/assets/items/tochilka/3.png",
       "alt": "jackknife",
       "itemPageSlider": [
-        "./assets/items/slider/1.webp",
-        "./assets/items/slider/2.webp",
-        "./assets/items/slider/3.webp",
-        "./assets/items/slider/4.webp",
-        "./assets/items/slider/5.webp"
+        "/assets/items/slider/1.webp",
+        "/assets/items/slider/2.webp",
+        "/assets/items/slider/3.webp",
+        "/assets/items/slider/4.webp",
+        "/assets/items/slider/5.webp"
       ]
     },
     "reviews": [
@@ -375,15 +331,15 @@
     "status": "Popular",
     "material": "водный камень корунд",
     "img": {
-      "mainSlider": "./assets/img/main/slideBanner.png",
-      "title": "./assets/items/tochilka/4.png",
+      "mainSlider": "/assets/img/main/slideBanner.png",
+      "title": "/assets/items/tochilka/4.png",
       "alt": "jackknife",
       "itemPageSlider": [
-        "./assets/items/slider/1.webp",
-        "./assets/items/slider/2.webp",
-        "./assets/items/slider/3.webp",
-        "./assets/items/slider/4.webp",
-        "./assets/items/slider/5.webp"
+        "/assets/items/slider/1.webp",
+        "/assets/items/slider/2.webp",
+        "/assets/items/slider/3.webp",
+        "/assets/items/slider/4.webp",
+        "/assets/items/slider/5.webp"
       ]
     },
     "reviews": [
@@ -420,15 +376,15 @@
     "status": "",
     "material": "дерево",
     "img": {
-      "mainSlider": "./assets/img/main/slideBanner.png",
-      "title": "./assets/items/accessories/1.png",
+      "mainSlider": "/assets/img/main/slideBanner.png",
+      "title": "/assets/items/accessories/1.png",
       "alt": "jackknife",
       "itemPageSlider": [
-        "./assets/items/slider/1.webp",
-        "./assets/items/slider/2.webp",
-        "./assets/items/slider/3.webp",
-        "./assets/items/slider/4.webp",
-        "./assets/items/slider/5.webp"
+        "/assets/items/slider/1.webp",
+        "/assets/items/slider/2.webp",
+        "/assets/items/slider/3.webp",
+        "/assets/items/slider/4.webp",
+        "/assets/items/slider/5.webp"
       ]
     },
     "reviews": [
@@ -465,15 +421,15 @@
     "status": "",
     "material": "пластик",
     "img": {
-      "mainSlider": "./assets/img/main/slideBanner.png",
-      "title": "./assets/items/accessories/2.png",
+      "mainSlider": "/assets/img/main/slideBanner.png",
+      "title": "/assets/items/accessories/2.png",
       "alt": "jackknife",
       "itemPageSlider": [
-        "./assets/items/slider/1.webp",
-        "./assets/items/slider/2.webp",
-        "./assets/items/slider/3.webp",
-        "./assets/items/slider/4.webp",
-        "./assets/items/slider/5.webp"
+        "/assets/items/slider/1.webp",
+        "/assets/items/slider/2.webp",
+        "/assets/items/slider/3.webp",
+        "/assets/items/slider/4.webp",
+        "/assets/items/slider/5.webp"
       ]
     },
     "reviews": [
@@ -510,15 +466,15 @@
     "status": "Popular",
     "material": "нержавеющая сталь",
     "img": {
-      "mainSlider": "./assets/img/main/slideBanner.png",
-      "title": "./assets/items/accessories/3.png",
+      "mainSlider": "/assets/img/main/slideBanner.png",
+      "title": "/assets/items/accessories/3.png",
       "alt": "jackknife",
       "itemPageSlider": [
-        "./assets/items/slider/1.webp",
-        "./assets/items/slider/2.webp",
-        "./assets/items/slider/3.webp",
-        "./assets/items/slider/4.webp",
-        "./assets/items/slider/5.webp"
+        "/assets/items/slider/1.webp",
+        "/assets/items/slider/2.webp",
+        "/assets/items/slider/3.webp",
+        "/assets/items/slider/4.webp",
+        "/assets/items/slider/5.webp"
       ]
     },
     "reviews": [
@@ -555,15 +511,15 @@
     "status": "New",
     "material": "нержавеющая сталь",
     "img": {
-      "mainSlider": "./assets/items/mainSlider/mainSlider4.webp",
-      "title": "./assets/items/accessories/4.png",
+      "mainSlider": "/assets/items/mainSlider/mainSlider4.webp",
+      "title": "/assets/items/accessories/4.png",
       "alt": "jackknife",
       "itemPageSlider": [
-        "./assets/items/slider/1.webp",
-        "./assets/items/slider/2.webp",
-        "./assets/items/slider/3.webp",
-        "./assets/items/slider/4.webp",
-        "./assets/items/slider/5.webp"
+        "/assets/items/slider/1.webp",
+        "/assets/items/slider/2.webp",
+        "/assets/items/slider/3.webp",
+        "/assets/items/slider/4.webp",
+        "/assets/items/slider/5.webp"
       ]
     },
     "reviews": [
@@ -602,15 +558,15 @@
     "bladeLength": "86",
     "handleMaterial": "сталь/пластик",
     "img": {
-      "mainSlider": "./assets/img/main/slideBanner.png",
-      "title": "./assets/items/skladnoj/1.png",
+      "mainSlider": "/assets/img/main/slideBanner.png",
+      "title": "/assets/items/skladnoj/1.png",
       "alt": "jackknife",
       "itemPageSlider": [
-        "./assets/items/slider/1.webp",
-        "./assets/items/slider/2.webp",
-        "./assets/items/slider/3.webp",
-        "./assets/items/slider/4.webp",
-        "./assets/items/slider/5.webp"
+        "/assets/items/slider/1.webp",
+        "/assets/items/slider/2.webp",
+        "/assets/items/slider/3.webp",
+        "/assets/items/slider/4.webp",
+        "/assets/items/slider/5.webp"
       ]
     },
     "reviews": [
@@ -663,15 +619,15 @@
     "bladeLength": "190",
     "handleMaterial": "дерево",
     "img": {
-      "mainSlider": "./assets/img/main/slideBanner.png",
-      "title": "./assets/img/knifeCatalog.png",
+      "mainSlider": "/assets/img/main/slideBanner.png",
+      "title": "/assets/img/knifeCatalog.png",
       "alt": "jackknife",
       "itemPageSlider": [
-        "./assets/items/slider/1.webp",
-        "./assets/items/slider/2.webp",
-        "./assets/items/slider/3.webp",
-        "./assets/items/slider/4.webp",
-        "./assets/items/slider/5.webp"
+        "/assets/items/slider/1.webp",
+        "/assets/items/slider/2.webp",
+        "/assets/items/slider/3.webp",
+        "/assets/items/slider/4.webp",
+        "/assets/items/slider/5.webp"
       ]
     },
     "reviews": [
@@ -717,15 +673,15 @@
     "bladeLength": "86",
     "handleMaterial": "сталь",
     "img": {
-      "mainSlider": "./assets/img/main/slideBanner.png",
-      "title": "./assets/items/skladnoj/3.png",
+      "mainSlider": "/assets/img/main/slideBanner.png",
+      "title": "/assets/items/skladnoj/3.png",
       "alt": "jackknife",
       "itemPageSlider": [
-        "./assets/items/slider/1.webp",
-        "./assets/items/slider/2.webp",
-        "./assets/items/slider/3.webp",
-        "./assets/items/slider/4.webp",
-        "./assets/items/slider/5.webp"
+        "/assets/items/slider/1.webp",
+        "/assets/items/slider/2.webp",
+        "/assets/items/slider/3.webp",
+        "/assets/items/slider/4.webp",
+        "/assets/items/slider/5.webp"
       ]
     },
     "reviews": [
@@ -771,15 +727,15 @@
     "bladeLength": "210",
     "handleMaterial": "дерево",
     "img": {
-      "mainSlider": "./assets/img/main/slideBanner.png",
-      "title": "./assets/items/kuhonnij/1.png",
+      "mainSlider": "/assets/img/main/slideBanner.png",
+      "title": "/assets/items/kuhonnij/1.png",
       "alt": "jackknife",
       "itemPageSlider": [
-        "./assets/items/slider/1.webp",
-        "./assets/items/slider/2.webp",
-        "./assets/items/slider/3.webp",
-        "./assets/items/slider/4.webp",
-        "./assets/items/slider/5.webp"
+        "/assets/items/slider/1.webp",
+        "/assets/items/slider/2.webp",
+        "/assets/items/slider/3.webp",
+        "/assets/items/slider/4.webp",
+        "/assets/items/slider/5.webp"
       ]
     },
     "reviews": [
@@ -832,15 +788,15 @@
     "bladeLength": "210",
     "handleMaterial": "полиоксиметилен",
     "img": {
-      "mainSlider": "./assets/items/mainSlider/mainSlider1.webp",
-      "title": "./assets/items/kuhonnij/2.png",
+      "mainSlider": "/assets/items/mainSlider/mainSlider1.webp",
+      "title": "/assets/items/kuhonnij/2.png",
       "alt": "jackknife",
       "itemPageSlider": [
-        "./assets/items/slider/1.webp",
-        "./assets/items/slider/2.webp",
-        "./assets/items/slider/3.webp",
-        "./assets/items/slider/4.webp",
-        "./assets/items/slider/5.webp"
+        "/assets/items/slider/1.webp",
+        "/assets/items/slider/2.webp",
+        "/assets/items/slider/3.webp",
+        "/assets/items/slider/4.webp",
+        "/assets/items/slider/5.webp"
       ]
     },
     "reviews": [
@@ -879,15 +835,15 @@
     "bladeLength": "86",
     "handleMaterial": "пластик",
     "img": {
-      "mainSlider": "./assets/img/main/slideBanner.png",
-      "title": "./assets/items/skladnoj/2.png",
+      "mainSlider": "/assets/img/main/slideBanner.png",
+      "title": "/assets/items/skladnoj/2.png",
       "alt": "jackknife",
       "itemPageSlider": [
-        "./assets/items/slider/1.webp",
-        "./assets/items/slider/2.webp",
-        "./assets/items/slider/3.webp",
-        "./assets/items/slider/4.webp",
-        "./assets/items/slider/5.webp"
+        "/assets/items/slider/1.webp",
+        "/assets/items/slider/2.webp",
+        "/assets/items/slider/3.webp",
+        "/assets/items/slider/4.webp",
+        "/assets/items/slider/5.webp"
       ]
     },
     "reviews": [
@@ -918,6 +874,59 @@
         "time": "16:26",
         "message": "teststtsst",
         "rating": 2
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "topic": "Набор швейцарских ножей",
+    "type": "Наборы ножей",
+    "collection": "TUOTOWN",
+    "title": "Набор ножей EXTRA",
+    "price": 1785,
+    "status": "Popular",
+    "bladeMaterial": "нержавеющая сталь Nitrum",
+    "handleMaterial": "полиоксиметилен",
+    "img": {
+      "mainSlider": "/assets/img/main/slideBanner.png",
+      "title": "/assets/items/nabor/2.png",
+      "alt": "jackknife",
+      "itemPageSlider": [
+        "/assets/items/slider/1.webp",
+        "/assets/items/slider/2.webp",
+        "/assets/items/slider/3.webp",
+        "/assets/items/slider/4.webp",
+        "/assets/items/slider/5.webp"
+      ]
+    },
+    "reviews": [
+      {
+        "name": "John Doe",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/11/2021",
+        "time": "14:27",
+        "rating": 4
+      },
+      {
+        "name": "Elizabeth Vinigret",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/09/2021",
+        "time": "11:07",
+        "rating": 5
+      },
+      {
+        "name": "Northen Ethan",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "05/07/2022",
+        "time": "21:52",
+        "rating": 1
+      },
+      {
+        "name": "Роман Візний",
+        "date": "8/8/2022",
+        "time": "10:24",
+        "rating": 5,
+        "message": "some test \n"
       }
     ]
   }

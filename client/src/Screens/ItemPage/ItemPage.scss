@@ -86,6 +86,10 @@
         justify-content: center;
         align-items: center;
 
+        .swiper-wrapper {
+            border-radius: 15px;
+        }
+
         img {
             height: 200px;
             width: 200px;

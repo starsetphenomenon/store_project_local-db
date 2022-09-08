@@ -8,11 +8,11 @@ function Header({ menuVisibility, setSearchingItems }) {
 
     let navigate = useNavigate();
 
-    const { cart, checkStorage, getStorage } = useContext(DataContext);
+    const { cart, getStorage } = useContext(DataContext);
 
     useEffect(() => { // counter in HEADER under cart icon ~~~~~~~~~~~~~
         setTotalCartItems(cart.length)
-        if (checkStorage('cart') && !cart.length) { // take counter from storage if it's not empty ~~~~~~~~~~~~
+        if (getStorage('cart') !== 'undefined') { // take counter from storage if it's not empty ~~~~~~~~~~~~
             setTotalCartItems(getStorage('cart').length)
         }
     }, [cart])
@@ -57,7 +57,7 @@ function Header({ menuVisibility, setSearchingItems }) {
                 </a>
             </div>
             <div className="logo">
-                <Link to="/"><img src="./assets/img/logo.png" alt="" /></Link>
+                <Link to="/"><img src="/assets/img/logo.png" alt="" /></Link>
             </div>
             <div className="right">
                 <div className="cart">

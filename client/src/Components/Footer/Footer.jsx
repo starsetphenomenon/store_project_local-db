@@ -12,7 +12,7 @@ export default function Footer({ setFilterLink }) {
         <div className="footer">
             <div className="company">
                 <div className="logo">
-                    <Link to="/"><img src="./assets/img/logo.png" alt="" /></Link>
+                    <Link to="/"><img src="/assets/img/logo.png" alt="" /></Link>
                     <p className="name">легендарные ножи,<br></br>
                         создающие шедевры</p>
                 </div>
@@ -30,7 +30,7 @@ export default function Footer({ setFilterLink }) {
                     <h2>Информация</h2>
                     <ul className="linkItems">
                         <li><a href=".">Главная</a></li>
-                        <li><a href=".">О Компания</a></li>
+                        <li><a href=".">О Компании</a></li>
                         <li><a href=".">Контакты</a></li>
                     </ul>
                 </div>
@@ -46,10 +46,10 @@ export default function Footer({ setFilterLink }) {
                 <div className="social">
                     <h2>Мы в соцсетях</h2>
                     <div className="icons">
-                        <a href="."><img src="./assets/icons/social/facebook.svg" alt="" /></a>
-                        <a href="."><img src="./assets/icons/social/vk.svg" alt="" /></a>
-                        <a href="."><img src="./assets/icons/social/instagramm.svg" alt="" /></a>
-                        <a href="."><img src="./assets/icons/social/youtube.svg" alt="" /></a>
+                        <Link to="/fb" href="."><img src="/assets/icons/social/facebook.svg" alt="" /></Link>
+                        <Link to="/vk" href="."><img src="/assets/icons/social/vk.svg" alt="" /></Link>
+                        <Link to="/insta" href="."><img src="/assets/icons/social/instagramm.svg" alt="" /></Link>
+                        <Link to="/youtube" href="."><img src="/assets/icons/social/youtube.svg" alt="" /></Link>
                     </div>
                 </div>
             </div>

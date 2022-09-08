@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import './ItemCard.scss';
 import { useContext, useState, useEffect } from 'react';
 import { DataContext } from '../../App';
@@ -6,22 +7,41 @@ import { useNavigate, Link } from 'react-router-dom';
 function ItemCard({ data: item, className, itemId }) {
 
     let navigate = useNavigate();
-    const { data, addToCart, checkStorage, setCart, getStorage } = useContext(DataContext);
+    const { data, addToCart, checkStorage, setCart, getStorage, cart } = useContext(DataContext);
     const [counter, setCounter] = useState(0);
 
-    useEffect(()=>{
+    useEffect(() => {
         if (checkStorage('cart')) { // put cartStorage to CART if it's not empty ~~~~~~~~~~
-            setCart(getStorage('cart'))            
+            setCart(getStorage('cart'))
         }
-    },[item])
+        if (item.counter !== undefined) { // take element counter if exist ~~~~~~~~~~~~~   
+            let cartItem = cart.find(elem => +elem.id === +item.id);
+            if (cartItem === undefined) {
+                item.counter = 0;
+            }
+            setCounter(item.counter)
+        }
+        let storageItem = [];
+        if (elemInCart(item, cart, storageItem)) { // take counter from storage if exist ~~~~~~~~~~~~                    
+            setCounter(storageItem[0].amount)
+            item.counter = storageItem[0].amount;
+        }
+    }, [item])
+
+    const elemInCart = (elem, db, resultItem) => {
+        let item = db.find(item => +item.id === +elem.id);
+        if (!item) {
+            return
+        }
+        return resultItem.push(item);
+    }
 
     const handleAddToCart = (e) => {
         addToCart(e.currentTarget, data, counter, setCounter);
     }
 
     const goToItemPage = (e) => {
-        e.stopPropagation();
-        navigate(`/itemID_#${e.currentTarget.getAttribute('id')}`);
+        navigate(`items/itemID_#${e.currentTarget.getAttribute('id')}`);
     }
 
     return (

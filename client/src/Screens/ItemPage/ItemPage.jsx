@@ -15,12 +15,17 @@ export default function ItemPage() {
 
     let location = useLocation();
     useEffect(() => {
-        setCurrentItem(getCurrentItem(data));
+        setCurrentItem(getCurrentItem(data)); 
+        console.log(currentItem)      
     }, [location]);
 
     useEffect(() => {
-        setCurrentItem(getCurrentItem(data));
+        setCurrentItem(getCurrentItem(data));    
     });
+
+    useEffect(() => {
+       
+    }, [currentItem]);
 
     const getCurrentItem = (db) => {
         let currentItemId = +location.hash.replace('#', '');
