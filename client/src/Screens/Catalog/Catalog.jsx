@@ -8,9 +8,8 @@ import { DataContext } from '../../App';
 
 function Catalog({ filter1 }) {
 
-    const filterMaterial = ['Все', 'Сталь', 'Нержавеющая сталь', 'Титан', 'Дерево'];
     let { data, filterLink } = useContext(DataContext);
-
+    const [filterByMaterial, setFilterByMaterial] = useState(['Все', 'Сталь', 'Нержавеющая сталь', 'Титан', 'Дерево']);
     const [pageTitle, setPageTitle] = useState('Ножи')
     const [filterData, setFilterData] = useState(data);
     const [filter, setFilter] = useState({
@@ -28,16 +27,24 @@ function Catalog({ filter1 }) {
     useEffect(() => {
         handleAllFilters(filter, data);
         getPriceRange(data)
-        console.log(data[0])
     }, [data]);
 
-    const handleFilter = (e) => { // handle TYPE filters ~~~~~~~~~~           
+    const handleFilter = (e) => { // handle TYPE filters ~~~~~~~~~~        
         if (e.target.getAttribute('value') === 'Все') {
             setFilter({
                 ...filter,
                 [e.target.getAttribute('name')]: '',
             })
         } else {
+            // Refresh MATERIAL filter if TYPE filter is pressed ~~~~~~~~~~~~~~~~~
+            if (e.target.getAttribute('name') === 'Что ищем?' && (filter['Материал'] !== undefined && filter['Материал'] !== '')) {
+                setFilter({
+                    ...filter,
+                    [e.target.getAttribute('name')]: e.target.getAttribute('value'),
+                    'Материал': '',
+                });
+                return
+            }
             setFilter({
                 ...filter,
                 [e.target.getAttribute('name')]: e.target.getAttribute('value'),
@@ -79,6 +86,24 @@ function Catalog({ filter1 }) {
         result = [...new Set(result)]
         setFilterData(result);
         getPriceRange(result);
+
+        // MATERIAL filter depends on TYPE filter ~~~~~~~~~~~~~~~~~~~
+        if (filter['Что ищем?']) {
+            let tempFilter = ['Все'];
+            let tempData = data.filter(el => JSON.stringify(el.type).toLowerCase().includes((filter['Что ищем?']).toLowerCase()))
+            tempData.forEach(el => {
+                if (el.material) {
+                    tempFilter.push(el.material)
+                }
+                if (el.bladeMaterial) {
+                    tempFilter.push(el.bladeMaterial)
+                }
+                if (el.handleMaterial) {
+                    tempFilter.push(el.bladeMaterial)
+                }
+            })
+            setFilterByMaterial([...new Set(tempFilter)]);
+        }
     }
 
     const getPriceRange = (data) => {
@@ -152,7 +177,7 @@ function Catalog({ filter1 }) {
                         </div>
                     </div>
                     <FilterSelect name="Что ищем?" handleFilter={handleFilter} filter={filter1} />
-                    <FilterSelect name="Материал" handleFilter={handleFilter} filter={filterMaterial} />
+                    <FilterSelect name="Материал" handleFilter={handleFilter} filter={filterByMaterial} />
                     <div className="status">
                         <h3>Статус</h3>
                         <div>

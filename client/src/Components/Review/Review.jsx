@@ -5,17 +5,23 @@ import PopUp from '../PopUp/PopUp';
 
 export default function Review({ data: revDB, currentItemID }) {
 
-    const { data, setData } = useContext(DataContext);
-
+    const { setData } = useContext(DataContext);
     const [reviews, setReviews] = useState([]);
-
     const [newReview, setNewReview] = useState({});
+    const [reviewInputValue, setReviewInputValue] = useState({
+        name: '',
+        message: '',
+    });
 
     useEffect(() => {
         setReviews(revDB);
     }, [revDB])
 
     const reviewInput = (e) => {
+        setReviewInputValue({
+            ...reviewInputValue,
+            [e.target.name]: e.target.value,
+        })
         setPopUp(false)
         let date = new Date();
         setNewReview({
@@ -30,28 +36,25 @@ export default function Review({ data: revDB, currentItemID }) {
     const [popUp, setPopUp] = useState(false);
 
     const addNewReview = () => {
+        setReviewInputValue({
+            name: '',
+            message: '',
+        })
         setPopUp(false)
         if (!newReview.name || !newReview.message) {
             setPopUp(true)
             return
         }
-        let newData = data.filter(item => +item.id !== +currentItemID);
-        let item = data.find(item => +item.id === +currentItemID);
-        item.reviews = [
-            ...reviews,
-            newReview
-        ];
-        newData = [
-            ...newData,
-            item,
-        ]
-        setData(newData); // new data with reviews ~~~~~~~~~~~~~~
-        fetch('http://localhost:3001/updateItem', { // sending new data to server ~~~~~~~~~~~~~~~
+        let resp = {
+            review: newReview,
+            id: currentItemID
+        }
+        fetch('http://localhost:3001/updateItemReviews', { // sending new data to server ~~~~~~~~~~~~~~~
             method: 'POST',
-            body: JSON.stringify(newData),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
-            }
+            },
+            body: JSON.stringify(resp)
         })
             .then(res => res.json())
             .then(db => {
@@ -116,19 +119,20 @@ export default function Review({ data: revDB, currentItemID }) {
                         </div>
                     )
                 })}
+                {!reviews?.length ? 'Отзывов пока нет...' : ''}
             </div>
             <div className="add">
                 <PopUp popUp={popUp} setPopUp={setPopUp}>Заполните все поля!</PopUp>
                 <h3>Добавить отзыв</h3>
                 <div className="revName">
                     <label htmlFor="name">Имя</label>
-                    <input onChange={reviewInput} spellCheck="false" name="name" type="text" />
+                    <input onChange={reviewInput} value={reviewInputValue.name} spellCheck="false" name="name" type="text" />
                 </div>
                 <div className="revMsg">
                     <label htmlFor="message">Отзыв</label>
-                    <textarea onChange={reviewInput} spellCheck="false" name="message" id="" rows="5"></textarea>
+                    <textarea onChange={reviewInput} value={reviewInputValue.message} spellCheck="false" name="message" id="" rows="5"></textarea>
                 </div>
-                <div className="rating">
+                <div className="setRating">
                     <label htmlFor="message">Оценка: </label>
                     <div className="stars">
                         {stars.map((_, ind) => {

@@ -84,6 +84,9 @@ function App() {
   }, []);
 
   useEffect(() => { // Get only unique links/topics from data ~~~
+    if (!data.length) {
+      return
+  }
     let links = [...new Set(data.map(item => item.type))]; // Main links
     let subLinks = []; // subLinks
     let slides = []; // main slider slides;
@@ -125,7 +128,7 @@ function App() {
         <ScrollToTop>
           <Routes>
             <Route path="/" index element={<Main />} />
-            <Route path="catalog" element={<Catalog filter1={menuLinks} />} />
+            <Route path="catalog" element={<Catalog filter1={menuLinks} />} ></Route>
             <Route path="catalog/items/:id" element={<ItemPage />} />
             <Route path="cart" element={<Cart />} />
             <Route path="search" element={<Search setSearchingItems={setSearchingItems} searchingItems={searchingItems} />} />

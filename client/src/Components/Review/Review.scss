@@ -119,7 +119,7 @@
         box-shadow: 2px 2px 4px black;
         border-radius: 8px;
 
-        .rating {
+        .setRating {
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
@@ -138,6 +138,7 @@
                 .star {
                     font-size: 32px;
                     cursor: pointer;
+                    -webkit-tap-highlight-color: transparent;
                 }
 
                 .yellow {

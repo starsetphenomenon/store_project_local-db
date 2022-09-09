@@ -2,11 +2,12 @@
 import './Search.scss';
 import { React, useContext, useState, useEffect } from 'react'
 import { DataContext } from '../../App';
+import { useNavigate } from 'react-router-dom';
 
 export default function Search({ searchingItems, setSearchingItems }) {
 
     let { data } = useContext(DataContext);
-
+    let navigate = useNavigate();
     const [searchData, setSearchData] = useState([]);
 
     const getSearchedItems = (db) => {
@@ -27,6 +28,10 @@ export default function Search({ searchingItems, setSearchingItems }) {
         setSearchingItems(e.target.value.toLowerCase())
     }
 
+    const goToItemPage = (e) => {
+        navigate(`../items/itemID_#${e.currentTarget.getAttribute('id')}`);
+    }
+
     return (
         <div className='searchPage'>
             <div className="wrapper">
@@ -34,11 +39,11 @@ export default function Search({ searchingItems, setSearchingItems }) {
                 <input placeholder={searchingItems} onChange={onSearch} spellCheck="false" type="search" />
                 {searchData.map(el => {
                     return (
-                        <div key={el.id} className="item">
+                        <div key={el.id} id={el.id} onClick={goToItemPage} className="item">
                             <div className="desc">
                                 <div className="title">{el.title}</div>
                                 <div className="title">Коллекция: {el.collection}</div>
-                                <div className="price">{el.price} ₴</div>
+                                <div className="price">{el.price} ₴</div>                                
                             </div>
                             <div className="photo">
                                 <img src={el.img.title} alt={el.img.alt} />
