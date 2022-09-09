@@ -31,15 +31,36 @@ app.get('/dataBase', function (request, response) {
         })
     } catch (error) {
         console.log('An error has occurred ', error);
-    } 
+    }
 });
 
-app.post('/updateItem', function (request, response) {
+app.post('/updateItemReviews', function (request, response) {
     try {
-        fs.writeFileSync('./data.json', JSON.stringify(request.body, null, 2), 'utf8');
-        console.log('Items db successfully was updated...');
+        return new Promise((resolve, reject) => {
+            fs.readFile('data.json', 'utf8', (err, db) => {
+                if (err) {
+                    reject(err)
+                } else {
+                    try {
+                        resolve(JSON.parse(db));
+                    } catch (err) {
+                        reject(err)
+                    }
+                }
+            })
+        }).then(data => {
+            let newData = data.filter(item => +item.id !== +request.body.id);
+            let item = data.find(item => +item.id === +request.body.id);
+            item.reviews = [
+                ...item.reviews,
+                request.body.review
+            ];
+            newData.unshift(item)
+            fs.writeFileSync('./data.json', JSON.stringify(newData, null, 2), 'utf8');
+            console.log('Items db successfully was updated...');
+            response.send(newData);
+        });
     } catch (error) {
         console.log('An error has occurred ', error);
     }
-    response.send(request.body);
 });

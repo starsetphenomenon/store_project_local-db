@@ -29,9 +29,9 @@ export default function Footer({ setFilterLink }) {
                 <div className="info">
                     <h2>Информация</h2>
                     <ul className="linkItems">
-                        <li><a href=".">Главная</a></li>
-                        <li><a href=".">О Компании</a></li>
-                        <li><a href=".">Контакты</a></li>
+                        <li><Link to="/">Главная</Link></li>
+                        <li><Link to="about">О Компании</Link></li>
+                        <li><Link to="contacts">Контакты</Link></li>
                     </ul>
                 </div>
                 <div className="catalog_footer">

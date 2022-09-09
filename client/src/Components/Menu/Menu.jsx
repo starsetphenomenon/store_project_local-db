@@ -9,6 +9,21 @@ export default function Menu({ menuVisibility, menuStatus, menuLinks, menuSubLin
         setFilterLink(e.target.name.toLowerCase())
     }
 
+    const handleSubMenu = (e) => {
+        if (e.currentTarget.classList.contains('activeSub')) {
+            e.currentTarget.classList.remove('activeSub')
+        } else {
+            let links = Array.from(e.currentTarget.parentNode.children).filter(el => el !== e.target);
+            links.forEach(el => el.classList.remove('activeSub'));
+            if (e.target.classList.contains('subName')) {
+                e.currentTarget.classList.toggle('activeSub')
+            }
+            if (e.target.tagName === 'A') {
+                e.currentTarget.classList.remove('activeSub')
+            }
+        }
+    }
+
     return (
         <div className={menuStatus ? 'Menu active' : 'Menu'}>
             <div onClick={menuVisibility} className='Menu__wrapper'></div>
@@ -21,7 +36,7 @@ export default function Menu({ menuVisibility, menuStatus, menuLinks, menuSubLin
                     <li onClick={menuVisibility}><NavLink to="/">Главная</NavLink></li>
                     <li onClick={menuVisibility}><NavLink to="/catalog">Каталог</NavLink></li>
                     {menuLinks.map((link, i) => {
-                        return <li key={i}><NavLink to="catalog">{link}</NavLink>
+                        return <li onClick={handleSubMenu} className='' key={i}><div className="subName">{link}</div>
                             <div className='lunges'>
                                 {menuSubLinks.map((subLink, ind) => {
                                     if (subLink[link] !== undefined) {
@@ -34,8 +49,8 @@ export default function Menu({ menuVisibility, menuStatus, menuLinks, menuSubLin
                     })}
                 </ul>
                 <ul className='mainLinks'>
-                    <li><a href=".">О компании</a></li>
-                    <li><a href=".">Контакты</a></li>
+                    <li><NavLink to="about">О компании</NavLink></li>
+                    <li><NavLink to="Contacts" href=".">Контакты</NavLink></li>
                 </ul>
             </div>
         </div >

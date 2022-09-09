@@ -1,18 +1,16 @@
 [
   {
-    "id": "12",
-    "topic": "Кухонные ножи TUOTOWN",
-    "type": "Ножи",
-    "collection": "TUOTOWN",
-    "title": "Кухонный нож FT1-L0",
-    "price": 955,
-    "status": "Popular",
-    "bladeMaterial": "сталь",
-    "bladeLength": "210",
-    "handleMaterial": "полиоксиметилен",
+    "id": "21",
+    "topic": "Дизайн",
+    "type": "Аксессуары",
+    "collection": "Раритет",
+    "title": "Кухонные часы",
+    "price": 510,
+    "status": "",
+    "material": "дерево",
     "img": {
       "mainSlider": "/assets/img/main/slideBanner.png",
-      "title": "/assets/items/kuhonnij/3.png",
+      "title": "/assets/items/accessories/1.png",
       "alt": "jackknife",
       "itemPageSlider": [
         "/assets/items/slider/1.webp",
@@ -43,9 +41,63 @@
         "date": "05/07/2022",
         "time": "21:52",
         "rating": 1
+      },
+      {
+        "name": "Someone Surnameoff",
+        "date": "9/8/2022",
+        "time": "11:47",
+        "rating": 1,
+        "message": "Test msg...."
+      },
+      {
+        "name": "Joseph Gordon Levitt",
+        "date": "9/8/2022",
+        "time": "11:51",
+        "rating": 1,
+        "message": "Item is terrible!"
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "topic": "Кухонные ножи TUOTOWN",
+    "type": "Ножи",
+    "collection": "TUOTOWN",
+    "title": "Кухонный нож FT1-L0",
+    "price": 955,
+    "status": "Popular",
+    "bladeMaterial": "сталь",
+    "bladeLength": "210",
+    "handleMaterial": "полиоксиметилен",
+    "img": {
+      "mainSlider": "/assets/img/main/slideBanner.png",
+      "title": "/assets/items/kuhonnij/3.png",
+      "alt": "jackknife",
+      "itemPageSlider": [
+        "/assets/items/slider/1.webp",
+        "/assets/items/slider/2.webp",
+        "/assets/items/slider/3.webp",
+        "/assets/items/slider/4.webp",
+        "/assets/items/slider/5.webp"
+      ]
+    },
+    "reviews": [
+      {
+        "name": "Elizabeth Vinigret",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/09/2021",
+        "time": "11:07",
+        "rating": 5
+      },
+      {
+        "rating": 5,
+        "name": "Andrew McNotmaker",
+        "date": "9/8/2022",
+        "time": "10:56",
+        "message": "Top item blablabla"
       }
     ],
-    "counter": 9
+    "counter": 6
   },
   {
     "id": "13",
@@ -71,27 +123,14 @@
     },
     "reviews": [
       {
-        "name": "John Doe",
-        "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2021",
-        "time": "14:27",
-        "rating": 4
-      },
-      {
-        "name": "Elizabeth Vinigret",
-        "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/09/2021",
-        "time": "11:07",
-        "rating": 5
-      },
-      {
         "name": "Northen Ethan",
         "message": "Lorem ipsum message for item reveiw....",
         "date": "05/07/2022",
         "time": "21:52",
         "rating": 1
       }
-    ]
+    ],
+    "counter": 4
   },
   {
     "id": "15",
@@ -116,29 +155,9 @@
       ]
     },
     "reviews": [
-      {
-        "name": "John Doe",
-        "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2021",
-        "time": "14:27",
-        "rating": 4
-      },
-      {
-        "name": "Elizabeth Vinigret",
-        "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/09/2021",
-        "time": "11:07",
-        "rating": 5
-      },
-      {
-        "name": "Northen Ethan",
-        "message": "Lorem ipsum message for item reveiw....",
-        "date": "05/07/2022",
-        "time": "21:52",
-        "rating": 1
-      }
+      
     ],
-    "counter": 3
+    "counter": 0
   },
   {
     "id": "16",
@@ -333,51 +352,6 @@
     "img": {
       "mainSlider": "/assets/img/main/slideBanner.png",
       "title": "/assets/items/tochilka/4.png",
-      "alt": "jackknife",
-      "itemPageSlider": [
-        "/assets/items/slider/1.webp",
-        "/assets/items/slider/2.webp",
-        "/assets/items/slider/3.webp",
-        "/assets/items/slider/4.webp",
-        "/assets/items/slider/5.webp"
-      ]
-    },
-    "reviews": [
-      {
-        "name": "John Doe",
-        "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2021",
-        "time": "14:27",
-        "rating": 4
-      },
-      {
-        "name": "Elizabeth Vinigret",
-        "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/09/2021",
-        "time": "11:07",
-        "rating": 5
-      },
-      {
-        "name": "Northen Ethan",
-        "message": "Lorem ipsum message for item reveiw....",
-        "date": "05/07/2022",
-        "time": "21:52",
-        "rating": 1
-      }
-    ]
-  },
-  {
-    "id": "21",
-    "topic": "Дизайн",
-    "type": "Аксессуары",
-    "collection": "Раритет",
-    "title": "Кухонные часы",
-    "price": 510,
-    "status": "",
-    "material": "дерево",
-    "img": {
-      "mainSlider": "/assets/img/main/slideBanner.png",
-      "title": "/assets/items/accessories/1.png",
       "alt": "jackknife",
       "itemPageSlider": [
         "/assets/items/slider/1.webp",

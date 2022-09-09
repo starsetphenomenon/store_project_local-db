@@ -47,49 +47,67 @@
             background: #373737a7;
             border-radius: 8px;
             position: relative;
-            transition: width 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            overflow: hidden;
+            height: 40px;
+            -webkit-tap-highlight-color: transparent;
 
-            & .lunges {
-                position: absolute;
-                max-height: 0;
-                width: 0;
-                overflow: hidden;
-                top: 40px;
-                left: 30px;
-                background-color: rgba(55, 55, 55, 1);
-                border-radius: 8px;
+            a {
+                width: 91%;
+            }
+
+          
+            .subName {
+                margin: 10px 0 0 15px;
+                padding-bottom: 10px;
+                width: 90%;
+                z-index: 1;
+            }
+
+            .lunges {
+                position: relative;
+                width: 90%;
+                margin: 0 0 0 5%;
                 z-index: 1001;
                 color: #FFF;
-                transition: max-height 1s;
                 transform-origin: top;
 
-                :first-child {
-                    border-radius: 8px 8px 0 0;
+                a {
+                    width: 96%;
+                    border-top: 1px solid #fff;
+                    font-size: 1rem;
+
+                    &:hover {
+                        color: #fff;
+                        transition: all 0.3s;
+                        background: rgba(0, 0, 0, 0.6);
+                    }
+                }
+
+                a.active {
+                    background: inherit;
+                    color: inherit;
+                    font-weight: inherit;
+                    opacity: inherit;
                 }
 
                 :last-child {
-                    border-radius: 0 0 8px 8px;
+                    border-radius: 0 0 8px 0;
                 }
 
-                a {
-
-                    display: block;
-
-                    &:not(:first-child) {
-                        border-top: 1px solid #fff;
-                    }
-
-                    &:hover {
-                        background-color: rgb(0, 0, 0);
-                        color: #fff;
-                    }
+                &:before {
+                    content: '\2192';
+                    position: absolute;
+                    top: -35px;
+                    right: -5px;
+                    width: auto;
+                    height: auto;
+                    font-size: 2rem;
+                    font-weight: 500;
                 }
-            }
-
-            &:hover .lunges {
-                max-height: 100vh;
-                width: 90%;
-                border: 2px solid rgba(255, 255, 255, 0.6);
             }
         }
 
@@ -144,9 +162,6 @@
                 line-height: 22px;
                 text-transform: uppercase;
 
-                &:hover a {
-                    opacity: 0.4;
-                }
             }
         }
 
@@ -163,6 +178,7 @@
                 background: #FFF;
 
                 a {
+                    width: 90%;
                     color: #000;
                 }
             }
@@ -200,6 +216,12 @@
                 li {
                     font-size: 15px;
                 }
+
+                .lunges {
+                    a {
+                        font-size: 14px;
+                    }
+                }
             }
 
             .mainLinks {
@@ -220,6 +242,7 @@
 @media (max-width: 575px) {
     .Menu {
 
+        width: 100% !important;
 
         &__content {
             width: 80%;
@@ -240,6 +263,12 @@
                 li {
                     font-size: 13px;
                 }
+
+                .lunges {
+                    a {
+                        font-size: 12px;
+                    }
+                }
             }
 
             .mainLinks {
@@ -257,11 +286,24 @@
     }
 }
 
-
 .active {
-    transform: translateX(0);
+    transform: translateX(0) !important;
 
     .Menu__wrapper {
         display: block;
+    }
+}
+
+.activeSub {
+    height: auto !important;
+
+    .lunges {
+        height: 100% !important;
+
+        &:before {
+            transition: transform 0.3s;
+            font-size: 1rem !important;
+            transform: rotate(90deg);
+        }
     }
 }

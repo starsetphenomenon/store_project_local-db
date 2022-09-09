@@ -5,8 +5,9 @@ import { React, useContext, useState, useEffect } from 'react'
 import { DataContext } from '../../App';
 
 function Header({ menuVisibility, setSearchingItems }) {
-
     let navigate = useNavigate();
+
+    // CART ~~~~~~~~~~~~~~~~~~~~~~
 
     const { cart, getStorage } = useContext(DataContext);
 
@@ -17,9 +18,11 @@ function Header({ menuVisibility, setSearchingItems }) {
         }
     }, [cart])
 
-
-
     const [totalCartItems, setTotalCartItems] = useState(0);
+
+    // CART ~~~~~~~~~~~~~~~~~~~~~~
+
+    // SEARCH ~~~~~~~~~~~~~~~~~~~~
 
     const onSearch = (e) => {
         setSearchingItems(e.target.value.toLowerCase());
@@ -29,6 +32,7 @@ function Header({ menuVisibility, setSearchingItems }) {
         }
     }
 
+    // SEARCH ~~~~~~~~~~~~~~~~~~~~
 
 
     return (

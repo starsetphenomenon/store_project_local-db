@@ -16,7 +16,7 @@ $hoverPluc: #C80000;
     width: 30.8%;
 }
 
-.item-img {   
+.item-img {
     -webkit-tap-highlight-color: transparent;
     position: relative;
     display: flex;
@@ -37,7 +37,7 @@ $hoverPluc: #C80000;
         display: flex;
         justify-content: center;
         align-items: center;
-       
+
         img {
             height: auto;
             width: auto;
@@ -58,6 +58,45 @@ $hoverPluc: #C80000;
 .basket {
     display: none;
 }
+
+.rating {
+    position: absolute;
+    height: 20px;
+    bottom: 30px !important;
+    right: 20px;
+    border-radius: 8px;
+    max-width: 80%;
+    width: auto;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: #373737a4;
+    backdrop-filter: blur(2px);
+
+
+    .stars {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .peoples {
+        color: #fff;
+    }
+}
+
+.rating.best {
+    color: yellow;
+}
+
+.rating.worst {
+    color: rgba(255, 53, 53, 0.8);
+}
+
 
 .plus {
     position: absolute;
@@ -85,7 +124,7 @@ $hoverPluc: #C80000;
         }
     }
 
-    .counter{
+    .counter {
         position: absolute;
         top: 8%;
         left: 4px;
@@ -139,6 +178,18 @@ $hoverPluc: #C80000;
 }
 
 @media (max-width: 991px) {
+
+    .rating {
+        .stars {
+            * {
+                font-size: 15px;
+            }
+        }
+
+        bottom: 30px;
+        right: 15px;
+    }
+
     .item-card {
         width: 32.3%;
         margin: 0 0 20px 0;
@@ -164,6 +215,17 @@ $hoverPluc: #C80000;
 }
 
 @media (max-width: 768px) {
+    .rating {
+        .stars {
+            * {
+                font-size: 15px;
+            }
+        }
+
+        bottom: 30px;
+        right: 15px;
+    }
+
     .item-card {
         width: 46%;
         margin: 0 0 30px 0;
@@ -183,6 +245,7 @@ $hoverPluc: #C80000;
 }
 
 @media (max-width: 575px) {
+
     .item-card {
         width: 48%;
     }
@@ -202,7 +265,7 @@ $hoverPluc: #C80000;
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
 
-        .img-wrapper{
+        .img-wrapper {
             height: 150px;
         }
 
@@ -211,12 +274,24 @@ $hoverPluc: #C80000;
         }
     }
 
+    .rating {
+        .stars {
+            * {
+                font-size: 10px;
+            }
+        }
+
+        bottom: 15px;
+        right: 15px;
+    }
+
     .plus {
         height: 28px;
         width: 28px;
         top: 15px;
         right: 15px;
-        .counter{
+
+        .counter {
             top: -2px;
             left: -1px;
         }
@@ -245,6 +320,19 @@ $hoverPluc: #C80000;
 }
 
 @media (max-width: 375px) {
+    .rating {
+        padding: 5px;
+
+        .stars {
+            * {
+                font-size: 10px;
+            }
+        }
+
+        bottom: 10px;
+        right: 10px;
+    }
+
     .plus {
         flex-direction: column;
         height: 26px;

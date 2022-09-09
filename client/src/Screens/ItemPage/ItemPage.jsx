@@ -15,16 +15,18 @@ export default function ItemPage() {
 
     let location = useLocation();
     useEffect(() => {
-        setCurrentItem(getCurrentItem(data)); 
-        console.log(currentItem)      
+        setCurrentItem(getCurrentItem(data));
     }, [location]);
 
     useEffect(() => {
-        setCurrentItem(getCurrentItem(data));    
+        if (!data.length) {
+            return
+        }
+        setCurrentItem(getCurrentItem(data));
     });
 
     useEffect(() => {
-       
+
     }, [currentItem]);
 
     const getCurrentItem = (db) => {
@@ -46,7 +48,7 @@ export default function ItemPage() {
         if (contain) {
             setPopUp(true);
             return;
-        }
+        }      
         addToCart(currentItem, data, counter, setCounter);
     }
 
