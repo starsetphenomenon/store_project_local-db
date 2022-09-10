@@ -1,5 +1,59 @@
 [
   {
+    "id": "1",
+    "topic": "Складные ножи TUOTOWN",
+    "type": "Ножи",
+    "collection": "TUOTOWN",
+    "title": "Складной нож SQ01-B",
+    "price": 850,
+    "status": "Новинка",
+    "bladeMaterial": "сталь 440С",
+    "bladeLength": "86",
+    "handleMaterial": "сталь/пластик",
+    "img": {
+      "mainSlider": "/assets/img/main/slideBanner.png",
+      "title": "/assets/items/skladnoj/1.png",
+      "alt": "jackknife",
+      "itemPageSlider": [
+        "/assets/items/slider/1.webp",
+        "/assets/items/slider/2.webp",
+        "/assets/items/slider/3.webp",
+        "/assets/items/slider/4.webp",
+        "/assets/items/slider/5.webp"
+      ]
+    },
+    "reviews": [
+      {
+        "name": "John Doe",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/11/2021",
+        "time": "14:27",
+        "rating": 4
+      },
+      {
+        "name": "Elizabeth Vinigret",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "15/09/2021",
+        "time": "11:07",
+        "rating": 5
+      },    
+      {
+        "name": "Bruce Wayne",
+        "date": "6/8/2022",
+        "time": "15:48",
+        "message": "Lorem ipsum message for item reveiw....",
+        "rating": 5
+      },
+      {
+        "rating": 5,
+        "name": "Jozsef Attila",
+        "date": "10/8/2022",
+        "time": "13:28",
+        "message": "Best item I'v ever had...."
+      }
+    ]
+  },
+  {
     "id": "21",
     "topic": "Дизайн",
     "type": "Аксессуары",
@@ -65,7 +119,7 @@
     "collection": "TUOTOWN",
     "title": "Кухонный нож FT1-L0",
     "price": 955,
-    "status": "Popular",
+    "status": "Популярное",
     "bladeMaterial": "сталь",
     "bladeLength": "210",
     "handleMaterial": "полиоксиметилен",
@@ -96,8 +150,7 @@
         "time": "10:56",
         "message": "Top item blablabla"
       }
-    ],
-    "counter": 6
+    ]
   },
   {
     "id": "13",
@@ -106,8 +159,8 @@
     "collection": "TUOTOWN",
     "title": "Набор ножей TUOTOWN",
     "price": 5195,
-    "status": "Popular",
-    "bladeMaterial": "татин",
+    "status": "Популярное",
+    "bladeMaterial": "титан",
     "handleMaterial": "полиоксиметилен",
     "img": {
       "mainSlider": "/assets/img/main/slideBanner.png",
@@ -129,8 +182,7 @@
         "time": "21:52",
         "rating": 1
       }
-    ],
-    "counter": 4
+    ]
   },
   {
     "id": "15",
@@ -154,10 +206,7 @@
         "/assets/items/slider/5.webp"
       ]
     },
-    "reviews": [
-      
-    ],
-    "counter": 0
+    "reviews": []
   },
   {
     "id": "16",
@@ -166,7 +215,7 @@
     "collection": "TUOTOWN",
     "title": "Набор ножей REGULAR",
     "price": 3760,
-    "status": "New",
+    "status": "Новинка",
     "bladeMaterial": "титан",
     "handleMaterial": "полиоксиметилен",
     "img": {
@@ -257,7 +306,7 @@
     "collection": "ARCOS",
     "title": "Ручная точилка Lansky",
     "price": 1280,
-    "status": "Popular",
+    "status": "Популярное",
     "material": "пластик/сталь",
     "img": {
       "mainSlider": "/assets/img/main/slideBanner.png",
@@ -302,7 +351,7 @@
     "collection": "Shifu",
     "title": "Точильный камень Shifu",
     "price": 1070,
-    "status": "New",
+    "status": "Новинка",
     "material": "водный камень корунд",
     "img": {
       "mainSlider": "/assets/items/mainSlider/mainSlider3.webp",
@@ -347,7 +396,7 @@
     "collection": "ARCOS",
     "title": "Точильный камень Arcos",
     "price": 580,
-    "status": "Popular",
+    "status": "Популярное",
     "material": "водный камень корунд",
     "img": {
       "mainSlider": "/assets/img/main/slideBanner.png",
@@ -437,7 +486,7 @@
     "collection": "Spooner",
     "title": "Кухонные ложки",
     "price": 970,
-    "status": "Popular",
+    "status": "Популярное",
     "material": "нержавеющая сталь",
     "img": {
       "mainSlider": "/assets/img/main/slideBanner.png",
@@ -482,7 +531,7 @@
     "collection": "Hoolder",
     "title": "Кухонные подставки",
     "price": 1235,
-    "status": "New",
+    "status": "Новинка",
     "material": "нержавеющая сталь",
     "img": {
       "mainSlider": "/assets/items/mainSlider/mainSlider4.webp",
@@ -521,74 +570,13 @@
     ]
   },
   {
-    "id": "1",
-    "topic": "Складные ножи TUOTOWN",
-    "type": "Ножи",
-    "collection": "TUOTOWN",
-    "title": "Складной нож SQ01-B",
-    "price": 850,
-    "status": "New",
-    "bladeMaterial": "сталь 440С",
-    "bladeLength": "86",
-    "handleMaterial": "сталь/пластик",
-    "img": {
-      "mainSlider": "/assets/img/main/slideBanner.png",
-      "title": "/assets/items/skladnoj/1.png",
-      "alt": "jackknife",
-      "itemPageSlider": [
-        "/assets/items/slider/1.webp",
-        "/assets/items/slider/2.webp",
-        "/assets/items/slider/3.webp",
-        "/assets/items/slider/4.webp",
-        "/assets/items/slider/5.webp"
-      ]
-    },
-    "reviews": [
-      {
-        "name": "John Doe",
-        "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/11/2021",
-        "time": "14:27",
-        "rating": 4
-      },
-      {
-        "name": "Elizabeth Vinigret",
-        "message": "Lorem ipsum message for item reveiw....",
-        "date": "15/09/2021",
-        "time": "11:07",
-        "rating": 5
-      },
-      {
-        "name": "Northen Ethan",
-        "message": "Lorem ipsum message for item reveiw....",
-        "date": "05/07/2022",
-        "time": "21:52",
-        "rating": 1
-      },
-      {
-        "name": "Gordon Levitt",
-        "message": "Some other review for item....",
-        "date": "5/04/2022",
-        "time": "14:27",
-        "rating": 3
-      },
-      {
-        "name": "Bruce Wayne",
-        "date": "6/8/2022",
-        "time": "15:48",
-        "message": "Lorem ipsum message for item reveiw....",
-        "rating": 5
-      }
-    ]
-  },
-  {
     "id": "6",
     "topic": "Кухонные ножи SANTOKU",
     "type": "Ножи",
     "collection": "SANTOKU",
     "title": "Кухонный нож Universal Santoku",
     "price": 980,
-    "status": "Popular",
+    "status": "Популярное",
     "bladeMaterial": "нержавеющая сталь Nitrum",
     "bladeLength": "190",
     "handleMaterial": "дерево",
@@ -757,7 +745,7 @@
     "collection": "TUOTOWN",
     "title": "Кухонный нож FT-B-1534",
     "price": 3455,
-    "status": "New",
+    "status": "Новинка",
     "bladeMaterial": "титан",
     "bladeLength": "210",
     "handleMaterial": "полиоксиметилен",
@@ -804,7 +792,7 @@
     "collection": "TUOTOWN",
     "title": "Складной нож FT-12P",
     "price": 1620,
-    "status": "Popular",
+    "status": "Популярное",
     "bladeMaterial": "сталь 440С",
     "bladeLength": "86",
     "handleMaterial": "пластик",
@@ -858,7 +846,7 @@
     "collection": "TUOTOWN",
     "title": "Набор ножей EXTRA",
     "price": 1785,
-    "status": "Popular",
+    "status": "Популярное",
     "bladeMaterial": "нержавеющая сталь Nitrum",
     "handleMaterial": "полиоксиметилен",
     "img": {

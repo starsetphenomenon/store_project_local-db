@@ -68,7 +68,7 @@
 
     &_heading {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         font-family: 'Jura';
         font-style: normal;
         font-weight: 500;
@@ -77,7 +77,7 @@
         text-transform: uppercase;
         color: #fff;
         margin: 60px 0;
-        padding: 0 60px;
+        padding: 0 10%;
 
         p {
             margin-left: 5%;
@@ -296,6 +296,24 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
+            position: relative;
+
+            .sortItems {
+                -webkit-tap-highlight-color: transparent;
+                position: absolute;
+                z-index: 1;
+                width: 230px;
+                right: 5%;
+                top: -100px;
+
+                .filter {
+                    width: 90%;
+                    background: rgba(0, 0, 0, 0.4);
+                    padding: 10px 5%;
+                    border-radius: 8px;
+                    backdrop-filter: blur(4px);
+                }
+            }
 
             .items__wrapper {
                 width: 100%;
@@ -386,6 +404,18 @@
     }
 }
 
+@media (max-width: 991px) {
+    .catalog{
+        &_heading{
+            justify-content: flex-start;
+        }
+        .sortItems {
+            top: -100px !important;
+            right: 0 !important;
+        }
+    }
+}
+
 @media (max-width: 767px) {
     .catalog {
         &_heading {
@@ -394,6 +424,12 @@
 
             p {
                 font-size: 12px;
+            }
+        }
+
+        .content {
+            .sortItems {
+                position: static !important ;
             }
         }
 
@@ -430,6 +466,10 @@
         .content {
             flex-direction: column;
 
+            .sortItems {
+                top: -80px !important;
+            }
+
             .filters {
                 width: 100%;
             }
@@ -451,6 +491,10 @@
     .catalog {
         .content {
             padding: 0;
+
+            .sortItems {
+                top: -80px !important;
+            }
 
             .items {
                 width: 100%;

@@ -73,6 +73,7 @@ function App() {
   const [mainSlides, setMainSlides] = useState([]);
   const [filterLink, setFilterLink] = useState('');
   const [searchingItems, setSearchingItems] = useState('');
+  const [searchResult, setSearchResult] = useState([]);
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
@@ -123,7 +124,7 @@ function App() {
 
     <div className="App">
       <DataContext.Provider value={{ addToCart, data, setData, mainSlides, filterLink, cart, setCart, getStorage, setStorage, checkStorage }}>
-        <Header setSearchingItems={setSearchingItems} menuVisibility={handleMenuVisibility} />
+        <Header searchResult={searchResult} setSearchingItems={setSearchingItems} menuVisibility={handleMenuVisibility} />
         <Menu menuLinks={menuLinks} setFilterLink={setFilterLink} menuSubLinks={menuSubLinks} menuStatus={menu} menuVisibility={handleMenuVisibility} />
         <ScrollToTop>
           <Routes>
@@ -131,7 +132,7 @@ function App() {
             <Route path="catalog" element={<Catalog filter1={menuLinks} />} ></Route>
             <Route path="catalog/items/:id" element={<ItemPage />} />
             <Route path="cart" element={<Cart />} />
-            <Route path="search" element={<Search setSearchingItems={setSearchingItems} searchingItems={searchingItems} />} />
+            <Route path="search" element={<Search setSearchResult={setSearchResult} setSearchingItems={setSearchingItems} searchingItems={searchingItems} />} />
             <Route path="items/:id" element={<ItemPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

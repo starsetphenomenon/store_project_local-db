@@ -4,6 +4,7 @@ import ItemCard from '../../Components/ItemCard/ItemCard';
 import "./Catalog.scss";
 import { React, useContext, useState, useEffect } from 'react'
 import { DataContext } from '../../App';
+import { Link } from 'react-router-dom';
 
 
 function Catalog({ filter1 }) {
@@ -20,8 +21,10 @@ function Catalog({ filter1 }) {
         max: 9999,
     });
 
+    const sortBy = ['Цена по убыванию', 'Цена по возрастанию', 'Рейтингу']
+
     useEffect(() => {
-        setFilter({ filter: filterLink }) // filterLink = link from MENU or FOOTER ~~~~~~~~~~~
+        setFilter({ filterLink: filterLink }) // filterLink = link from MENU or FOOTER ~~~~~~~~~~~      
     }, [filterLink])
 
     useEffect(() => {
@@ -29,7 +32,22 @@ function Catalog({ filter1 }) {
         getPriceRange(data)
     }, [data]);
 
-    const handleFilter = (e) => { // handle TYPE filters ~~~~~~~~~~        
+    useEffect(() => {
+        handleAllFilters(filter, data);
+        let title = Object.values(filter).filter(el => el !== '');
+        setPageTitle(title.join(' / '));
+    }, [filter]);
+
+    useEffect(() => {
+        if (filter['Что ищем?'] && filter['filterLink'].length) { // reset filterLink if new TYPE filter is set ~~~~~~~~~~
+            setFilter({
+                ...filter,
+                filterLink: '',
+            })
+        }
+    }, [filterData]);
+
+    const handleFilter = (e) => { // handle TYPE filters ~~~~~~~~~~      
         if (e.target.getAttribute('value') === 'Все') {
             setFilter({
                 ...filter,
@@ -38,6 +56,7 @@ function Catalog({ filter1 }) {
         } else {
             // Refresh MATERIAL filter if TYPE filter is pressed ~~~~~~~~~~~~~~~~~
             if (e.target.getAttribute('name') === 'Что ищем?' && (filter['Материал'] !== undefined && filter['Материал'] !== '')) {
+
                 setFilter({
                     ...filter,
                     [e.target.getAttribute('name')]: e.target.getAttribute('value'),
@@ -88,9 +107,10 @@ function Catalog({ filter1 }) {
         getPriceRange(result);
 
         // MATERIAL filter depends on TYPE filter ~~~~~~~~~~~~~~~~~~~
-        if (filter['Что ищем?']) {
+        const filterMaterialByType = (filterIsOn, type) => {
+            if (!filterIsOn) { return }
             let tempFilter = ['Все'];
-            let tempData = data.filter(el => JSON.stringify(el.type).toLowerCase().includes((filter['Что ищем?']).toLowerCase()))
+            let tempData = data.filter(el => JSON.stringify(el[type]).toLowerCase().includes((filterIsOn).toLowerCase()))
             tempData.forEach(el => {
                 if (el.material) {
                     tempFilter.push(el.material)
@@ -102,8 +122,13 @@ function Catalog({ filter1 }) {
                     tempFilter.push(el.bladeMaterial)
                 }
             })
-            setFilterByMaterial([...new Set(tempFilter)]);
+            console.log(filterIsOn)
+            console.log(tempFilter)
+            return setFilterByMaterial([...new Set(tempFilter)]);
         }
+        filterMaterialByType(filter['Что ищем?'], 'type');
+        filterMaterialByType(filter['filterLink'], 'topic');
+        // MATERIAL filter depends on TYPE filter ~~~~~~~~~~~~~~~~~~~
     }
 
     const getPriceRange = (data) => {
@@ -125,17 +150,17 @@ function Catalog({ filter1 }) {
         })
     }
 
-    useEffect(() => {
-        handleAllFilters(filter, data);
-        let title = Object.values(filter).filter(el => el !== '');
-        setPageTitle(title.join(' / '));
-    }, [filter]);
-
     const handlePrice = (e) => {
         let result = [];
-        result = data.filter(el => el.price >= +e.target.min && el.price <= +e.target.value); // Filter by PRICE ~~~~~~~~~
+        result = data.filter(el => el.price > +priceRange.min && el.price <= +e.target.value); // Filter by PRICE ~~~~~~~~~
         handleAllFilters(filter, result); // Filter by current FILTERS ~~~~~~~~~
         if (e.target.name === 'price') { // prcieRange from inputs
+            if (e.target.getAttribute('id') === 'min') {
+                result = data.filter(el => el.price > +e.target.value && el.price <= +priceRange.max);
+            } else {
+                result = data.filter(el => el.price > +priceRange.min && el.price <= +e.target.value);
+            }
+            handleAllFilters(filter, result);
             setPriceRange({
                 ...priceRange,
                 [e.target.getAttribute('id')]: +e.target.value
@@ -153,6 +178,42 @@ function Catalog({ filter1 }) {
     const resetFilters = () => {
         setFilter({});
     }
+
+    // Sort items ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    const sortData = (data, criterium, direction) => { // SORT function ~~~~~~~~~
+        if (direction === '-') {
+            return data.sort((a, b) => b[criterium] - a[criterium])
+        }
+        if (direction === '+') {
+            return data.sort((a, b) => a[criterium] - b[criterium])
+        }
+    }
+
+    const [sortVisibility, setSortVisibility] = useState(false);
+    const handleSortItems = (e) => { // handle SORT by SELECT ~~~~~~~
+        setSortVisibility(prev => !prev);
+        if (e.target.getAttribute('value').includes('возрастанию')) {
+            setFilterData(sortData(filterData, 'price', '+'))
+        }
+        if (e.target.getAttribute('value').includes('убыванию')) {
+            setFilterData(sortData(filterData, 'price', '-'))
+        }
+        if (e.target.getAttribute('value').includes('Рейтингу')) {
+            let tempData = [];
+            filterData.map(el => { // get each item AVG rating ~~~~~~~~
+                let ratings = el.reviews.map(e => e.rating)
+                let avgRating = Math.round(ratings.reduce((prev, curr, _, arr) => prev += curr / arr.length, 0))
+                return tempData.push({
+                    ...el,
+                    itemRating: avgRating
+                })
+            })
+            setFilterData(sortData(tempData, 'itemRating', '-'))
+        }
+    }
+
+    // Sort items ~~~~~~~~~~~~~~~~~~~~~~~~~
 
     return (
         <div className='catalog'>
@@ -180,17 +241,17 @@ function Catalog({ filter1 }) {
                     <FilterSelect name="Материал" handleFilter={handleFilter} filter={filterByMaterial} />
                     <div className="status">
                         <h3>Статус</h3>
-                        <div>
-                            <input type="radio" id="All" name="status" onChange={handleStatus} />
+                        <div onChange={handleStatus}>
+                            <input type="radio" id="All" name="status" />
                             <label htmlFor="All">Все</label>
                         </div>
-                        <div>
-                            <input type="radio" id="New" name="status" onChange={handleStatus} />
-                            <label htmlFor="New">Новинки</label>
+                        <div onChange={handleStatus}>
+                            <input type="radio" id="Новинка" name="status" />
+                            <label htmlFor="Новинка">Новинки</label>
                         </div>
-                        <div>
-                            <input type="radio" id="Popular" name="status" onChange={handleStatus} />
-                            <label htmlFor="Popular">Популярное</label>
+                        <div onChange={handleStatus}>
+                            <input type="radio" id="Популярное" name="status" />
+                            <label htmlFor="Популярное">Популярное</label>
                         </div>
                     </div>
                     <div className="price">
@@ -204,6 +265,9 @@ function Catalog({ filter1 }) {
                     </div>
                 </div>
                 <div className="items">
+                    <div className="sortItems">
+                        <FilterSelect name="Сортировать" handleFilter={handleSortItems} filterVisibility={sortVisibility} filter={sortBy} />
+                    </div>
                     <div className="items__wrapper">
                         {filterData.map(item => {
                             return <ItemCard itemId={item.id} data={item} key={item.id} className={'item-card-catalog'} status={item.status} />
@@ -213,46 +277,46 @@ function Catalog({ filter1 }) {
             </div>
             <div className="footer">
                 <div className="knifeTypes">
-                    <a href=".">
+                    <Link to="/knifes-with-surface">
                         <div className="img-wrapper"></div>
                         <img src="./assets/img/catalog/catalog-footer-type1.png" alt="" />
                         <h5>Ножи с покрытием</h5>
-                    </a>
-                    <a href=".">
+                    </Link>
+                    <Link to="/knifes-with-surface">
                         <div className="img-wrapper"></div>
                         <img src="./assets/img/catalog/catalog-footer-type2.png" alt="" />
                         <h5>Ножи с покрытием</h5>
-                    </a>
-                    <a href=".">
+                    </Link>
+                    <Link to="/knifes-with-surface">
                         <div className="img-wrapper"></div>
                         <img src="./assets/img/catalog/catalog-footer-type3.png" alt="" />
                         <h5>Ножи с покрытием</h5>
-                    </a>
-                    <a href=".">
+                    </Link>
+                    <Link to="/knifes-with-surface">
                         <div className="img-wrapper"></div>
                         <img src="./assets/img/catalog/catalog-footer-type4.png" alt="" />
                         <h5>Ножи с покрытием</h5>
-                    </a>
-                    <a href=".">
+                    </Link>
+                    <Link to="/knifes-with-surface">
                         <div className="img-wrapper"></div>
                         <img src="./assets/img/catalog/catalog-footer-type5.png" alt="" />
                         <h5>Ножи с покрытием</h5>
-                    </a>
-                    <a href=".">
+                    </Link>
+                    <Link to="/knifes-with-surface">
                         <div className="img-wrapper"></div>
                         <img src="./assets/img/catalog/catalog-footer-type6.png" alt="" />
                         <h5>Ножи с покрытием</h5>
-                    </a>
-                    <a href=".">
+                    </Link>
+                    <Link to="/knifes-with-surface">
                         <div className="img-wrapper"></div>
                         <img src="./assets/img/catalog/catalog-footer-type7.png" alt="" />
                         <h5>Ножи с покрытием</h5>
-                    </a>
-                    <a href=".">
+                    </Link>
+                    <Link to="/knifes-with-surface">
                         <div className="img-wrapper"></div>
                         <img src="./assets/img/catalog/catalog-footer-type8.png" alt="" />
                         <h5>Ножи с покрытием</h5>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>

@@ -16,7 +16,7 @@ function Main() {
         if (checkStorage('cart')) { // put cartStorage to CART if it's not empty ~~~~~~~~~~
             setCart(getStorage('cart'))
         }      
-        setDataByStatus(data.filter(el => el.status === 'Popular'));
+        setDataByStatus(data.filter(el => el.status === 'Популярное'));
         setDataByType(data);     
     }, [data])
 
@@ -104,8 +104,8 @@ function Main() {
             <div className="line"></div>
             <div className="main-wrapper">
                 <div className="switcher-new-popular">
-                    <h3 value="New" onClick={filterDataByStatus} className={activeStatus === 'New' ? 'new active' : 'new'}>НОВИНКИ</h3>
-                    <h3 value="Popular" onClick={filterDataByStatus} className={activeStatus === 'Popular' ? 'active' : ''}>ПОПУЛЯРНОЕ</h3>
+                    <h3 value="Новинка" onClick={filterDataByStatus} className={activeStatus === 'New' ? 'new active' : 'new'}>НОВИНКИ</h3>
+                    <h3 value="Популярное" onClick={filterDataByStatus} className={activeStatus === 'Popular' ? 'active' : ''}>ПОПУЛЯРНОЕ</h3>
                 </div>
                 <div className="collection-item">
                     {dataByStatus.map(item => {
