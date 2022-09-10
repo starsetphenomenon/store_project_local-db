@@ -26,6 +26,7 @@
         background-color: transparent;
         border: none;
         cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
 
         svg {
             transition-duration: 0.3s;

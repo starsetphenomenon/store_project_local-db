@@ -11,7 +11,7 @@ export default function PopUp({ children, popUp, setPopUp }) {
     let timer;
 
     const timerOn = () => {
-        timer = setTimeout(handlePopUp, 3000);
+        timer = setTimeout(handlePopUp, 5000);
     }
 
     useEffect(() => {

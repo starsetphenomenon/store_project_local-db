@@ -9,7 +9,7 @@ import ItemPageSlider from '../../Components/ScrollToTop/ItemPageSlider/ItemPage
 
 export default function ItemPage() {
 
-    const { data, addToCart, cart } = useContext(DataContext);
+    const { data, addToCart, cart, setCart, getStorage } = useContext(DataContext);
 
     const [currentItem, setCurrentItem] = useState({});
 
@@ -48,7 +48,7 @@ export default function ItemPage() {
         if (contain) {
             setPopUp(true);
             return;
-        }      
+        }
         addToCart(currentItem, data, counter, setCounter);
     }
 
