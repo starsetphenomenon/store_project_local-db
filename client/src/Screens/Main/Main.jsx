@@ -8,16 +8,16 @@ import { useNavigate } from 'react-router-dom';
 
 function Main() {
     let navigate = useNavigate();
-    const { data, mainSlides, setCart, checkStorage, getStorage } = useContext(DataContext);
+    const { data, mainSlides, setCart, getStorage } = useContext(DataContext);
     const [dataByType, setDataByType] = useState([]);
     const [dataByStatus, setDataByStatus] = useState([]);
 
     useEffect(() => {
-        if (checkStorage('cart')) { // put cartStorage to CART if it's not empty ~~~~~~~~~~
+        if (getStorage('cart') !== 'undefined' && getStorage('cart') !== null) { // put cartStorage to CART if it's not empty ~~~~~~~~~~
             setCart(getStorage('cart'))
-        }      
+        }
         setDataByStatus(data.filter(el => el.status === 'Популярное'));
-        setDataByType(data);     
+        setDataByType(data);
     }, [data])
 
 

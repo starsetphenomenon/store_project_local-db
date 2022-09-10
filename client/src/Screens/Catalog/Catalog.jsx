@@ -122,8 +122,6 @@ function Catalog({ filter1 }) {
                     tempFilter.push(el.bladeMaterial)
                 }
             })
-            console.log(filterIsOn)
-            console.log(tempFilter)
             return setFilterByMaterial([...new Set(tempFilter)]);
         }
         filterMaterialByType(filter['Что ищем?'], 'type');

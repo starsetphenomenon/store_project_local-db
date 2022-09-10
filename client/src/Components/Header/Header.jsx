@@ -13,7 +13,7 @@ function Header({ menuVisibility, setSearchingItems }) {
 
     useEffect(() => { // counter in HEADER under cart icon ~~~~~~~~~~~~~
         setTotalCartItems(cart.length)
-        if (getStorage('cart') !== 'undefined') { // take counter from storage if it's not empty ~~~~~~~~~~~~
+        if (getStorage('cart') !== 'undefined' && getStorage('cart') !== null) { // take counter from storage if it's not empty ~~~~~~~~~~~~
             setTotalCartItems(getStorage('cart').length)
         }
     }, [cart])

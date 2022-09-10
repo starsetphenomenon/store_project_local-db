@@ -61,10 +61,6 @@ function App() {
     return localStorage.setItem(key, JSON.stringify(value));
   }
 
-  const checkStorage = (key) => {
-    return (JSON.parse(localStorage.getItem(key)) === 'undefined' || JSON.parse(localStorage.getItem(key)).length);
-  }
-
   // Local Storage ~~~~~~~~~~~~~~~~~~~~~~
 
   const [data, setData] = useState([]);
@@ -82,12 +78,13 @@ function App() {
       .then((result) => {
         setData(result);
       })
+    setCart(getStorage('cart')) // get Cart from storage if page REFRESHED ~~~~~~~~~~~
   }, []);
 
   useEffect(() => { // Get only unique links/topics from data ~~~
     if (!data.length) {
       return
-  }
+    }
     let links = [...new Set(data.map(item => item.type))]; // Main links
     let subLinks = []; // subLinks
     let slides = []; // main slider slides;
@@ -123,7 +120,7 @@ function App() {
   return (
 
     <div className="App">
-      <DataContext.Provider value={{ addToCart, data, setData, mainSlides, filterLink, cart, setCart, getStorage, setStorage, checkStorage }}>
+      <DataContext.Provider value={{ addToCart, data, setData, mainSlides, filterLink, cart, setCart, getStorage, setStorage }}>
         <Header searchResult={searchResult} setSearchingItems={setSearchingItems} menuVisibility={handleMenuVisibility} />
         <Menu menuLinks={menuLinks} setFilterLink={setFilterLink} menuSubLinks={menuSubLinks} menuStatus={menu} menuVisibility={handleMenuVisibility} />
         <ScrollToTop>

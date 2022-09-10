@@ -8,10 +8,11 @@ import { DataContext } from '../../App';
 import { Link } from 'react-router-dom';
 
 export default function Cart() {
-    const { cart, setCart, checkStorage, getStorage, setStorage } = useContext(DataContext);
+    const { cart, setCart, getStorage, setStorage } = useContext(DataContext);
     const [popUp, setPopUp] = useState(false);
     const [modal, setModal] = useState(false);
     const [totalPrice, setTotalPrice] = useState(0);
+    const [myOrders, setMyOrders] = useState([]);
 
     const updateTotalPrice = (db) => {
         let prices = [];
@@ -27,7 +28,7 @@ export default function Cart() {
     }
 
     useEffect(() => {
-        if (!cart.length && checkStorage('cart')) {
+        if (!cart.length && (getStorage('cart') !== 'undefined' && getStorage('cart') !== null)) {
             updateTotalPrice([])
             if (getStorage('cart').length > 0) {
                 setCart(getStorage('cart'))
@@ -52,6 +53,9 @@ export default function Cart() {
     });
 
     useEffect(() => {
+        if (!formValue.name.length && !formValue.tel.length && !formValue.email.length) {
+            return
+        }
         setStorage('cartForm', formValue);
     }, [formValue]);
 
@@ -91,12 +95,42 @@ export default function Cart() {
         setPopUp(false);
     }
 
-    const handleSend = () => {
+    useEffect(() => {
+        if ((getStorage('myOrders') !== 'undefined' && getStorage('myOrders') !== null) && getStorage('myOrders').length) { // get myOrders from storage
+            setMyOrders(getStorage('myOrders'))
+            return
+        }
+    }, [])
+
+    const handleSendOrder = () => {
         if (!popUp) {
             clearTimeout(popTimer);
         }
-        if (form.name && form.email && form.tel) {
+        if (form.name && form.email && form.tel) { // clear All storages and cart on submit ~~~~~~~~~~~~~~~~
             setModal(true);
+            setFormValue({
+                name: '',
+                tel: '',
+                email: '',
+            })
+            localStorage.removeItem('cartForm');
+            localStorage.removeItem('cart');
+            setCart([]);
+            let date = new Date();
+            setMyOrders([
+                ...myOrders, {
+                    orderItems: cart,
+                    date: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
+                    time: `${date.getHours()}:${date.getMinutes()}`,
+                }
+            ])
+            setStorage('myOrders', [
+                ...myOrders, {
+                    orderItems: cart,
+                    date: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
+                    time: `${date.getHours()}:${date.getMinutes()}`,
+                }
+            ])
         } else {
             setPopUp(true);
             setTimeout(popTimer, 3000);
@@ -181,10 +215,10 @@ export default function Cart() {
                     <div className="send">
                         <div className="policy">
                             Нажимая «Выбрать способ доставки», подтверждаю, что я ознакомлен с условиями
-                            <a href="."> Публичного договора оферты</a> и <a href=".">Политикой конфиденциальности</a>,
+                            <Link to="policy"> Публичного договора оферты</Link> и <Link to="policy">Политикой конфиденциальности</Link>,
                             а также согласен получать информационную рассылку
                         </div>
-                        <button onClick={handleSend} type="submit">Отправить форму</button>
+                        <button onClick={handleSendOrder} type="submit">Отправить форму</button>
                     </div>
                 </form>
             </div>

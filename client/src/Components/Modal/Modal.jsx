@@ -10,7 +10,7 @@ export default function Modal({ children, modal, setModal }) {
     return (
         <div className={modal ? 'Modal active' : 'Modal'}>
             <div className={modal ? 'Modal__wrapper active' : 'Modal__wrapper'}></div>
-            <div className={modal ? 'Modal__content active' : 'Modal__content inActive'}>
+            <div className={modal ? 'Modal__content' : 'Modal__content inActive'}>
                 <div onClick={handleModal} className="close">
                     <span></span>
                     <span></span>

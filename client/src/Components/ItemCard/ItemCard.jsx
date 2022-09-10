@@ -7,12 +7,12 @@ import { useNavigate, Link } from 'react-router-dom';
 function ItemCard({ data: item, className, itemId }) {
 
     let navigate = useNavigate();
-    const { data, addToCart, checkStorage, setCart, getStorage, cart } = useContext(DataContext);
+    const { data, addToCart, setCart, getStorage, cart } = useContext(DataContext);
     const [counter, setCounter] = useState(0);
     const [itemAvgRating, setItemAvgRating] = useState(0);
 
     useEffect(() => {
-        if (checkStorage('cart')) { // put cartStorage to CART if it's not empty ~~~~~~~~~~
+        if (getStorage('cart') !== 'undefined' && getStorage('cart') !== null) { // put cartStorage to CART if it's not empty ~~~~~~~~~~
             setCart(getStorage('cart'))
         }
         if (item.counter !== undefined) { // take element counter if exist ~~~~~~~~~~~~~   
