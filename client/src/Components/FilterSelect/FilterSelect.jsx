@@ -1,13 +1,19 @@
 import './FilterSelect.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-export default function FilterSelect({ filter, name, handleFilter }) {
+export default function FilterSelect({ filter, name, handleFilter, filterVisibility }) {
 
     const [isVisible, setIsVisible] = useState(false);
 
     const handleVisibility = () => {
         setIsVisible(prev => !prev);
     }
+
+    useEffect(() => {
+        if (filterVisibility !== undefined) {
+            setIsVisible(false)
+        }
+    }, [filterVisibility])
 
     return (
         <div className="filter">
