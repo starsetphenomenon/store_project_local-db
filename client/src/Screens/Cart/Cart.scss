@@ -201,6 +201,8 @@
         justify-content: center;
         align-items: center;
         padding: 60px 0;
+        position: relative;
+        z-index: 1;
 
         form {
             display: flex;
@@ -264,7 +266,7 @@
                     width: 90%;
                     display: flex;
                     color: #fff;
-                    padding: 0 5%;                   
+                    padding: 0 5%;
 
                     ::placeholder {
                         font-family: 'Montserrat';
@@ -353,11 +355,174 @@
                 border: none;
                 color: #FFFFFF;
                 cursor: pointer;
+
                 &:hover {
                     background: rgba(255, 255, 255, 0.6);
                     color: #000;
                 }
             }
+        }
+
+        &::before {
+            content: '';
+            height: 0;
+            width: 0;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-top: 100px solid #232323;
+            bottom: -20%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .ordersHistory {
+        height: 0;
+        width: 80%;
+        border-radius: 15px;
+        background: #232323;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+        transform-origin: top;
+        transform: translateY(200%);
+
+        .ordersItem {
+            padding: 0;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            border-bottom: 3px solid #373737;
+
+            .ordersHeadingItems {
+                justify-content: center;
+            }
+
+            .ordersHeadingDate,
+            .ordersHeadingItems,
+            .ordersHeadingTotal {
+                font-family: 'Jura';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 28px;
+
+                &:not(:last-child) {
+                    border-right: none;
+                }
+            }
+        }
+
+
+        * {
+            &:not(:last-child) {
+                border-right: 3px solid #373737;
+            }
+
+            padding: 10px;
+        }
+
+        .date,
+        .ordersHeadingDate {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 120px;
+
+            .Date {
+                max-width: 80%;
+                border-right: none;
+                border-bottom: 1px dashed #fff;
+                font-size: 12px;
+            }
+
+            .time {
+                font-size: 12px;
+            }
+        }
+
+        .totalPrice,
+        .ordersHeadingTotal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 180px;
+
+            .totalPrice_wrapper {
+                width: 100%;
+                word-wrap: break-word;
+            }
+        }
+
+        .items,
+        .ordersHeadingItems {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            width: 120px;
+            width: 100%;
+
+            .item {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #373737;
+                padding: 0 5px;
+                width: auto;
+                max-width: 100%;
+                border-radius: 8px;
+                border-right: none;
+                cursor: pointer;
+
+                .itemName {
+                    border-right: 3px solid #232323;
+                }
+
+                &:hover {
+                    background: #6d6d6d;
+                }
+            }
+        }
+    }
+
+    .showMyorders {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        text-transform: uppercase;
+        width: auto;
+        height: 50px;
+        border: none;
+        cursor: pointer;
+        background: #272727;
+        color: #fff;
+        border-radius: 27px;
+        padding: 10px 20px;
+        -webkit-tap-highlight-color: transparent;
+        margin-top: 30px;
+        position: relative;
+        z-index: 5;
+
+
+
+        &:hover {
+            background: rgba(0, 0, 0, 1);
+            color: #fff;
+        }
+
+        &:active {
+            background: rgba(197, 197, 197, 1);
+            transform: scale(1.1);
+            color: black;
         }
     }
 }
@@ -381,8 +546,64 @@
     }
 }
 
+@media (max-width: 767px) {
+    .ordersHistory {
+
+        .ordersHeadingDate,
+        .ordersHeadingItems,
+        .ordersHeadingTotal {
+            font-size: 17px !important;
+        }
+
+        .date {
+            .Date {
+                word-wrap: break-word;
+                display: flex;
+                flex-direction: row-reverse;
+            }
+        }
+
+        .totalPrice {
+            flex-direction: column;
+            font-size: 12px;
+            width: 40px !important;
+        }
+    }
+}
+
 
 @media (max-width: 575px) {
+    .ordersHistory {
+        gap: 30px;
+
+        .ordersItem {
+            flex-direction: column !important;
+
+            * {
+                &:not(:last-child) {
+                    border: none;
+                    border-bottom: 3px solid #373737;
+                    width: 90%;
+                    justify-content: center;
+                }
+            }
+
+            .ordersHeadingTotal {
+                width: 90% !important;
+            }
+
+            .totalPrice {
+                width: 90% !important;
+
+                * {
+                    text-align: center;
+                }
+            }
+
+            border-bottom: 3px solid #fff !important;
+        }
+    }
+
     .Cart {
         .top {
             .back {
@@ -431,7 +652,9 @@
 
         .bottom {
             padding: 30px 0;
-
+            &::before{
+                bottom: -17%;
+            }
             h3 {
                 font-weight: 500;
                 font-size: 18px;
@@ -451,4 +674,9 @@
             }
         }
     }
+}
+
+.show {
+    height: 100% !important;
+    transform: translateY(0) !important;
 }

@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import './Slider.scss';
 import { Navigation, Pagination, Mousewheel, Keyboard, Autoplay } from "swiper";
+import { Link } from 'react-router-dom';
 
 export default function Slider({ slides }) {
     const pagination = {
@@ -21,7 +22,7 @@ export default function Slider({ slides }) {
             spaceBetween={0}
             modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
             autoplay={{
-                delay: 3500,
+                delay: 350055,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
             }}
@@ -36,7 +37,7 @@ export default function Slider({ slides }) {
                         <h1>{el.title}</h1>
                         <h4>Коллекция: {el.collection}</h4>
                         <h4>Цена: {el.price} UAH</h4>
-                        <button>Подробнее</button>
+                        <button><Link to={`items/itemID_#${el.id}`}>Подробнее</Link></button>
                     </div>
                 </div>
             </SwiperSlide>

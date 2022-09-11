@@ -34,6 +34,9 @@ function ItemCard({ data: item, className, itemId }) {
     }, [item])
 
     const elemInCart = (elem, db, resultItem) => {
+        if (db === null) {
+            return
+        }
         let item = db.find(item => +item.id === +elem.id);
         if (!item) {
             return

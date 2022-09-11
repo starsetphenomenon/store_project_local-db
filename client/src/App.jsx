@@ -23,7 +23,7 @@ function App() {
     setCounter(prev => prev + 1);
     let elemId = target.id;
     let item = data.find(item => +item.id === +elemId);
-    if (cart.some(el => +el.id === +elemId)) { // if Cart elem already exist, then just ++amount of elem ~~~~~~~~
+    if (cart !== null && cart.some(el => +el.id === +elemId)) { // if Cart elem already exist, then just ++amount of elem ~~~~~~~~
       let amountItem = cart.find(e => +e.id === +elemId);
       amountItem.amount++;
       amountItem.counter++;
@@ -78,7 +78,9 @@ function App() {
       .then((result) => {
         setData(result);
       })
-    setCart(getStorage('cart')) // get Cart from storage if page REFRESHED ~~~~~~~~~~~
+    if (getStorage('cart') !== null) {
+      setCart(getStorage('cart')) // get Cart from storage if page REFRESHED ~~~~~~~~~~~
+    }
   }, []);
 
   useEffect(() => { // Get only unique links/topics from data ~~~
@@ -95,7 +97,7 @@ function App() {
         [el.type]: el.topic,
       })
     })
-    let slide = data.filter(el => el.status === 'New')
+    let slide = data.filter(el => el.status === 'Новинка')
     slide.forEach(el => { // main slider slides
       slides.push({
         price: el.price,
