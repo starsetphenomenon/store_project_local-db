@@ -1,5 +1,44 @@
 [
   {
+    "id": "13",
+    "topic": "Набор титановых ножей",
+    "type": "Наборы ножей",
+    "collection": "TUOTOWN",
+    "title": "Набор ножей TUOTOWN",
+    "price": 5195,
+    "status": "Новинка",
+    "bladeMaterial": "титан",
+    "handleMaterial": "полиоксиметилен",
+    "img": {
+      "mainSlider": "/assets/img/main/slideBanner.png",
+      "title": "/assets/items/nabor/1.png",
+      "alt": "jackknife",
+      "itemPageSlider": [
+        "/assets/items/slider/1.webp",
+        "/assets/items/slider/2.webp",
+        "/assets/items/slider/3.webp",
+        "/assets/items/slider/4.webp",
+        "/assets/items/slider/5.webp"
+      ]
+    },
+    "reviews": [
+      {
+        "name": "Northen Ethan",
+        "message": "Lorem ipsum message for item reveiw....",
+        "date": "05/07/2022",
+        "time": "21:52",
+        "rating": 1
+      },
+      {
+        "name": "Alice Fromwonderland",
+        "date": "11/8/2022",
+        "time": "9:11",
+        "rating": 1,
+        "message": "This item is 100% not magic!"
+      }
+    ]
+  },
+  {
     "id": "1",
     "topic": "Складные ножи TUOTOWN",
     "type": "Ножи",
@@ -36,7 +75,7 @@
         "date": "15/09/2021",
         "time": "11:07",
         "rating": 5
-      },    
+      },
       {
         "name": "Bruce Wayne",
         "date": "6/8/2022",
@@ -149,38 +188,6 @@
         "date": "9/8/2022",
         "time": "10:56",
         "message": "Top item blablabla"
-      }
-    ]
-  },
-  {
-    "id": "13",
-    "topic": "Набор титановых ножей",
-    "type": "Наборы ножей",
-    "collection": "TUOTOWN",
-    "title": "Набор ножей TUOTOWN",
-    "price": 5195,
-    "status": "Популярное",
-    "bladeMaterial": "титан",
-    "handleMaterial": "полиоксиметилен",
-    "img": {
-      "mainSlider": "/assets/img/main/slideBanner.png",
-      "title": "/assets/items/nabor/1.png",
-      "alt": "jackknife",
-      "itemPageSlider": [
-        "/assets/items/slider/1.webp",
-        "/assets/items/slider/2.webp",
-        "/assets/items/slider/3.webp",
-        "/assets/items/slider/4.webp",
-        "/assets/items/slider/5.webp"
-      ]
-    },
-    "reviews": [
-      {
-        "name": "Northen Ethan",
-        "message": "Lorem ipsum message for item reveiw....",
-        "date": "05/07/2022",
-        "time": "21:52",
-        "rating": 1
       }
     ]
   },

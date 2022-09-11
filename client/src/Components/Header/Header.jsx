@@ -12,7 +12,9 @@ function Header({ menuVisibility, setSearchingItems }) {
     const { cart, getStorage } = useContext(DataContext);
 
     useEffect(() => { // counter in HEADER under cart icon ~~~~~~~~~~~~~
-        setTotalCartItems(cart.length)
+        if (cart !== null) {
+            setTotalCartItems(cart.length)
+        }
         if (getStorage('cart') !== 'undefined' && getStorage('cart') !== null) { // take counter from storage if it's not empty ~~~~~~~~~~~~
             setTotalCartItems(getStorage('cart').length)
         }

@@ -16,6 +16,9 @@ export default function Cart() {
 
     const updateTotalPrice = (db) => {
         let prices = [];
+        if (db === null) {
+            return
+        }
         let cartTotalPrice = db.map(el => {  // get total price from Cart items ~~~~~~~~~~~
             return el = {
                 ...el,
@@ -28,7 +31,7 @@ export default function Cart() {
     }
 
     useEffect(() => {
-        if (!cart.length && (getStorage('cart') !== 'undefined' && getStorage('cart') !== null)) {
+        if ((cart === null || !cart.length) && (getStorage('cart') !== 'undefined' && getStorage('cart') !== null)) {
             updateTotalPrice([])
             if (getStorage('cart').length > 0) {
                 setCart(getStorage('cart'))
@@ -115,21 +118,24 @@ export default function Cart() {
             })
             localStorage.removeItem('cartForm');
             localStorage.removeItem('cart');
-            setCart([]);
             let date = new Date();
             setMyOrders([
-                ...myOrders, {
+                {
                     orderItems: cart,
                     date: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
                     time: `${date.getHours()}:${date.getMinutes()}`,
-                }
+                    totalPrice: totalPrice,
+                },
+                ...myOrders
             ])
-            setStorage('myOrders', [
-                ...myOrders, {
-                    orderItems: cart,
-                    date: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
-                    time: `${date.getHours()}:${date.getMinutes()}`,
-                }
+            setCart([]);
+            setStorage('myOrders', [{
+                orderItems: cart,
+                date: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
+                time: `${date.getHours()}:${date.getMinutes()}`,
+                totalPrice: totalPrice,
+            },
+            ...myOrders
             ])
         } else {
             setPopUp(true);
@@ -156,6 +162,14 @@ export default function Cart() {
         setStorage('cart', result)
     }
 
+    // Order list handle ~~~~~~~~~~~~~
+
+    const [showOrders, setShowOrders] = useState(false);
+
+    const showOrdersHistory = () => {
+        setShowOrders(prev => !prev)
+    }
+
     return (
         <div className='Cart'>
             <Modal modal={modal} setModal={setModal}>Благодарим за ваш заказ! <br></br> Ожидайте звонка...</Modal>
@@ -169,7 +183,7 @@ export default function Cart() {
             </div>
             <div className="mid">
                 <ul className="items">
-                    {cart.length ? cart.map(el => {
+                    {cart !== null && cart.length ? cart.map(el => {
                         return (
                             <li key={el.id} className="item">
                                 <div className="item_name">
@@ -222,6 +236,41 @@ export default function Cart() {
                     </div>
                 </form>
             </div>
-        </div>
+            <button onClick={showOrdersHistory} type="button" className="showMyorders">Список покупок</button>
+            <div className={showOrders ? "ordersHistory show" : "ordersHistory"}>
+                <div className="ordersItem">
+                    <div className="ordersHeadingDate">
+                        Дата
+                    </div>
+                    <div className="ordersHeadingItems">
+                        Приобретенные товары
+                    </div>
+                    <div className="ordersHeadingTotal">
+                        Итог ₴
+                    </div>
+                </div>
+                {myOrders.length ? myOrders.map((order, ind) => {
+                    return (<div key={ind} className="ordersItem">
+                        <div className="date">
+                            <div className="Date">{order.date}</div>
+                            <div className="time">{order.time}</div>
+                        </div>
+                        <div className="items">
+                            {order.orderItems.map(item => {
+                                return (<Link to={`../items/itemID_#${item.id}`} key={item.id} className="item">
+                                    <div className="itemName">{item.title}</div>
+                                    <div className="itemAmount">{item.amount}x</div>
+                                </Link>)
+                            })}
+                        </div>
+                        <div className="totalPrice">
+                            <div className="totalPrice_wrapper">
+                                {order.totalPrice} ₴
+                            </div>
+                        </div>
+                    </div>)
+                }) : <div className="ordersItem"><div className="items">Здесь пока пусто...</div></div>}
+            </div>
+        </div >
     )
 }

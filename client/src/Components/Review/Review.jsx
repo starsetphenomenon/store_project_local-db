@@ -45,7 +45,7 @@ export default function Review({ data: revDB, currentItemID }) {
             setPopUp(true)
             return
         }
-        let resp = {
+        let request = {
             review: newReview,
             id: currentItemID
         }
@@ -54,7 +54,7 @@ export default function Review({ data: revDB, currentItemID }) {
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             },
-            body: JSON.stringify(resp)
+            body: JSON.stringify(request)
         })
             .then(res => res.json())
             .then(db => {
