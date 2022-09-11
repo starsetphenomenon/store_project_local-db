@@ -5,6 +5,8 @@ import "./Catalog.scss";
 import { React, useContext, useState, useEffect } from 'react'
 import { DataContext } from '../../App';
 import { Link } from 'react-router-dom';
+import PaginatedItems from '../../Components/PaginatedItems/PaginatedItems';
+
 
 
 function Catalog({ filter1 }) {
@@ -266,11 +268,10 @@ function Catalog({ filter1 }) {
                     <div className="sortItems">
                         <FilterSelect name="Сортировать" handleFilter={handleSortItems} filterVisibility={sortVisibility} filter={sortBy} />
                     </div>
-                    <div className="items__wrapper">
-                        {filterData.map(item => {
+                    <PaginatedItems parentBlockClass={"items__wrapper"} itemsPerPage={6} data={filterData} />
+                    {/*  {filterData.map(item => {
                             return <ItemCard itemId={item.id} data={item} key={item.id} className={'item-card-catalog'} status={item.status} />
-                        })}
-                    </div>
+                        })} */}
                 </div>
             </div>
             <div className="footer">

@@ -32,6 +32,13 @@
             left: 0;
             top: 50%;
             transform: translateY(-50%);
+            -webkit-tap-highlight-color: transparent;
+
+            &:hover {
+                img {
+                    transform: rotate(180deg) scaleX(2);
+                }
+            }
 
             img {
                 transform: rotate(180deg);
@@ -652,9 +659,11 @@
 
         .bottom {
             padding: 30px 0;
-            &::before{
+
+            &::before {
                 bottom: -17%;
             }
+
             h3 {
                 font-weight: 500;
                 font-size: 18px;

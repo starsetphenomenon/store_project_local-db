@@ -5,7 +5,7 @@ import Modal from '../../Components/Modal/Modal';
 import InputNumber from '../../Components/InputNumber/InputNumber';
 import PopUp from '../../Components/PopUp/PopUp';
 import { DataContext } from '../../App';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Cart() {
     const { cart, setCart, getStorage, setStorage } = useContext(DataContext);
@@ -170,15 +170,23 @@ export default function Cart() {
         setShowOrders(prev => !prev)
     }
 
+    // Go back button ~~~~~~~~~~~~~
+
+    const navigate = useNavigate();
+
+    const goBack = () => {
+        return navigate(-1);
+    }
+
     return (
         <div className='Cart'>
             <Modal modal={modal} setModal={setModal}>Благодарим за ваш заказ! <br></br> Ожидайте звонка...</Modal>
             <PopUp popUp={popUp} setPopUp={setPopUp}>Пожалуйста, заполните <br></br> все поля!</PopUp>
             <div className="top">
-                <Link to="/catalog" className="back">
+                <div onClick={goBack} className="back">
                     <img src="./assets/icons/arrow-toRight.svg" alt="." />
-                    <h4>К покупкам</h4>
-                </Link>
+                    <h4>Назад</h4>
+                </div>
                 <h2>Корзина</h2>
             </div>
             <div className="mid">
