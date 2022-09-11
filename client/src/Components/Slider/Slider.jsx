@@ -22,7 +22,7 @@ export default function Slider({ slides }) {
             spaceBetween={0}
             modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
             autoplay={{
-                delay: 350055,
+                delay: 3500,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
             }}

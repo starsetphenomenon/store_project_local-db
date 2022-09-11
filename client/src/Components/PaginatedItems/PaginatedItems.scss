@@ -1,0 +1,24 @@
+.sweetPagination {
+    margin: 15px;
+    width: 100%;
+
+    .paginationUL {
+        .pageItem {
+            -webkit-tap-highlight-color: transparent;
+
+            .pageButton {
+                height: 40px !important;
+                width: 40px !important;
+
+                &:hover {
+                    background: #373737 !important;
+                    border: 1px solid #fff;
+                }
+            }
+
+            .activeButton {
+                background: #272727 !important;
+            }
+        }
+    }
+}
