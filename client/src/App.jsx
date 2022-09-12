@@ -75,7 +75,12 @@ function App() {
   useEffect(() => {
     fetch("http://localhost:3001/dataBase")
       .then((response) => response.json())
-      .then((result) => {
+      .then((result) => { // sort data by DATE and set last N elements status to NEW ~~~~~~~~~~~~
+        result.sort((a, b) => new Date(b.creationDate) - new Date(a.creationDate))
+        const LAST_NEW_ELEMENT = 6;  // amout of status NEW elements
+        for (let i = 0; i < LAST_NEW_ELEMENT; i++) { // set last N elemnt status to NEW ~~~~~~~~~~~~
+          result[i].status = "Новинка"
+        }
         setData(result);
       })
     if (getStorage('cart') !== null) {

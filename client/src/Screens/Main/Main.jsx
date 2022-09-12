@@ -21,7 +21,7 @@ function Main({ setFilterLink }) {
     }, [data])
 
 
-    const [activeStatus, setActiveStatus] = useState('Popular'); // set Active class to link and style ~~~~~~~~
+    const [activeStatus, setActiveStatus] = useState('Популярное'); // set Active class to link and style ~~~~~~~~
     const filterDataByStatus = (e) => {
         setDataByStatus(data.filter(el => el.status === e.target.getAttribute('value')));
         setActiveStatus(e.target.getAttribute('value'))
@@ -105,8 +105,8 @@ function Main({ setFilterLink }) {
             <div className="line"></div>
             <div className="main-wrapper">
                 <div className="switcher-new-popular">
-                    <h3 value="Новинка" onClick={filterDataByStatus} className={activeStatus === 'New' ? 'new active' : 'new'}>НОВИНКИ</h3>
-                    <h3 value="Популярное" onClick={filterDataByStatus} className={activeStatus === 'Popular' ? 'active' : ''}>ПОПУЛЯРНОЕ</h3>
+                    <h3 value="Новинка" onClick={filterDataByStatus} className={activeStatus === 'Новинка' ? 'new active' : 'new'}>НОВИНКИ</h3>
+                    <h3 value="Популярное" onClick={filterDataByStatus} className={activeStatus === 'Популярное' ? 'active' : ''}>ПОПУЛЯРНОЕ</h3>
                 </div>
                 <div className="collection-item">
                     {dataByStatus.map(item => {
