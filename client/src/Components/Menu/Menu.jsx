@@ -49,8 +49,8 @@ export default function Menu({ menuVisibility, menuStatus, menuLinks, menuSubLin
                     })}
                 </ul>
                 <ul className='mainLinks'>
-                    <li><NavLink to="about">О компании</NavLink></li>
-                    <li><NavLink to="Contacts" href=".">Контакты</NavLink></li>
+                    <li><NavLink onClick={handleLink} to="about">О компании</NavLink></li>
+                    <li><NavLink onClick={handleLink} to="Contacts" href=".">Контакты</NavLink></li>
                 </ul>
             </div>
         </div >

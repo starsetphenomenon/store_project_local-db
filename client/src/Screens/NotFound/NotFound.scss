@@ -47,6 +47,33 @@
                 animation: anim 4s ease-in-out infinite;
             }
         }
+
+        .backBtn {
+            background: #272727;
+            border-radius: 6px;
+            cursor: pointer;
+            border: none;
+            padding: 15px 30px;
+            width: 50%;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 17px;
+            line-height: 17px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            -webkit-tap-highlight-color: transparent;
+
+            &:active {
+               transform: scale(1.1);
+            }
+
+            &:hover {
+                background: #373737;
+                border: 2px solid #272727;
+            }
+        }
     }
 }
 

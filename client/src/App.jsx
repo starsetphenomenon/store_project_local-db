@@ -127,7 +127,7 @@ function App() {
         <Menu menuLinks={menuLinks} setFilterLink={setFilterLink} menuSubLinks={menuSubLinks} menuStatus={menu} menuVisibility={handleMenuVisibility} />
         <ScrollToTop>
           <Routes>
-            <Route path="/" index element={<Main />} />
+            <Route path="/" index element={<Main setFilterLink={setFilterLink} />} />
             <Route path="catalog" element={<Catalog filter1={menuLinks} />} ></Route>
             <Route path="catalog/items/:id" element={<ItemPage />} />
             <Route path="cart" element={<Cart />} />

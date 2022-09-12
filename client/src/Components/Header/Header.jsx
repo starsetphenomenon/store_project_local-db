@@ -4,12 +4,15 @@ import { Link, useNavigate } from "react-router-dom";
 import { React, useContext, useState, useEffect } from 'react'
 import { DataContext } from '../../App';
 
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
+
 function Header({ menuVisibility, setSearchingItems }) {
     let navigate = useNavigate();
 
     // CART ~~~~~~~~~~~~~~~~~~~~~~
 
-    const { cart, getStorage } = useContext(DataContext);
+    const { cart, getStorage, data } = useContext(DataContext);
 
     useEffect(() => { // counter in HEADER under cart icon ~~~~~~~~~~~~~
         if (cart !== null) {
@@ -26,15 +29,22 @@ function Header({ menuVisibility, setSearchingItems }) {
 
     // SEARCH ~~~~~~~~~~~~~~~~~~~~
 
-    const onSearch = (e) => {
-        setSearchingItems(e.target.value.toLowerCase());
+    const onSearch = (e, _value) => {
+        setSearchingItems(e.target.getAttribute('value'));
         if (e.key === 'Enter') {
             e.target.value = '';
             return navigate('/search')
         }
     }
 
-    // SEARCH ~~~~~~~~~~~~~~~~~~~~
+    const onSearchChange = (e, value) => {
+        if (value === null) {
+            return
+        }
+        setSearchingItems(value.title);
+        e.target.value = '';
+        return navigate('/search')
+    }
 
 
     return (
@@ -104,13 +114,34 @@ function Header({ menuVisibility, setSearchingItems }) {
                     </Link>
                 </div>
                 <div className="search">
-                    <input onKeyDown={onSearch} onChange={onSearch} type="search" placeholder="Поиск" spellCheck="false" />
+                    <Autocomplete
+                        className="search"
+                        disablePortal
+                        id="combo-box-demo"
+                        options={data}
+                        clearOnEscape
+                        getOptionLabel={(item) => `${item.title}`}
+                        sx={{ width: 300 }}
+                        noOptionsText={'Пусто...'}
+                        isOptionEqualToValue={(option, value) =>
+                            option.title === value.title
+                        }
+                        onChange={onSearchChange}
+                        onKeyDown={onSearch}
+                        onInputChange={onSearch}
+                        classes={{
+                            option: 'listOption',
+                            listbox: 'listbox',                           
+                        }}
+                        renderInput={(params) => <TextField {...params} label="Поиск" />}
+                    />
+                    {/*  <input onKeyDown={onSearch} onChange={onSearch} type="search" placeholder="Поиск" spellCheck="false" />
                     <Link to="/search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.5556 18.1111C14.7284 18.1111 18.1111 14.7284 18.1111 10.5556C18.1111 6.38274 14.7284 3 10.5556 3C6.38274 3 3 6.38274
                              3 10.5556C3 14.7284 6.38274 18.1111 10.5556 18.1111Z" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                         <path d="M19.9999 19.9999L15.8916 15.8916" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
         </div>

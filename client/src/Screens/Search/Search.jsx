@@ -12,13 +12,16 @@ export default function Search({ searchingItems, setSearchingItems }) {
 
     const getSearchedItems = (db) => {
         let result = [];
-        result = db.filter(el => JSON.stringify(el.topic).toLocaleLowerCase().includes(searchingItems) ||
-            JSON.stringify(el.type).toLocaleLowerCase().includes(searchingItems) ||
-            JSON.stringify(el.title).toLocaleLowerCase().includes(searchingItems))
+        result = db.filter(el => JSON.stringify(el.topic).toLocaleLowerCase().includes(searchingItems.toLocaleLowerCase()) ||
+            JSON.stringify(el.type).toLocaleLowerCase().includes(searchingItems.toLocaleLowerCase()) ||
+            JSON.stringify(el.title).toLocaleLowerCase().includes(searchingItems.toLocaleLowerCase()))
         setSearchData(result);
     }
 
     useEffect(() => {
+        if (searchingItems === null) {
+            return
+        }
         if (searchingItems.trim() !== '') {
             getSearchedItems(data);
         }
@@ -43,7 +46,7 @@ export default function Search({ searchingItems, setSearchingItems }) {
                             <div className="desc">
                                 <div className="title">{el.title}</div>
                                 <div className="title">Коллекция: {el.collection}</div>
-                                <div className="price">{el.price} ₴</div>                                
+                                <div className="price">{el.price} ₴</div>
                             </div>
                             <div className="photo">
                                 <img src={el.img.title} alt={el.img.alt} />
