@@ -23,6 +23,12 @@
         align-items: center;
         width: 100%;
 
+        h3 {
+            font-family: 'Jura';
+            font-style: normal;
+            font-weight: 700;
+        }
+
         &:hover {
             path {
                 fill: #FFFFFF;
@@ -49,6 +55,9 @@
         transition: all 1s;
 
         li {
+            font-family: 'Jura';
+            font-style: normal;
+            font-weight: 700;
             cursor: pointer;
             margin-bottom: 10px;
             cursor: pointer;

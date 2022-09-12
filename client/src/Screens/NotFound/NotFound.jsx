@@ -1,8 +1,15 @@
 import './NotFound.scss';
-
+import { useNavigate } from 'react-router-dom';
 import React from 'react'
 
 export default function NotFound() {
+
+    const navigate = useNavigate();
+
+    const goBack = () => {
+        return navigate(-1);
+    }
+
     return (
         <div className='notFound'>
             <div className="wrapper">
@@ -14,6 +21,7 @@ export default function NotFound() {
                     <div className="num2">0</div>
                     <div className="num3">4</div>
                 </div>
+                <button onClick={goBack} className="backBtn" type="button">Назад</button>
             </div>
         </div>
     )

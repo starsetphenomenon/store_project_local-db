@@ -6,7 +6,7 @@ import ItemCard from "../../Components/ItemCard/ItemCard.jsx"
 import { DataContext } from '../../App';
 import { useNavigate } from 'react-router-dom';
 
-function Main() {
+function Main({ setFilterLink }) {
     let navigate = useNavigate();
     const { data, mainSlides, setCart, getStorage } = useContext(DataContext);
     const [dataByType, setDataByType] = useState([]);
@@ -37,7 +37,8 @@ function Main() {
         setActiveType(e.currentTarget.getAttribute('id') + '')
     }
 
-    const navigateToCollection = () => {
+    const navigateToCollection = (e) => {
+        setFilterLink(e.currentTarget.getAttribute('name').toLowerCase())
         return navigate("/catalog");
     }
 
@@ -91,7 +92,7 @@ function Main() {
                         <img className="banner-img" src='../assets/img/main/banner.png' alt='banner'></img>
                         <div className="banner-text">
                             <p>Познакомьтесь с коллекцией ножей TUOTOWN</p>
-                            <div onClick={navigateToCollection} className="img-wrapper">
+                            <div onClick={navigateToCollection} name="TuoTown" className="img-wrapper">
                                 <img src='./assets/icons/arrow-right.svg' alt='arrow'></img>
                             </div>
                         </div>

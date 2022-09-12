@@ -41,7 +41,7 @@ function Catalog({ filter1 }) {
     }, [filter]);
 
     useEffect(() => {
-        if (filter['Что ищем?'] && filter['filterLink'].length) { // reset filterLink if new TYPE filter is set ~~~~~~~~~~
+        if (filter['Что ищем?'] !== undefined && (filter['filterLink'] !== undefined && filter['filterLink'].length)) { // reset filterLink if new TYPE filter is set ~~~~~~~~~~
             setFilter({
                 ...filter,
                 filterLink: '',
@@ -152,13 +152,13 @@ function Catalog({ filter1 }) {
 
     const handlePrice = (e) => {
         let result = [];
-        result = data.filter(el => el.price > +priceRange.min && el.price <= +e.target.value); // Filter by PRICE ~~~~~~~~~
+        result = data.filter(el => el.price >= +priceRange.min && el.price <= +e.target.value); // Filter by PRICE ~~~~~~~~~
         handleAllFilters(filter, result); // Filter by current FILTERS ~~~~~~~~~
         if (e.target.name === 'price') { // prcieRange from inputs
             if (e.target.getAttribute('id') === 'min') {
-                result = data.filter(el => el.price > +e.target.value && el.price <= +priceRange.max);
+                result = data.filter(el => el.price >= +e.target.value && el.price <= +priceRange.max);
             } else {
-                result = data.filter(el => el.price > +priceRange.min && el.price <= +e.target.value);
+                result = data.filter(el => el.price >= +priceRange.min && el.price <= +e.target.value);
             }
             handleAllFilters(filter, result);
             setPriceRange({

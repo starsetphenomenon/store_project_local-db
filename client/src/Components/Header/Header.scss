@@ -125,7 +125,7 @@
                 border-radius: 4px;
                 display: flex;
                 justify-content: center;
-                align-items: center;                
+                align-items: center;
             }
         }
 
@@ -138,6 +138,7 @@
             align-items: center;
             width: auto;
 
+
             input {
                 background: rgba(33, 33, 33, 0);
                 box-shadow: 2px 2px 4px black;
@@ -145,12 +146,42 @@
                 border-radius: 16px;
                 padding: 0 10% 0 15px;
                 width: 90%;
-                height: 25px;
+                height: 30px;
                 color: #fff;
 
                 :hover {
                     border: 1px solid rgb(255, 255, 255);
                 }
+
+            }
+
+            .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+                border: none;
+            }
+
+            .MuiAutocomplete-noOptions {
+                background: #272727;
+                color: #fff;
+            }
+
+            .listbox {
+                background: #272727;
+                color: #fff;
+            }
+
+            .listOption {
+                border-bottom: 1px solid #fff;
+            }
+
+            label {
+                margin-left: 10px;
+                color: rgba(255, 255, 255, 0.6);
+                font-family: 'Montserrat';
+                font-style: normal;
+            }
+
+            .MuiAutocomplete-popupIndicator {
+                color: rgba(255, 0, 0, 0.6);
             }
 
             a {
@@ -172,8 +203,38 @@
 @media (max-width: 992px) {
     .header {
         .right {
+
             .search {
-                width: 30%;
+                justify-content: flex-end;
+                width: 50%;
+                margin-left: 0;
+
+                input {
+                    font-size: 12px !important;
+                }
+
+                label {
+                    font-size: 14px !important;
+                }
+
+                .Mui-focused {
+                    color: red !important;
+
+                    label {
+                        font-size: 12px !important;
+                        top: 10px;
+                    }
+                }
+
+                .listOption {
+                    font-size: 11px;
+                }
+
+                :first-child {
+                    width: 100%;
+
+                }
+
             }
         }
     }
