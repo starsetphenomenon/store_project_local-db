@@ -1,12 +1,13 @@
 [
   {
+    "creationDate": "2022-08-19T23:15:30.000Z",
     "id": "13",
     "topic": "Набор титановых ножей",
     "type": "Наборы ножей",
     "collection": "TUOTOWN",
     "title": "Набор ножей TUOTOWN",
     "price": 5195,
-    "status": "Новинка",
+    "status": "",
     "bladeMaterial": "титан",
     "handleMaterial": "полиоксиметилен",
     "img": {
@@ -39,13 +40,14 @@
     ]
   },
   {
+    "creationDate": "2022-07-19T22:17:22.000Z",
     "id": "1",
     "topic": "Складные ножи TUOTOWN",
     "type": "Ножи",
     "collection": "TUOTOWN",
     "title": "Складной нож SQ01-B",
     "price": 850,
-    "status": "Новинка",
+    "status": "",
     "bladeMaterial": "сталь 440С",
     "bladeLength": "86",
     "handleMaterial": "сталь/пластик",
@@ -93,6 +95,7 @@
     ]
   },
   {
+    "creationDate": "2017-02-19T13:12:30.000Z",
     "id": "21",
     "topic": "Дизайн",
     "type": "Аксессуары",
@@ -152,6 +155,7 @@
     ]
   },
   {
+    "creationDate": "2019-08-19T23:15:30.000Z",
     "id": "12",
     "topic": "Кухонные ножи TUOTOWN",
     "type": "Ножи",
@@ -192,6 +196,7 @@
     ]
   },
   {
+    "creationDate": "2015-02-21T23:15:27.000Z",
     "id": "15",
     "topic": "Набор нержавеющих ножей",
     "type": "Наборы ножей",
@@ -216,13 +221,14 @@
     "reviews": []
   },
   {
+    "creationDate": "2021-08-19T23:15:30.000Z",
     "id": "16",
     "topic": "Набор титановых ножей",
     "type": "Наборы ножей",
     "collection": "TUOTOWN",
     "title": "Набор ножей REGULAR",
     "price": 3760,
-    "status": "Новинка",
+    "status": "",
     "bladeMaterial": "титан",
     "handleMaterial": "полиоксиметилен",
     "img": {
@@ -262,6 +268,7 @@
     ]
   },
   {
+    "creationDate": "2009-11-27T23:47:22.000Z",
     "id": "17",
     "topic": "Ручные точилки",
     "type": "Точилки",
@@ -307,6 +314,7 @@
     ]
   },
   {
+    "creationDate": "2014-02-19T23:15:30.000Z",
     "id": "18",
     "topic": "Ручные точилки",
     "type": "Точилки",
@@ -352,13 +360,14 @@
     ]
   },
   {
+    "creationDate": "2021-01-17T11:15:24.000Z",
     "id": "19",
     "topic": "Точильные камни",
     "type": "Точилки",
     "collection": "Shifu",
     "title": "Точильный камень Shifu",
     "price": 1070,
-    "status": "Новинка",
+    "status": "",
     "material": "водный камень корунд",
     "img": {
       "mainSlider": "/assets/items/mainSlider/mainSlider3.webp",
@@ -397,6 +406,7 @@
     ]
   },
   {
+    "creationDate": "2014-02-19T23:15:30.000Z",
     "id": "20",
     "topic": "Точильные камни",
     "type": "Точилки",
@@ -442,6 +452,7 @@
     ]
   },
   {
+    "creationDate": "2002-11-19T23:15:43.000Z",
     "id": "22",
     "topic": "Ложки",
     "type": "Аксессуары",
@@ -487,6 +498,7 @@
     ]
   },
   {
+    "creationDate": "2003-12-19T23:15:30.000Z",
     "id": "23",
     "topic": "Ложки",
     "type": "Аксессуары",
@@ -532,13 +544,14 @@
     ]
   },
   {
+    "creationDate": "2022-10-21T11:24:13.000Z",
     "id": "24",
     "topic": "Подставки",
     "type": "Аксессуары",
     "collection": "Hoolder",
     "title": "Кухонные подставки",
     "price": 1235,
-    "status": "Новинка",
+    "status": "",
     "material": "нержавеющая сталь",
     "img": {
       "mainSlider": "/assets/items/mainSlider/mainSlider4.webp",
@@ -577,6 +590,7 @@
     ]
   },
   {
+    "creationDate": "2007-02-19T23:15:30.000Z",
     "id": "6",
     "topic": "Кухонные ножи SANTOKU",
     "type": "Ножи",
@@ -631,6 +645,7 @@
     ]
   },
   {
+    "creationDate": "2009-08-19T23:15:30.000Z",
     "id": "9",
     "topic": "Складные ножи TUOTOWN",
     "type": "Ножи",
@@ -685,6 +700,7 @@
     ]
   },
   {
+    "creationDate": "2011-08-19T23:15:30.000Z",
     "id": "10",
     "topic": "Кухонные ножи TUOTOWN",
     "type": "Ножи",
@@ -746,13 +762,14 @@
     ]
   },
   {
+    "creationDate": "2021-04-23T13:15:22.000Z",
     "id": "11",
     "topic": "Кухонные ножи TUOTOWN",
     "type": "Ножи",
     "collection": "TUOTOWN",
     "title": "Кухонный нож FT-B-1534",
     "price": 3455,
-    "status": "Новинка",
+    "status": "",
     "bladeMaterial": "титан",
     "bladeLength": "210",
     "handleMaterial": "полиоксиметилен",
@@ -793,6 +810,7 @@
     ]
   },
   {
+    "creationDate": "2013-08-19T23:15:30.000Z",
     "id": "25",
     "topic": "Складные ножи TUOTOWN",
     "type": "Ножи",
@@ -847,6 +865,7 @@
     ]
   },
   {
+    "creationDate": "2014-08-19T23:15:30.000Z",
     "id": "14",
     "topic": "Набор швейцарских ножей",
     "type": "Наборы ножей",
