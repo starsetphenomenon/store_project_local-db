@@ -4,7 +4,7 @@ import { useContext, useState, useEffect } from "react";
 import Slider from "../../Components/Slider/Slider"
 import ItemCard from "../../Components/ItemCard/ItemCard.jsx"
 import { DataContext } from '../../App';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function Main({ setFilterLink }) {
     let navigate = useNavigate();
@@ -163,9 +163,9 @@ function Main({ setFilterLink }) {
                             <p>4 августа 2021 19:24</p>
                         </div>
                         <div className="title-item">
-                            <a href=".">
+                            <Link to="blog">
                                 Традиционные виды японских кухонных ножей
-                            </a>
+                            </Link>
                         </div>
                     </div>
                     <div className="interesting-item">
@@ -177,9 +177,9 @@ function Main({ setFilterLink }) {
                             <p>4 августа 2021 19:24</p>
                         </div>
                         <div className="title-item">
-                            <a href=".">
+                            <Link to="blog">
                                 Всемирная история режущих клинков — взгляд в прошлое
-                            </a>
+                            </Link>
                         </div>
                     </div>
                     <div className="interesting-item">
@@ -191,9 +191,9 @@ function Main({ setFilterLink }) {
                             <p>4 августа 2021 19:24</p>
                         </div>
                         <div className="title-item">
-                            <a href=".">
+                            <Link to="blog">
                                 Традиционные виды японских кухонных ножей
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

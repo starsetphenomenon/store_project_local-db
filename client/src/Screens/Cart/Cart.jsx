@@ -13,6 +13,13 @@ export default function Cart() {
     const [modal, setModal] = useState(false);
     const [totalPrice, setTotalPrice] = useState(0);
     const [myOrders, setMyOrders] = useState([]);
+    const [popUpCartEmpty, setPopUpCartEmpty] = useState(false);
+
+    const regExs = {
+        name: /^([a-zA-Zа-яієїґА-ЯІЄЇ']{3,})+\s?([a-zA-Zа-яієїґА-ЯІЄЇ']{3,})+\s?$/,
+        tel: /^([0-9]{3}\s?[0-9]{3}\s?[0-9]{2}\s?[0-9]{2,3})$/,
+        email: /[^@\s]+@[^@\s]+\.[^@\s]+/,
+    };
 
     const updateTotalPrice = (db) => {
         let prices = [];
@@ -42,17 +49,17 @@ export default function Cart() {
         updateTotalPrice(cart)
     }, [cart])
 
-    const [form, setForm] = useState({
-        tel: false,
-        name: false,
-        email: false,
-    });
-
     const [formValue, setFormValue] = useState(getStorage('cartForm') || // set Input values from Storage if it's not empty ~~~~~~~~~~~
     {
         name: '',
         tel: '',
         email: '',
+    });
+
+    const [form, setForm] = useState({ // check form Validation on load (in case we get it from Storage) ~~~~~~~~~~~~~
+        tel: regExs['tel'].test(formValue['tel']),
+        name: regExs['name'].test(formValue['name']),
+        email: regExs['email'].test(formValue['email']),
     });
 
     useEffect(() => {
@@ -62,14 +69,7 @@ export default function Cart() {
         setStorage('cartForm', formValue);
     }, [formValue]);
 
-    const handleInputValidation = e => {
-        handleClassName(e);
-        const regExs = {
-            name: /^([a-zA-Zа-яієїґА-ЯІЄЇ']{2,}\s[a-zA-Zа-яієїґА-ЯІЄЇ']{1,}'?-?[a-zA-Zа-яієїґА-ЯІЄЇ']{2,}\s?([a-zA-Zа-яієїґА-ЯІЄЇ']{1,})?)/,
-            tel: /(\+?[0-9]{2,3}\s?[0-9]{2,3}\s?[0-9]{2,3}\s?[0-9]{2,4}$)/,
-            email: /[^@\s]+@[^@\s]+\.[^@\s]+/,
-        };
-
+    const handleInputValidation = (e) => {
         const isMatch = regExs[e.target.name].test(e.target.value);
         setForm({
             ...form,
@@ -79,6 +79,19 @@ export default function Cart() {
             ...formValue,
             [e.target.name]: e.target.value,
         })
+        handleClassName(e, regExs[e.target.name].test(e.target.value));
+    }
+
+    const handleClassName = (e, isValidate) => {
+        if (e.target.value.length) {
+            if (isValidate) {
+                e.target.setAttribute('class', 'valid');
+            } else {
+                e.target.setAttribute('class', 'invalid');
+            }
+        } else {
+            e.target.setAttribute('class', '');
+        }
     }
 
     const handleSubmit = e => {
@@ -106,6 +119,10 @@ export default function Cart() {
     }, [])
 
     const handleSendOrder = () => {
+        if (!cart.length) {
+            setPopUpCartEmpty(true) // IF CART IS EMPTY ON SUBMIT ORDER ~~~~~~~~~~~~~~~~~
+            return
+        }
         if (!popUp) {
             clearTimeout(popTimer);
         }
@@ -143,18 +160,6 @@ export default function Cart() {
         }
     }
 
-    const handleClassName = (e) => {
-        if (e.target.value.length) {
-            if (form[e.target.name]) {
-                e.target.setAttribute('class', 'valid');
-            } else {
-                e.target.setAttribute('class', 'invalid');
-            }
-        } else {
-            e.target.setAttribute('class', '');
-        }
-    }
-
     const handleDeleteElem = (e) => {
         let result = [];
         result = cart.filter(item => +item.id !== +e.currentTarget.id);
@@ -182,6 +187,7 @@ export default function Cart() {
         <div className='Cart'>
             <Modal modal={modal} setModal={setModal}>Благодарим за ваш заказ! <br></br> Ожидайте звонка...</Modal>
             <PopUp popUp={popUp} setPopUp={setPopUp}>Пожалуйста, заполните <br></br> все поля!</PopUp>
+            <PopUp popUp={popUpCartEmpty} setPopUp={setPopUpCartEmpty}>Ваша корзина пуста!</PopUp>
             <div className="top">
                 <div onClick={goBack} className="back">
                     <img src="./assets/icons/arrow-toRight.svg" alt="." />
@@ -220,18 +226,18 @@ export default function Cart() {
                     <div className="info">
                         <div className="info_item required">
                             <p className="name">Получатель</p>
-                            <input pattern="[a-zA-Zа-яієїґА-ЯІЄЇ']{2,}\s[a-zA-Zа-яієїґА-ЯІЄЇ']{1,}'?-?[a-zA-Zа-яієїґА-ЯІЄЇ']{2,}\s?[a-zA-Zа-яієїґА-ЯІЄЇ']{1,}"
-                                value={formValue.name} name="name" onChange={handleInputValidation} spellCheck="false" placeholder='Имя Фамилия' type="text" />
+                            <input value={formValue.name} name="name" onChange={handleInputValidation} spellCheck="false"
+                                placeholder='Имя Фамилия' type="text" />
                         </div>
                         <div className="info_item required">
                             <p className="name">Мобильный телефон</p>
-                            <input pattern="\+?[0-9]{2,3}\s?[0-9]{2,3}\s?[0-9]{2,3}\s?[0-9]{2,4}$"
-                                value={formValue.tel} name="tel" onChange={handleInputValidation} spellCheck="false" placeholder='+380___  __  __' type="tel" />
+                            <input value={formValue.tel} name="tel" onChange={handleInputValidation} spellCheck="false"
+                                placeholder='0## _ - - - _ - - _ - -' type="tel" />
                         </div>
                         <div className="info_item">
                             <p className="name">E-mail</p>
-                            <input pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
-                                value={formValue.email} name="email" onChange={handleInputValidation} spellCheck="false" placeholder='Ваша почта' type="email" />
+                            <input value={formValue.email} name="email" onChange={handleInputValidation} spellCheck="false"
+                                placeholder='Ваша почта' type="email" />
                         </div>
                     </div>
                     <div className="send">

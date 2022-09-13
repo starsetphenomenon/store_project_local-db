@@ -3,7 +3,6 @@ import "./Header.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { React, useContext, useState, useEffect } from 'react'
 import { DataContext } from '../../App';
-
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 

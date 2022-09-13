@@ -251,7 +251,7 @@ function Catalog({ filter1 }) {
                         </div>
                         <div onChange={handleStatus}>
                             <input type="radio" id="Популярное" name="status" />
-                            <label htmlFor="Популярное">Популярное</label>
+                            <label htmlFor="Популярное">Популярные</label>
                         </div>
                     </div>
                     <div className="price">
