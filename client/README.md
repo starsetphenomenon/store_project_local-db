@@ -1,3 +1,3 @@
 ### Tuo town
 
-Store project
+NPM start to run client side.
