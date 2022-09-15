@@ -6,39 +6,40 @@ import ItemCard from "../../Components/ItemCard/ItemCard.jsx"
 import { DataContext } from '../../App';
 import { useNavigate, Link } from 'react-router-dom';
 
-function Main({ setFilterLink }) {
+function Main() {
     let navigate = useNavigate();
-    const { data, mainSlides, setCart, getStorage } = useContext(DataContext);
+    const { data, mainSlides, setCart, getStorage, setFilterLink } = useContext(DataContext);
     const [dataByType, setDataByType] = useState([]);
     const [dataByStatus, setDataByStatus] = useState([]);
 
     useEffect(() => {
         if (getStorage('cart') !== 'undefined' && getStorage('cart') !== null) { // put cartStorage to CART if it's not empty ~~~~~~~~~~
-            setCart(getStorage('cart'))
+            setCart(getStorage('cart'));
         }
         setDataByStatus(data.filter(el => el.status === 'Популярное'));
-        setDataByType(data);
+        setDataByType(data.sort((a, b) => b.itemRating - a.itemRating));
     }, [data])
 
 
     const [activeStatus, setActiveStatus] = useState('Популярное'); // set Active class to link and style ~~~~~~~~
     const filterDataByStatus = (e) => {
         setDataByStatus(data.filter(el => el.status === e.target.getAttribute('value')));
-        setActiveStatus(e.target.getAttribute('value'))
+        setActiveStatus(e.target.getAttribute('value'));
     }
 
     const [activeType, setActiveType] = useState(''); // set Active class to link and style ~~~~~~~~~~~~
     const filterDataByType = (e) => {
+        data.sort((a, b) => b.itemRating - a.itemRating)
         if (e.currentTarget.getAttribute('value') === 'Складные' || e.currentTarget.getAttribute('value') === 'Кухонные') {
             setDataByType(data.filter(el => el.topic.toLowerCase().includes(e.currentTarget.getAttribute('value').toLowerCase())));
         } else {
             setDataByType(data.filter(el => el.type.toLowerCase().includes(e.currentTarget.getAttribute('value').toLowerCase())));
         }
-        setActiveType(e.currentTarget.getAttribute('id') + '')
+        setActiveType(e.currentTarget.getAttribute('id') + '');
     }
 
     const navigateToCollection = (e) => {
-        setFilterLink(e.currentTarget.getAttribute('name').toLowerCase())
+        setFilterLink(e.currentTarget.getAttribute('name').toLowerCase());
         return navigate("/catalog");
     }
 

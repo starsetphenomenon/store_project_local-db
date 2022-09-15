@@ -1,8 +1,11 @@
 import "./Footer.scss";
 import { Link } from "react-router-dom";
-import React from 'react'
+import { useContext } from 'react';
+import { DataContext } from '../../App';
 
-export default function Footer({ setFilterLink }) {
+export default function Footer() {
+
+    const { setFilterLink } = useContext(DataContext);
 
     const handleLink = (e) => {
         setFilterLink(e.target.name)
@@ -38,7 +41,7 @@ export default function Footer({ setFilterLink }) {
                     <h2>Каталог</h2>
                     <ul className="linkItems">
                         <li><Link onClick={handleLink} to="/catalog" name="Кухонные ножи">Кухонные ножи</Link></li>
-                        <li><Link onClick={handleLink} to="/catalog" name="Складные">Складные ножи</Link></li>
+                        <li><Link onClick={handleLink} to="/catalog" name="Складные ножи">Складные ножи</Link></li>
                         <li><Link onClick={handleLink} to="/catalog" name="Точилки">Точилки для ножей</Link></li>
                         <li><Link onClick={handleLink} to="/catalog" name="аксессуары">Аксессуары</Link></li>
                     </ul>

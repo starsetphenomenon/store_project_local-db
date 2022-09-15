@@ -4,13 +4,13 @@ import { React, useContext, useState, useEffect } from 'react'
 import { DataContext } from '../../App';
 import { useNavigate } from 'react-router-dom';
 
-export default function Search({ searchingItems, setSearchingItems }) {
+export default function Search({ searchingItems }) {
 
-    let { data } = useContext(DataContext);
+    let { data, setSearchingItems } = useContext(DataContext);
     let navigate = useNavigate();
     const [searchData, setSearchData] = useState([]);
 
-    const getSearchedItems = (db) => {
+    const getSearchedItems = (db) => {    
         let result = [];
         result = db.filter(el => JSON.stringify(el.topic).toLocaleLowerCase().includes(searchingItems.toLocaleLowerCase()) ||
             JSON.stringify(el.type).toLocaleLowerCase().includes(searchingItems.toLocaleLowerCase()) ||

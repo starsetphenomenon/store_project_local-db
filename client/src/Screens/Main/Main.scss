@@ -49,7 +49,6 @@ a {
     justify-content: space-between;
     padding: 0 88px 0;
     margin-bottom: 88px;
-    cursor: pointer;
 
     div {
         display: flex;
@@ -70,6 +69,7 @@ a {
         opacity: 40%;
         color: #fff;
         -webkit-tap-highlight-color: transparent;
+        cursor: pointer;
 
         &:hover {
             .menu-element-item {

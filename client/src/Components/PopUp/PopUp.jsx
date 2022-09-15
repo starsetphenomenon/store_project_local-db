@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import './PopUp.scss';
 import { useEffect } from 'react';
 import React from 'react'
@@ -9,14 +10,15 @@ export default function PopUp({ children, popUp, setPopUp }) {
     }
 
     let timer;
-
     const timerOn = () => {
-        timer = setTimeout(handlePopUp, 5000);
+        return timer = setTimeout(handlePopUp, 5000);
     }
 
     useEffect(() => {
         clearTimeout(timer);
-        timerOn();
+        if (popUp) { // run countdown to close timer if PopUp true ~~~~~~~~~~~~
+            timerOn();
+        }
     }, [popUp])
 
     return (

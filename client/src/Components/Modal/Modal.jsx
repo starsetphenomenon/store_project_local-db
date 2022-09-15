@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Modal({ children, modal, setModal }) {
 
-    const handleModal = () => {
+    const handleModal = () => { // handle modal view ~~~~~~~~~
         setModal(prev => !prev)
     }
 

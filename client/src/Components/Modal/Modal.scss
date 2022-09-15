@@ -17,6 +17,7 @@
         width: 100vw;
         z-index: 1;
         background: #3030305a;
+        backdrop-filter: blur(4px);
     }
 
     &__content {

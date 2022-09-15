@@ -72,7 +72,7 @@
         font-family: 'Jura';
         font-style: normal;
         font-weight: 500;
-        font-size: 24px;
+        font-size: 21px;
         line-height: 120%;
         text-transform: uppercase;
         color: #fff;
@@ -80,9 +80,24 @@
         padding: 0 10%;
 
         p {
-            margin-left: 15px;
+            margin-left: 30px;
             font-size: 1rem;
-            border-bottom: 1px solid #FFF;
+            position: relative;
+
+            &::before {
+                content: '\2295';
+                position: absolute;
+                left: -15px;
+                top: 50%;
+                transform: translateY(-50%);
+                height: 10px;
+                width: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: orange;
+                font-size: 15px;
+            }
         }
     }
 

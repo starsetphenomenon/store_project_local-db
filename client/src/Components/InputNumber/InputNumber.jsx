@@ -7,7 +7,7 @@ export default function InputNumber({ children, currentElem }) {
 
     const { cart, setCart, setStorage } = useContext(DataContext);
 
-    const [amount, setAmount] = useState('');
+    const [amount, setAmount] = useState();
 
     const setNewAmount = (id, operator) => {
         let elem = cart.find(el => +el.id === +id);
@@ -25,7 +25,7 @@ export default function InputNumber({ children, currentElem }) {
     }
 
     const handlePlus = () => {
-        setAmount(+amount + 1);
+        setAmount(amount + 1);
         setNewAmount(currentElem, '+')
     }
 
@@ -34,7 +34,7 @@ export default function InputNumber({ children, currentElem }) {
             setAmount(amount - 1);
         }
         else {
-            setAmount(+"1");
+            setAmount(1);
         }
         setNewAmount(currentElem, '-')
     }

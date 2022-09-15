@@ -1,19 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import FilterSelect from '../../Components/FilterSelect/FilterSelect';
-import ItemCard from '../../Components/ItemCard/ItemCard';
 import "./Catalog.scss";
 import { React, useContext, useState, useEffect } from 'react'
 import { DataContext } from '../../App';
 import { Link } from 'react-router-dom';
 import PaginatedItems from '../../Components/PaginatedItems/PaginatedItems';
 
-
-
-function Catalog({ filter1 }) {
+function Catalog({ menuLinksFilter }) {
 
     let { data, filterLink } = useContext(DataContext);
     const [filterByMaterial, setFilterByMaterial] = useState(['Все', 'Сталь', 'Нержавеющая сталь', 'Титан', 'Дерево']);
-    const [pageTitle, setPageTitle] = useState('Ножи')
+    const [pageTitle, setPageTitle] = useState(['Ножи'])
     const [filterData, setFilterData] = useState(data);
     const [filter, setFilter] = useState({
         filter: 'Ножи',
@@ -37,11 +34,12 @@ function Catalog({ filter1 }) {
     useEffect(() => {
         handleAllFilters(filter, data);
         let title = Object.values(filter).filter(el => el !== '');
-        setPageTitle(title.join(' / '));
+        setPageTitle([...title]);
     }, [filter]);
 
     useEffect(() => {
-        if (filter['Что ищем?'] !== undefined && (filter['filterLink'] !== undefined && filter['filterLink'].length)) { // reset filterLink if new TYPE filter is set ~~~~~~~~~~
+        if (filter['Что ищем?'] !== undefined &&
+            (filter['filterLink'] !== undefined && filter['filterLink'].length)) { // reset filterLink if new TYPE filter is set ~~~~~~~~~~
             setFilter({
                 ...filter,
                 filterLink: '',
@@ -194,22 +192,13 @@ function Catalog({ filter1 }) {
     const handleSortItems = (e) => { // handle SORT by SELECT ~~~~~~~
         setSortVisibility(prev => !prev);
         if (e.target.getAttribute('value').includes('возрастанию')) {
-            setFilterData(sortData(filterData, 'price', '+'))
+            setFilterData(sortData([...filterData], 'price', '+'))
         }
         if (e.target.getAttribute('value').includes('убыванию')) {
-            setFilterData(sortData(filterData, 'price', '-'))
+            setFilterData(sortData([...filterData], 'price', '-'))
         }
         if (e.target.getAttribute('value').includes('Рейтингу')) {
-            let tempData = [];
-            filterData.map(el => { // get each item AVG rating ~~~~~~~~
-                let ratings = el.reviews.map(e => e.rating)
-                let avgRating = Math.round(ratings.reduce((prev, curr, _, arr) => prev += curr / arr.length, 0))
-                return tempData.push({
-                    ...el,
-                    itemRating: avgRating
-                })
-            })
-            setFilterData(sortData(tempData, 'itemRating', '-'))
+            setFilterData(sortData([...filterData], 'itemRating', '-'))
         }
     }
 
@@ -227,7 +216,7 @@ function Catalog({ filter1 }) {
                     <h3>Эксклюзивные технологии на страже чистоты и уюта в вашем доме</h3>
                 </div>
             </div>
-            <h2 className='catalog_heading'>Ваш фильтр: <p>{pageTitle}</p></h2>
+            <h2 className='catalog_heading'>Ваш фильтр: {pageTitle.map((title, ind) => <p key={ind}>{title}</p>)}</h2>
             <div className="content">
                 <div className="filters">
                     <div onClick={resetFilters} className="resetFilter">
@@ -237,7 +226,7 @@ function Catalog({ filter1 }) {
                             <span></span>
                         </div>
                     </div>
-                    <FilterSelect name="Что ищем?" handleFilter={handleFilter} filter={filter1} />
+                    <FilterSelect name="Что ищем?" handleFilter={handleFilter} filter={menuLinksFilter} />
                     <FilterSelect name="Материал" handleFilter={handleFilter} filter={filterByMaterial} />
                     <div className="status">
                         <h3>Статус</h3>
@@ -268,10 +257,7 @@ function Catalog({ filter1 }) {
                     <div className="sortItems">
                         <FilterSelect name="Сортировать" handleFilter={handleSortItems} filterVisibility={sortVisibility} filter={sortBy} />
                     </div>
-                    <PaginatedItems parentBlockClass={"items__wrapper"} itemsPerPage={6} data={filterData} />
-                    {/*  {filterData.map(item => {
-                            return <ItemCard itemId={item.id} data={item} key={item.id} className={'item-card-catalog'} status={item.status} />
-                        })} */}
+                    <PaginatedItems parentBlockClass={"items__wrapper"} itemsPerPage={6} data={filterData} />                   
                 </div>
             </div>
             <div className="footer">
