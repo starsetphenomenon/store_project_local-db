@@ -69,32 +69,49 @@ function App() {
   const [mainSlides, setMainSlides] = useState([]);
   const [filterLink, setFilterLink] = useState('');
   const [searchingItems, setSearchingItems] = useState('');
-  const [searchResult, setSearchResult] = useState([]);
   const [cart, setCart] = useState([]);
+  const LAST_NEW_ELEMENT = 6;  // amout of status NEW elements
 
   useEffect(() => {
     fetch("http://localhost:3001/dataBase")
       .then((response) => response.json())
       .then((result) => { // sort data by DATE and set last N elements status to NEW ~~~~~~~~~~~~
         result.sort((a, b) => new Date(b.creationDate) - new Date(a.creationDate))
-        const LAST_NEW_ELEMENT = 6;  // amout of status NEW elements
+        let mainSlider = []; // get Main Slides from data ~~~~~~~~~~
         for (let i = 0; i < LAST_NEW_ELEMENT; i++) { // set last N elemnt status to NEW ~~~~~~~~~~~~
           result[i].status = "Новинка"
+          mainSlider.push({
+            price: result[i].price,
+            title: result[i].title,
+            collection: result[i].collection,
+            imgSrc: result[i].img.mainSlider,
+            imgAlt: result[i].img.alt,
+            id: result[i].id,
+          })
         }
-        setData(result);
+        setMainSlides(mainSlider) // set Main Slides ~~~~~~~~~~~
+        let dataWithRating = [];
+        result.map(el => { // get each item AVG rating ~~~~~~~~
+          let ratings = el.reviews.map(e => e.rating)
+          let avgRating = Math.round(ratings.reduce((prev, curr, _, arr) => prev += curr / arr.length, 0))
+          return dataWithRating.push({
+            ...el,
+            itemRating: avgRating
+          })
+        })
+        setData(dataWithRating);
       })
     if (getStorage('cart') !== null) {
-      setCart(getStorage('cart')) // get Cart from storage if page REFRESHED ~~~~~~~~~~~
+      setCart(getStorage('cart')) // get Cart from storage on LOAD ~~~~~~~~~~~
     }
   }, []);
 
-  useEffect(() => { // Get only unique links/topics from data ~~~
+  useEffect(() => { // Get only unique links/topics from data and get items for Main Slider ~~~
     if (!data.length) {
       return
     }
     let links = [...new Set(data.map(item => item.type))]; // Main links
     let subLinks = []; // subLinks
-    let slides = []; // main slider slides;
     let sub = [...new Map(data.map(item => // subLinks
       [item.topic, item])).values()];
     sub.forEach(el => {
@@ -102,46 +119,37 @@ function App() {
         [el.type]: el.topic,
       })
     })
-    let slide = data.filter(el => el.status === 'Новинка')
-    slide.forEach(el => { // main slider slides
-      slides.push({
-        price: el.price,
-        title: el.title,
-        collection: el.collection,
-        imgSrc: el.img.mainSlider,
-        imgAlt: el.img.alt,
-        id: el.id,
-      })
-    })
-    setMainSlides(slides);
     setMenuLinks(links);
     setMenuSubLinks(subLinks);
   }, [data]);
 
-  const [menu, setMenu] = useState(false);
 
+  // Menu visibility ~~~~~~~~~~~~~~~~~~~~
+  const [menu, setMenu] = useState(false);
   const handleMenuVisibility = () => {
     setMenu(prev => !prev);
   }
 
   return (
-
     <div className="App">
-      <DataContext.Provider value={{ addToCart, data, setData, mainSlides, filterLink, cart, setCart, getStorage, setStorage }}>
-        <Header searchResult={searchResult} setSearchingItems={setSearchingItems} menuVisibility={handleMenuVisibility} />
-        <Menu menuLinks={menuLinks} setFilterLink={setFilterLink} menuSubLinks={menuSubLinks} menuStatus={menu} menuVisibility={handleMenuVisibility} />
+      <DataContext.Provider value={{
+        addToCart, data, setData, mainSlides, filterLink, setFilterLink,
+        cart, setCart, getStorage, setStorage, setSearchingItems, handleMenuVisibility
+      }}>
+        <Header />
+        <Menu menuLinks={menuLinks} menuSubLinks={menuSubLinks} menuStatus={menu} />
         <ScrollToTop>
           <Routes>
-            <Route path="/" index element={<Main setFilterLink={setFilterLink} />} />
-            <Route path="catalog" element={<Catalog filter1={menuLinks} />} ></Route>
+            <Route path="/" index element={<Main />} />
+            <Route path="catalog" element={<Catalog menuLinksFilter={menuLinks} />} ></Route>
             <Route path="catalog/items/:id" element={<ItemPage />} />
             <Route path="cart" element={<Cart />} />
-            <Route path="search" element={<Search setSearchResult={setSearchResult} setSearchingItems={setSearchingItems} searchingItems={searchingItems} />} />
+            <Route path="search" element={<Search searchingItems={searchingItems} />} />
             <Route path="items/:id" element={<ItemPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </ScrollToTop>
-        <Footer setFilterLink={setFilterLink} />
+        <Footer />
       </DataContext.Provider>
     </div >
   );

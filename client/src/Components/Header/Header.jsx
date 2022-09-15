@@ -1,17 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import "./Header.scss";
 import { Link, useNavigate } from "react-router-dom";
-import { React, useContext, useState, useEffect } from 'react'
+import { React, useContext, useState, useEffect } from 'react';
 import { DataContext } from '../../App';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 
-function Header({ menuVisibility, setSearchingItems }) {
+function Header() {
     let navigate = useNavigate();
 
     // CART ~~~~~~~~~~~~~~~~~~~~~~
 
-    const { cart, getStorage, data } = useContext(DataContext);
+    const { cart, getStorage, data, setSearchingItems, handleMenuVisibility } = useContext(DataContext);
 
     useEffect(() => { // counter in HEADER under cart icon ~~~~~~~~~~~~~
         if (cart !== null) {
@@ -49,7 +49,7 @@ function Header({ menuVisibility, setSearchingItems }) {
     return (
         <div className="header">
             <div className="left">
-                <div className="burger" onClick={menuVisibility}>
+                <div className="burger" onClick={handleMenuVisibility}>
                     <span></span>
                     <span></span>
                     <span></span>
@@ -130,7 +130,7 @@ function Header({ menuVisibility, setSearchingItems }) {
                         onInputChange={onSearch}
                         classes={{
                             option: 'listOption',
-                            listbox: 'listbox',                           
+                            listbox: 'listbox',
                         }}
                         renderInput={(params) => <TextField {...params} label="Поиск" />}
                     />

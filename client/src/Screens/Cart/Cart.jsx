@@ -136,23 +136,20 @@ export default function Cart() {
             localStorage.removeItem('cartForm');
             localStorage.removeItem('cart');
             let date = new Date();
-            setMyOrders([
-                {
-                    orderItems: cart,
-                    date: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
-                    time: `${date.getHours()}:${date.getMinutes()}`,
-                    totalPrice: totalPrice,
-                },
-                ...myOrders
-            ])
-            setCart([]);
-            setStorage('myOrders', [{
+            let orderedItems = { // ordered items with INFO ~~~~~~~~~~~~~~~
                 orderItems: cart,
                 date: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
                 time: `${date.getHours()}:${date.getMinutes()}`,
                 totalPrice: totalPrice,
-            },
-            ...myOrders
+            }
+            setMyOrders([
+                orderedItems,
+                ...myOrders
+            ])
+            setCart([]);
+            setStorage('myOrders', [
+                orderedItems,
+                ...myOrders
             ])
         } else {
             setPopUp(true);
@@ -160,26 +157,24 @@ export default function Cart() {
         }
     }
 
-    const handleDeleteElem = (e) => {
+    const handleDeleteElem = (e) => { // delete Item from CART ~~~~~~~~~~~~
         let result = [];
         result = cart.filter(item => +item.id !== +e.currentTarget.id);
         setCart(result)
         setStorage('cart', result)
     }
 
-    // Order list handle ~~~~~~~~~~~~~
+
 
     const [showOrders, setShowOrders] = useState(false);
-
-    const showOrdersHistory = () => {
+    const showOrdersHistory = () => { // Order list handle ~~~~~~~~~~~~~
         setShowOrders(prev => !prev)
     }
 
-    // Go back button ~~~~~~~~~~~~~
+
 
     const navigate = useNavigate();
-
-    const goBack = () => {
+    const goBack = () => { // Go back button ~~~~~~~~~~~~~
         return navigate(-1);
     }
 

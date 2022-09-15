@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { DataContext } from '../../App';
 import Review from '../../Components/Review/Review';
 import PopUp from '../../Components/PopUp/PopUp';
-import ItemPageSlider from '../../Components/ScrollToTop/ItemPageSlider/ItemPageSlider.jsx';
+import ItemPageSlider from '../../Components/ItemPageSlider/ItemPageSlider.jsx';
 
 export default function ItemPage() {
 
@@ -25,13 +25,9 @@ export default function ItemPage() {
         setCurrentItem(getCurrentItem(data));
     });
 
-    useEffect(() => {
-
-    }, [currentItem]);
-
     const getCurrentItem = (db) => {
         let currentItemId = +location.hash.replace('#', '');
-        let item = db.find(item => +item.id === currentItemId);
+        let item = db.find(item => +item.id === +currentItemId);
         return item;
     }
 

@@ -1,11 +1,14 @@
-import { React } from 'react'
+import { React, useContext } from 'react'
 import "./Menu.scss";
 import { NavLink } from 'react-router-dom';
+import { DataContext } from '../../App';
 
-export default function Menu({ menuVisibility, menuStatus, menuLinks, menuSubLinks, setFilterLink }) {
+export default function Menu({ menuStatus, menuLinks, menuSubLinks }) {
+
+    let { setFilterLink, handleMenuVisibility } = useContext(DataContext);
 
     const handleLink = (e) => {
-        menuVisibility();
+        handleMenuVisibility();
         setFilterLink(e.target.name.toLowerCase())
     }
 
@@ -26,15 +29,15 @@ export default function Menu({ menuVisibility, menuStatus, menuLinks, menuSubLin
 
     return (
         <div className={menuStatus ? 'Menu active' : 'Menu'}>
-            <div onClick={menuVisibility} className='Menu__wrapper'></div>
+            <div onClick={handleMenuVisibility} className='Menu__wrapper'></div>
             <div className="Menu__content">
-                <div className="close" onClick={menuVisibility}>
+                <div className="close" onClick={handleMenuVisibility}>
                     <span></span>
                     <span></span>
                 </div>
                 <ul className='filterLinks'>
-                    <li onClick={menuVisibility}><NavLink to="/">Главная</NavLink></li>
-                    <li onClick={menuVisibility}><NavLink to="/catalog">Каталог</NavLink></li>
+                    <li onClick={handleMenuVisibility}><NavLink to="/">Главная</NavLink></li>
+                    <li onClick={handleMenuVisibility}><NavLink to="/catalog">Каталог</NavLink></li>
                     {menuLinks.map((link, i) => {
                         return <li onClick={handleSubMenu} className='' key={i}><div className="subName">{link}</div>
                             <div className='lunges'>

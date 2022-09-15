@@ -49,7 +49,7 @@ export default function Review({ data: revDB, currentItemID }) {
             review: newReview,
             id: currentItemID
         }
-        fetch('http://localhost:3001/updateItemReviews', { // sending new data to server ~~~~~~~~~~~~~~~
+        fetch('http://localhost:3001/updateItemReviews', { // sending new REVIEW to server ~~~~~~~~~~~~~~~
             method: 'POST',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
@@ -58,7 +58,7 @@ export default function Review({ data: revDB, currentItemID }) {
         })
             .then(res => res.json())
             .then(db => {
-                setData(db)
+                setData(db) // update data with new REVIEWS ~~~~~~~~~~~
             });
     }
 
