@@ -36,6 +36,8 @@ export default function Review({ data: revDB, currentItemID }) {
     const [popUp, setPopUp] = useState(false);
 
     const addNewReview = () => {
+        setPopUp(true)
+        return
         setReviewInputValue({
             name: '',
             message: '',
@@ -122,7 +124,7 @@ export default function Review({ data: revDB, currentItemID }) {
                 {!reviews?.length ? 'Отзывов пока нет...' : ''}
             </div>
             <div className="add">
-                <PopUp popUp={popUp} setPopUp={setPopUp}>Заполните все поля!</PopUp>
+                <PopUp popUp={popUp} setPopUp={setPopUp}>Server is OFF!</PopUp>
                 <h3>Добавить отзыв</h3>
                 <div className="revName">
                     <label htmlFor="name">Имя</label>

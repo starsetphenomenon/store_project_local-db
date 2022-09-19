@@ -73,7 +73,7 @@ function App() {
   const LAST_NEW_ELEMENT = 6;  // amout of status NEW elements
 
   useEffect(() => {
-    fetch("http://localhost:3001/dataBase")
+    fetch("/data/data.json")
       .then((response) => response.json())
       .then((result) => { // sort data by DATE and set last N elements status to NEW ~~~~~~~~~~~~
         result.sort((a, b) => new Date(b.creationDate) - new Date(a.creationDate))

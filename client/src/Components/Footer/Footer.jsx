@@ -59,7 +59,7 @@ export default function Footer() {
             <div className="info">
                 <h2>Контактная информация</h2>
                 <h2>+7 (981) 120-11-17</h2>
-                <div className="mail">tuotown@mail.ru</div>
+                <div className="mail">tuotown@gmail.com</div>
                 <div className="hours">08:00 — 18:00, ежедневно</div>
                 <div className="adress">
                     Украина, Киев, ул. Шевченка 15а.
